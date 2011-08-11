@@ -1,0 +1,9 @@
+cn:
+  hello: "你好"
+  welcome: "欢迎"
+  friends: "朋友"
+  friend: "朋友"
+  login: "登录"
+  
+  activerecord:
+    errors:

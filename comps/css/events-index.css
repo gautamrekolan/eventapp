@@ -1,0 +1,129 @@
+@charset "UTF-8";
+/* CSS Document */
+
+
+/* GENERAL */
+
+body {
+	/*text-align:center;*/
+	background-color:#EEF4F6;
+	font-family:Arial, Helvetica, sans-serif;
+}
+
+a:link {
+	
+}
+
+/******* END GENERAL ***********/
+
+.eventsContainer {
+	margin: 0 auto;
+	width: 900px;
+	background-color: #FFFFFF;
+	/* 
+	border: 1px solid #000;
+	float: left;
+	*/
+	display: block;
+}
+
+.header {
+	
+}
+
+.titleLoginJoin {
+	width: 880px;
+	float:left;
+	padding: 5px;
+}
+
+.title {
+	float:left;
+}
+
+.loginJoin {
+	float:right;
+}
+
+.marquee {
+	height:175px;
+	width:900px;
+	background-color:#9FF;	
+	float:left;
+}
+
+
+/* EVENTS BODY */
+
+.eventsBody {
+	float:left;
+	width:
+}
+
+.eventsHeader {
+	padding:5px;
+}
+
+.events {
+	float: left;
+	width: 680px;
+}
+
+.rightTower {
+	width: 200px;
+	float: right;
+	background-color: #0FC;
+	height: 500px;
+	padding:10px;
+}
+
+/* EVENT ITEM */
+
+.event {
+	width: 680px;
+	height: 50px;
+	border-color: #CCCCCC;
+	border-bottom: dotted;
+	float: left;
+	background-color: #CCC;
+	padding:10px;
+}
+
+.event .userIcon {
+	width: 50px;
+	height: 50px;
+	background-color: #C6F;
+	float:left;
+	margin-right:10px;
+}
+
+.event .eventTitle {
+	float: left;
+}
+
+.event a {
+	color:blue;
+}
+
+.event .eventLocation {
+	
+}
+
+
+/* FOOTER */
+
+.footer {
+	float:left;
+	height: 15px;
+	width:880px;
+	padding: 10px;
+	background-color:#FFFFFF;
+}
+
+.footer .disclaimer {
+	color:#CCCCCC;
+	font-size: 10px;
+	text-align:center;
+}
+
+
