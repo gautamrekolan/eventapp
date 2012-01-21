@@ -1,7 +1,16 @@
-<h1>Listing events</h1>
+<!-- events -->
+
+<%= stylesheet_link_tag "events/event.css" %>
+
+<h1>upcoming events</h1>
+
+<!-- TODO create a database full of sample events for the 'new event teaser'... should be prepopulated suggestions of events,
+	then randomly draw from those events and place them in the new event form in a light gray -->
+
+<div id="newevent">
+	<%= link_to 'create new event', new_event_path %>
+</div>
 
 <div id="events">
   <%= render @events %>
 </div>
-
-<%= link_to 'New Event', new_event_path %>

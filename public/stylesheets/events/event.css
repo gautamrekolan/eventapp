@@ -1,0 +1,8 @@
+.eventcontainer {
+	padding:5px;
+}
+
+.eventcontainer .event h3 {
+	font-size:13px;
+	line-height:15px;
+}

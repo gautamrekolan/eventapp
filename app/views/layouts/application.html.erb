@@ -1,12 +1,30 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Eventapp</title>
+  <title>events</title>
   <%= stylesheet_link_tag :all %>
   <%= javascript_include_tag 'jquery-1.5.2.min', 'rails', 'application' %>
   <%= csrf_meta_tag %>
 </head>
 <body>
+<div id="headerbar">
+	<div id="headercontentcontainer">
+		<div id="homelogo">
+			<%= link_to "eventsite", "/events" %>
+		</div>
+		<div id="logingroup">
+			<form name="input" action="/login" method="get">
+				<div id="usernamecontainer">
+					<input type="text" name="uname" value="username" />
+				</div>
+				<div id="passwordcontainer">
+					<input type="text" name="pass" value="password" />
+				</div>
+				<input type=submit VALUE="log in">
+			</form>
+		</div>
+	</div>
+</div>
 
 <!-- makes sure notices always show -->
 <%= content_tag :p, notice, :class => 'notice' if notice.present? %> 
@@ -19,8 +37,11 @@
 
 <% end %>
 
-
+<div id="maincontainer">
+	
 <%= yield %>
+
+</div>
 
 </body>
 </html>

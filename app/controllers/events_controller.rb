@@ -14,8 +14,11 @@ class EventsController < ApplicationController
 
   # GET /events/1
   def show
-    @event = Event.find(params[:id])
-
+    begin
+      @event = Event.find(params[:id])
+    rescue ActiveRecord::RecordNotFound
+      puts "we couldn't find that record"
+    end
     respond_to do |format|
       format.html # show.html.erb
       format.xml  { render :xml => @event }
@@ -84,8 +87,8 @@ class EventsController < ApplicationController
   
   def notify_friend
     @event = Event.find(params[:id])
-	Notifier.email_friend(@event, params[:name], params[:email]).deliver 
-	redirect_to @event, :notice => "message sent successfully"
+	  Notifier.email_friend(@event, params[:name], params[:email]).deliver 
+	  redirect_to @event, :notice => "message sent successfully"
   end
   
 end

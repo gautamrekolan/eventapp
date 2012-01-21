@@ -1,0 +1,72 @@
+
+/* h1,h2,h3.... */
+
+body {
+	font-family: "lucida grande",tahoma,verdana,arial,sans-serif;
+}
+
+body h1 {
+	font-size:20px;
+	color:black;
+}
+
+h3 {
+	font-size:13px;
+}
+
+body {
+	background-color:#FFFFFF;
+}
+
+#headerbar {
+	height:40px;
+	width:100%;
+	background-color:#CCCCCC;
+	border-bottom:1px solid #0099FF;
+}
+
+#headercontentcontainer {
+	width:980px;
+	margin: 0 auto;
+}
+
+#homelogo {
+	float:left;
+}
+
+#logingroup {
+	float:right;
+}
+
+#logingroup #usernamecontainer {
+	float:left;
+}
+
+#logingroup #passwordcontainer {
+	float:left;
+}
+
+input {
+	background-color:#E6F5FF;
+}
+
+/* CONTENT */
+
+#maincontainer {
+	margin: 0 auto;
+	width: 980px;
+}
+
+/* general links */
+
+a {
+	text-decoration: none;
+}
+
+a:hover {
+	color: gray;
+}
+
+a:visited {
+	
+}
