@@ -1,0 +1,32 @@
+<%= stylesheet_link_tag "events/user-event.css"%>
+
+<% if @user.id == @requested_user.id %>
+	
+	<!-- this is the logged in user's profile -->
+	
+	<div><%= @user.username %></div>
+	
+	<% if @userevents.length > 0 %>
+		<!-- user has events -->
+		<%= render @userevents %>
+	<% else %>
+		<!-- user doesn't have any events -->
+		<h1>has not created any events</h2>
+	<% end %>
+	
+<% else %>
+
+	<!-- this is not the logged in user's profile -->
+	
+	<div><%= @requested_user.username %></div>
+	
+	<% if @userevents.length > 0 %>
+		<!-- user has events -->
+		<%= render @userevents %>
+	<% else %>
+		<!-- user doesn't have any events -->
+		<h1>has not created any events</h1>
+		<h2>create and event! suggest and event!</h2>
+	<% end %>
+	
+<% end %>
