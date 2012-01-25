@@ -4,15 +4,21 @@ class ApplicationController < ActionController::Base
   
   protect_from_forgery
   
+  #returns the currently logged in user or nil if there isn't one
   protected
-    #returns the currently logged in user or nil if there isn't one
 	def current_user
 	  return unless session[:user_id]
 	  @current_user ||= User.find_by_id(session[:user_id])
 	end
-	
 	#make current method available in other templates as a helper
 	helper_method :current_user
+  
+	protected
+	def user_events(user)
+    return Event.where(:user_id => user.id)
+	end
+	
+	helper_method :user_events
 	
 	#filter method to enforce login requirement
 	#apply as a before_filter on a any controller you want to protect

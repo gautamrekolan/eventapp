@@ -1,8 +1,28 @@
 .eventcontainer {
-	padding:5px;
+	
+}
+
+.eventcontainer .event {
+	width:490px;
+	background-color:#DDDDDD;
+	margin-bottom:5px;
 }
 
 .eventcontainer .event h3 {
-	font-size:13px;
+	font-size:14px;
 	line-height:15px;
 }
+
+.eventcontainer .eventdescription {
+	font-size:12px;
+}
+
+.eventcontainer .event .postedby {
+	font-size:11px;
+	color:#333333;
+}
+
+.event .postedby .username {
+	
+}
+
