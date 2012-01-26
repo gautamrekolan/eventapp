@@ -4,6 +4,8 @@ class ApplicationController < ActionController::Base
   
   protect_from_forgery
   
+  # puts "ACTION NAME " + params[:action].to_s
+  
   #returns the currently logged in user or nil if there isn't one
   protected
 	def current_user
