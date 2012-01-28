@@ -9,12 +9,13 @@ Eventapp::Application.routes.draw do
   resources :categories
 
   resources :connections
-
+  
   resources :events do
     member do
 	    post :notify_friend
 	  end
     resources :comments
+    resources :event_likes
   end
   
   resources :users

@@ -7,11 +7,37 @@
   <%= csrf_meta_tag %>
 </head>
 <body>
+
 <div id="headerbar">
 	<div id="headercontentcontainer">
 		<div id="homelogo">
 			<%= link_to "eventsite", "/events" %>
 		</div>
+		
+		<%- # if user not logged in then show the top login bar %>
+		
+		<% if !logged_in? %>
+		
+			<%- # don't show top login bar if the user is on login "sessions" page'%>
+			
+			<% if controller_name != "sessions" %>
+			<div id="logingroup">
+				<%= form_tag session_path do %> 
+			    <div id="usernamecontainer">
+			    	<%- # label_tag :email %>
+				    <%= text_field_tag :email %> 
+			  	</div>
+			  	<div id="passwordcontainer"> 
+			    	<%- # label_tag :password %> 
+					<%= password_field_tag :password %>
+			  	</div> 
+			  	<%= submit_tag 'login' %> 
+		  	
+				<% end %>
+			</div>
+			<% end %>
+		
+		<!--
 		<div id="logingroup">
 			<form name="input" action="/login" method="get">
 				<div id="usernamecontainer">
@@ -23,6 +49,14 @@
 				<input type=submit VALUE="log in">
 			</form>
 		</div>
+		-->
+		<% else %>
+			<div id="logoutgroup">
+				<div id="logoutbutton">
+					<%= link_to "logout", logout_path %>
+				</div>
+			</div>
+		<% end %>
 	</div>
 </div>
 

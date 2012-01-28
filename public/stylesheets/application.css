@@ -46,6 +46,10 @@ body {
 	float:left;
 }
 
+#logoutgroup {
+	float:right;
+}
+
 input {
 	background-color:#E6F5FF;
 }

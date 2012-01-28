@@ -1,3 +1,5 @@
+<%= stylesheet_link_tag "events/event.css" %>
+
 <%= render @event %>
 
 <%= link_to 'Email a friend', '#', :onclick => "$('#notify_friend_form').slideDown()" %> 
@@ -7,6 +9,3 @@
 <div id="comments">
   <%= render @event.comments %>
 </div>
-
-<%= link_to "new comment", new_event_comment_path(@event, :format => :js), 
-  :remote => true, :id => 'new_comment_link' %>

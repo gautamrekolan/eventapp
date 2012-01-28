@@ -2,17 +2,14 @@
 <p id="notice"><%= notice %></p>
 -->
 
+
+
 <!-- TODO check that start date is before end date -->
 <div class="eventcontainer">
+	<div class="eventcontents">
 	<%= div_for event do %> 
 		<h3>
 		  <%= link_to event.name, event %> 
-		  <% if event.owned_by? current_user %>
-		    <span class='actions'>
-		      <%= link_to "Edit", edit_event_path(event) %>
-		      <%= link_to "Delete", event, :confirm => "Are you sure?", :method => :delete %>
-		    </span> 
-		  <% end %>
 		</h3>
 		<div class="eventdescription">
 			<%= event.description %> 
@@ -21,4 +18,28 @@
 			- by <a class="username" href="/users/<%= event.user.id %>"><%= event.user.username %></a> <%= time_ago_in_words(event.created_at) %> ago
 		</div>
 	<% end %>
+	</div>
+	<div class="eventactionsbar">
+		<% if logged_in? %>
+		<div class="publicactions">
+			<%= link_to "like", new_event_event_like_path(event, :format => :js), :class => "likelink", :remote => true %>
+			<%= link_to "comment", new_event_comment_path(@event, :format => :js), :remote => true, :class => 'commentlink' %>
+			
+			<%= link_to "go!", "/fakeurl", :class => "golink" %>
+		</div>
+		<% else %>
+		<div class="publicactions">
+			<%= link_to "like", "/login", :class => "likelink", :notice => "login to like events" %>
+			<%= link_to "comment", "/login", :class => "commentlink" %>
+			<%= link_to "go!", "/login", :class => "golink" %>
+		</div>
+		<% end %>
+		
+		<% if event.owned_by? current_user %>
+		<div class='currentuseractions'>
+	      <%= link_to "edit", edit_event_path(event) %>
+	      <%= link_to "delete", event, :confirm => "Are you sure?", :method => :delete %>
+	    </div> 
+		<% end %>
+	</div>
 </div>
