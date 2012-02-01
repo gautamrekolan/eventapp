@@ -24,7 +24,7 @@ class UsersController < ApplicationController
     @requested_user = User.find(params[:id])
     
     # this will give you either the current logged in user's events or the somebody else's profile
-    @userevents = user_events(@requested_user)
+    # @userevents = user_events(@requested_user) don't need this 
     
     # puts "USER askjdf" + params[:id].to_s
     respond_to do |format|

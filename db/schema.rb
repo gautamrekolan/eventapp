@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120127050422) do
+ActiveRecord::Schema.define(:version => 20120129235614) do
 
   create_table "categories", :force => true do |t|
     t.datetime "created_at"
@@ -24,12 +24,11 @@ ActiveRecord::Schema.define(:version => 20120127050422) do
   end
 
   create_table "comments", :force => true do |t|
-    t.string   "name"
-    t.string   "email"
     t.text     "body"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "event_id"
+    t.integer  "user_id"
   end
 
   create_table "connections", :force => true do |t|
@@ -66,6 +65,8 @@ ActiveRecord::Schema.define(:version => 20120127050422) do
   create_table "going_tos", :force => true do |t|
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "user_id"
+    t.integer  "event_id"
   end
 
   create_table "keywords", :force => true do |t|

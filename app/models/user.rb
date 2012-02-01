@@ -15,6 +15,7 @@ class User < ActiveRecord::Base
   has_one :profile, :dependent => :destroy
   has_many :events, :dependent => :destroy, :order => 'starttime ASC'
   has_many :replies, :through => :events, :source => :comments
+  has_many :going_tos
   
   before_save :encrypt_new_password
   

@@ -16,6 +16,7 @@ Eventapp::Application.routes.draw do
 	  end
     resources :comments
     resources :event_likes
+    resources :going_tos
   end
   
   resources :users

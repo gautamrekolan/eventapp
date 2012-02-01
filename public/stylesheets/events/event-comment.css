@@ -1,0 +1,19 @@
+#events .comment_form_container {
+	float:left;
+	width:486px;
+	background-color:#DFDFDF;
+	padding:7px;
+}
+
+#events .comment_field_container {
+	
+}
+
+#events #new_comment {
+	
+}
+
+#events textarea {
+	font-size:12px;
+	
+}

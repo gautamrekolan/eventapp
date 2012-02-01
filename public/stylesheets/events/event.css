@@ -1,17 +1,16 @@
 .eventcontainer {
-	
-}
-
-.eventcontainer {
-	margin-bottom:10px;
-	border:1px solid black;
+	float:left;
+	margin-top:10px;
+	/* border:1px solid black; */
+	width:490px;
+	margin-right:10px;
 }
 
 .eventcontainer .eventcontents {
 	background-color:#DFDFDF;
+	width:490px;
 	padding:5px;
 	float:left;
-	width:490px;
 }
 
 .eventcontainer .event h3 {
@@ -36,15 +35,31 @@
 
 .eventcontainer .eventactionsbar {
 	padding-left:5px;
+	padding-right:5px;
+	padding-bottom:3px;
 	background-color:#EFEFEF;
-	width:480px;
+	width:490px;
 	float:left;
+}
+
+.eventcontainer .eventactionsbar .publicactions .pipeseparator {
+	color:#CCCCCC;
 }
 
 .eventactionsbar .publicactions {
 	float:left;
 }
 
+.eventactionsbar a {
+	font-size:12px;
+}
+
+.eventactionsbar .currentuseractions {
+	font-size:12px;
+	float:right;
+}
+
+/*
 .eventactionsbar .likelink {
 	font-size:12px;
 }
@@ -57,7 +72,7 @@
 	font-size:12px;
 }
 
-.eventactionsbar .currentuseractions {
+.eventactionsbar .goinglink {
 	font-size:12px;
-	float:right;
 }
+*/

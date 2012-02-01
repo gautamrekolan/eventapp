@@ -6,8 +6,8 @@ body {
 }
 
 body h1 {
-	font-size:20px;
-	color:black;
+	font-size:16px;
+	color:#333333;
 }
 
 h3 {
@@ -34,19 +34,22 @@ body {
 	float:left;
 }
 
-#logingroup {
+#headerbar #logingroup {
 	float:right;
+	margin-top:10px;
 }
 
-#logingroup #usernamecontainer {
+#headerbar #logingroup #usernamecontainer {
 	float:left;
+	margin-right:10px;
 }
 
-#logingroup #passwordcontainer {
+#headerbar #logingroup #passwordcontainer {
 	float:left;
+	margin-right:10px;
 }
 
-#logoutgroup {
+#headerbar #logoutgroup {
 	float:right;
 }
 

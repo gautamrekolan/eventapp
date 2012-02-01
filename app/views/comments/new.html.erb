@@ -1,18 +1,8 @@
-<%= form_for([@event, @event.comments.new],
-  :html => {:style => 'display: none;'}) do |f| %> 
-<div class="field">
-  <%= f.label :name %><br />
-  <%= f.text_field :name %> 
+<div class="comment_form_container">
+	<%= form_for([@event, @event.comments.new],
+	  :html => {:style => 'display: none;'}) do |f| %> 
+		<div class="comment_field_container">
+		  <%= f.text_area(:body, :rows => 1, :cols => 50) %> 
+		</div>
+	<% end %>
 </div>
-<div class="field"> 
-  <%= f.label :email %><br /> 
-  <%= f.text_field :email %>
-</div> 
-<div class="field">
-  <%= f.label :body %><br />
-  <%= f.text_area :body %> 
-</div>
-<div class="actions"> 
-  <%= f.submit 'Add' %>
-</div> 
-<% end %>

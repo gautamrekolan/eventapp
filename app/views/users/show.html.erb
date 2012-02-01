@@ -1,14 +1,14 @@
-<%= stylesheet_link_tag "events/user-event.css"%>
+<%= stylesheet_link_tag "events/user-event.css", "events/event.css", "events/event-comment.css"%>
 
-<% if @user.id == @requested_user.id %>
+<% if @user === @requested_user %>
 	
 	<!-- this is the logged in user's profile -->
 	
-	<div><%= @user.username %></div>
 	
-	<% if @userevents.length > 0 %>
+	<% if @user.events.length > 0 %>
 		<!-- user has events -->
-		<%= render @userevents %>
+		<h1 class="events_title title">your events</h1>
+		<%= render @user.events %>
 	<% else %>
 		<!-- user doesn't have any events -->
 		<h1>has not created any events</h2>
@@ -18,15 +18,33 @@
 
 	<!-- this is not the logged in user's profile -->
 	
-	<div><%= @requested_user.username %></div>
 	
-	<% if @userevents.length > 0 %>
+	<%-# events created by requested user %>
+	<% if @requested_user.events.length > 0 %>
 		<!-- user has events -->
-		<%= render @userevents %>
+		<div class="eventstitle title"><%= @requested_user.username %>'s events</div>
+		<%= render @requested_user.events %>
 	<% else %>
 		<!-- user doesn't have any events -->
-		<h1>has not created any events</h1>
-		<h2>create and event! suggest and event!</h2>
+		<div>has not created any events</div>
+		<div>create and event! suggest and event!</div>
+		<%-# TODO find a clever way to request fantasy events or "dream events", "future events" %>
 	<% end %>
 	
+	<%-# event's this user is going to'%>
+	<% if @requested_user.going_to.count > 0 %>	
+		<div class="going_tos_container">
+			<div class="going_tos_title title">
+				event's <%= @requested_user.username %> is going to
+			</div>
+			<% @requested_user.going_tos.each do |going_to| %>
+				<%- # looks like not having error checking%>
+				<%= render Event.find(going_to.event_id)%>
+			<% end %>
+		</div>
+	<% end %>
+		
+	<%-# TODO add connections / friends / following. i think following / or subscribing is better than 'friends' %>
+	<div class="following">FOLLOWING</div>
+	<div class="related_events">RELATED EVENTS???</div>
 <% end %>

@@ -1,32 +1,40 @@
 <%= form_for(@event) do |f| %>
-  <% if @event.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@event.errors.count, "error") %> prohibited this event from being saved:</h2>
-
-      <ul>
-      <% @event.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
-
-  <div class="field">
-    <%= f.label :name %><br />
-    <%= f.text_field :name %>
-  </div>
-  <div class="field">
-    <%= f.label :starttime %><br />
-    <%= f.datetime_select :starttime %>
-  </div>
-  <div class="field">
-    <%= f.label :endtime %><br />
-    <%= f.datetime_select :endtime %>
-  </div>
-  <div class="field">
-    <%= f.label :location %><br />
-    <%= f.text_field :location %>
-  </div>
+  	<% if @event.errors.any? %>
+	   <div id="error_explanation">
+	     <h2><%= pluralize(@event.errors.count, "error") %> prohibited this event from being saved:</h2>
+	     <ul>
+	     <% @event.errors.full_messages.each do |msg| %>
+	       <li><%= msg %></li>
+	     <% end %>
+	     </ul>
+	   </div>
+	 <% end %>
+	<%-# TODO prepopulate with name %>
+	 <div class="field">
+	   <%= f.label :name %><br />
+	   <%= f.text_field :name %>
+	 </div>
+	<%-# TODO need better looking date finder %>
+	 <div class="field">
+	   <%= f.label :starttime %><br />
+	   <%= f.datetime_select :starttime %>
+	 </div>
+	<%-# TODO need better looking date finder %>
+	 <div class="field">
+	   <%= f.label :endtime %><br />
+	   <%= f.datetime_select :endtime %>
+	 </div>
+	<%-# TODO prepopulate with location %>
+	<%-# TODO need ajaxy search api for locations / addresses. google? %>
+	 <div class="field">
+	   <%= f.label :location %><br />
+	   <%= f.text_field :location %>
+	 </div>
+	<div class="field">
+  		<%= f.label :description %>
+		<%= f.text_field :description %>
+	</div>
+	<%-# TODO change categories to "tags" %>
   <div class="field"> 
     <%= f.label "Categories" %><br /> 
 	  <% for category in Category.all %>
@@ -35,6 +43,8 @@
 	  <% end %>
   </div>
   <div class="actions">
+	<%-# TODO probably change or customize this helper method %>
+	<%- # this method is found in app/helper/appication it is a helper method%>
     <%= submit_or_cancel(f) %>
   </div>
 <% end %>

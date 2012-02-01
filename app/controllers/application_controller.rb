@@ -36,6 +36,12 @@ class ApplicationController < ActionController::Base
 	#make logged_in? available in templates as a helper
 	helper_method :logged_in?
 	
+  def find_event
+    @event = Event.find(params[:event_id])
+  end
+  
+  helper_method :find_event
+	
 	def access_denied
 	  redirect_to login_path, :notice => "please login" and return false
 	end

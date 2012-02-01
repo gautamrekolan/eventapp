@@ -1,11 +1,8 @@
 <!--
 <p id="notice"><%= notice %></p>
 -->
-
-
-
 <!-- TODO check that start date is before end date -->
-<div class="eventcontainer">
+<% div_for(event, :class => "eventcontainer") do %>
 	<div class="eventcontents">
 	<%= div_for event do %> 
 		<h3>
@@ -22,16 +19,53 @@
 	<div class="eventactionsbar">
 		<% if logged_in? %>
 		<div class="publicactions">
-			<%= link_to "like", new_event_event_like_path(event, :format => :js), :class => "likelink", :remote => true %>
-			<%= link_to "comment", new_event_comment_path(@event, :format => :js), :remote => true, :class => 'commentlink' %>
-			
-			<%= link_to "go!", "/fakeurl", :class => "golink" %>
+			<!--  FORGET ABOUT LIKE FOR NOW, STICK WITH "GO!" AND "GOING" 
+			<% if event.liked_by? current_user %>
+			<span class="alreadyliked">you and&nbsp;
+			<%= link_to  event.event_likes.count.to_s, 
+				new_event_event_like_path(event, :format => :json), 
+				:class => "likelink", 
+				:remote => true %>
+				&nbsp;people like this
+			<% else %>
+			<%= link_to  "like " + event.event_likes.count.to_s, 
+				new_event_event_like_path(event, :format => :json), 
+				:class => "likelink", 
+				:remote => true %>
+			<% end %>
+			-->
+			<!-- GOING? WHO CARES IF YOU LIKE IT... -->
+			<% if event.going? current_user %>
+				<% if event.going_to.count == 1 %>
+					<%= link_to "you're going!", 
+					"/fakeurl",
+					:disabled => true, 
+					:class => "goinglink"%>
+				<% elsif event.going_to.count == 2 %>
+					<%= link_to "you & " + (event.going_to.count - 1).to_s + " person are going",
+						event_going_tos_path(event),
+						:class => "goinglink"%>
+				<% else %>
+					<%= link_to "you & " + (event.going_to.count - 1).to_s + " others are going",
+						event_going_tos_path(event),
+						:class => "goinglink"%>
+				<% end %>
+			<% else %>
+				<%= link_to "go!", 
+					new_event_going_to_path(event, :format => :json), 
+					:class => "golink",
+					:remote => true %>
+			<% end %>
+			<!-- COMMENT -->
+			<span class="pipeseparator">&nbsp;|&nbsp;</span>
+			<%= link_to "comment", new_event_comment_path(event, :format => :js), :remote => true, :class => 'commentlink' %>
+				
 		</div>
 		<% else %>
 		<div class="publicactions">
-			<%= link_to "like", "/login", :class => "likelink", :notice => "login to like events" %>
-			<%= link_to "comment", "/login", :class => "commentlink" %>
-			<%= link_to "go!", "/login", :class => "golink" %>
+			<%= link_to "like", "/login", :class => "likelink", :notice => "login to like events" %> |
+			<%= link_to "comment", "/login", :class => "commentlink" %> |
+			<%= link_to "go!", "/login", :class => "golink" %> 
 		</div>
 		<% end %>
 		
@@ -42,4 +76,4 @@
 	    </div> 
 		<% end %>
 	</div>
-</div>
+<% end %>
