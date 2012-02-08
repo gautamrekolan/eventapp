@@ -3,7 +3,9 @@
 <head>
   <title>events</title>
   <%= stylesheet_link_tag :all %>
-  <%= javascript_include_tag 'jquery-1.5.2.min', 'rails', 'application' %>
+  <%= javascript_include_tag 'jquery-1.5.2.min.js', 'rails', 'application' %>
+  <%= javascript_include_tag 'jquery-ui-1.8.17.custom.min.js' %>
+
   <%= csrf_meta_tag %>
 </head>
 <body>
@@ -53,7 +55,7 @@
 		<% else %>
 			<div id="logoutgroup">
 				<div id="logoutbutton">
-					<%= link_to "logout", logout_path %>
+					<%= link_to "#{current_user.username} logout", logout_path %>
 				</div>
 			</div>
 		<% end %>

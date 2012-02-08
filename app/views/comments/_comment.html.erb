@@ -1,10 +1,33 @@
 <%= div_for comment do %> 
-<h3> 
-  <% if @event.owned_by? current_user %>
-    <span class='actions'>
-      <%= link_to 'Delete', [@event, comment], :confirm => 'Are you sure?', :method => :delete, :remote => true %>
-    </span>
-  <% end %>
-</h3>
-<%= comment.body %> 
+	<span class="commenter_name">
+		<%= link_to User.find(comment.user_id).username,
+		 	"/users/" + comment.user.id.to_s %>
+	</span> 
+	<span class="comment_body">
+		<%= comment.body %>
+	</span>
+	<% if @event.owned_by? current_user %>
+	
+	<!-- TODO these actions below should be icons of some kind but ok as text for now -->
+	
+	<div class='comment_actions'>
+	   	<%= link_to 'Delete', 
+			[@event, comment], 
+			:confirm => 'Are you sure?', 
+			:method => :delete, 
+			:remote => true %>
+    </div>
+	<% elsif comment.owned_by? current_user %>
+	<div class='comment_actions'>
+	   	<%= link_to 'Delete', 
+			[@event, comment], 
+			:confirm => 'Are you sure?', 
+			:method => :delete, 
+			:remote => true %>
+    </div>
+	<% else %>
+	<div class="comment_actions">
+		none of the above
+	</div>
+	<% end %> 
 <% end %>

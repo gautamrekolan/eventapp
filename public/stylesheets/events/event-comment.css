@@ -5,6 +5,23 @@
 	padding:7px;
 }
 
+#events .comments_container {
+	float:left;
+}
+
+.comments_container .comment {
+	width:490px;
+	padding:5px;
+	font-size:12px;
+	background-color:#DFDFDF;
+	margin-top:1px;
+	margin-bottom:1px;
+}
+
+.comment .comment_actions {
+	float:right;
+}
+
 #events .comment_field_container {
 	
 }

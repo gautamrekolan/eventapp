@@ -9,13 +9,14 @@ class User < ActiveRecord::Base
 
   validates :password, :confirmation => true,
     :length => { :within => 4..20 },
-	:presence => true,
-	:if => :password_required?
+	  :presence => true,
+	  :if => :password_required?
 
   has_one :profile, :dependent => :destroy
   has_many :events, :dependent => :destroy, :order => 'starttime ASC'
-  has_many :replies, :through => :events, :source => :comments
-  has_many :going_tos
+  #has_many :replies, :through => :events, :source => :comments
+  has_many :going_tos, :dependent => :destroy, :order => 'starttime ASC'
+  has_many :comments, :dependent => :destroy
   
   before_save :encrypt_new_password
   

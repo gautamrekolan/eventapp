@@ -1,7 +1,8 @@
 class Event < ActiveRecord::Base
+  
 	validates :name, :presence => true
 	validates :starttime, :presence => true
-	validates :endtime, :presence => true
+	# validates :endtime, :presence => true
 	validates :location, :presence => true
 	
 	belongs_to :user

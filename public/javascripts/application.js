@@ -30,9 +30,21 @@ $(document).ready(function() {
 	});
 	*/
 	
+	//http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js
+	//setTimeout (initTimepicker,3000);
+	$('#event_starttime').datetimepicker();
+	$('#event_endtime').datetimepicker();
 });
 
 
+
 /************ EVENT COMMENTS ********************/
+
+
+
+/************ CREATE NEW EVENTS DATE PICKER ***************/
+
+
+
 
 

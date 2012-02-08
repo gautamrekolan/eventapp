@@ -1,8 +1,21 @@
+<div id="event_<%=@event.id%>_comments_container" class="comments_container">
+	<%= render @event.comments %>
+</div>
+
 <div class="comment_form_container">
 	<%= form_for([@event, @event.comments.new],
-	  :html => {:style => 'display: none;'}) do |f| %> 
+		:remote => true,
+		:format => :js,
+		#:id => "new_event_" + @event.id.to_s + "_comment",
+	  	:html => {:style => 'display: none;'}) do |f| %> 
 		<div class="comment_field_container">
-		  <%= f.text_area(:body, :rows => 1, :cols => 50) %> 
+		  <%= f.text_area(:body, 
+							:rows => 1, 
+							:cols => 50, 
+							:placeholder => "write a comment about this event",
+							:title => "write a comment about this event",
+							:class => "comment_body",
+							:id  => "new_event_" + @event.id.to_s + "_comment") %> 
 		</div>
 	<% end %>
 </div>

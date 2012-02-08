@@ -57,14 +57,17 @@
 					:remote => true %>
 			<% end %>
 			<!-- COMMENT -->
-			<span class="pipeseparator">&nbsp;|&nbsp;</span>
-			<%= link_to "comment", new_event_comment_path(event, :format => :js), :remote => true, :class => 'commentlink' %>
+			<span class="pipeseparator">&nbsp;&middot;&nbsp;</span>
+			<%= link_to pluralize(event.comments.count, 'comment'), 
+				new_event_comment_path(event, :format => :js), 
+				:remote => true, 
+				:class => 'commentlink' %>
 				
 		</div>
 		<% else %>
 		<div class="publicactions">
-			<%= link_to "like", "/login", :class => "likelink", :notice => "login to like events" %> |
-			<%= link_to "comment", "/login", :class => "commentlink" %> |
+			<%= link_to "like", "/login", :class => "likelink", :notice => "login to like events" %>&nbsp;&middot;&nbsp;
+			<%= link_to "comment", "/login", :class => "commentlink" %> &nbsp;&middot;&nbsp;
 			<%= link_to "go!", "/login", :class => "golink" %> 
 		</div>
 		<% end %>

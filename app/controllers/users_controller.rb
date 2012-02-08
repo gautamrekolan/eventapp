@@ -23,6 +23,8 @@ class UsersController < ApplicationController
     
     @requested_user = User.find(params[:id])
     
+    if @requested_user === @user
+    end
     # this will give you either the current logged in user's events or the somebody else's profile
     # @userevents = user_events(@requested_user) don't need this 
     

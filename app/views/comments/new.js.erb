@@ -1,3 +1,80 @@
+//first things first, disable the comment link so they can't
+$("#event_<%=@event.id%> .commentlink").hide('fast');
+
+//TODO comment this
 $("<%= escape_javascript render(:file => 'comments/new.html.erb') %>").insertAfter('#event_<%=params[:event_id]%>'); 
 $('#new_comment').slideDown();
-$('#new_comment_link').hide();
+
+
+
+//set focus to the comment text area
+$("#new_event_<%=@event.id%>_comment").focus();
+
+//TODO fix new_comment name to something more specific to avoid conflicts with other css
+
+//$('#new_comment_link').hide();
+
+/***** submit the comment on enter press ******/
+
+
+$(".comment_body").keypress(function(e) {
+	if(e.which == 13) {
+		
+		//note: this will disable typing if outside of
+		e.preventDefault();
+		//enter key was pressed
+		
+		//TODO error handling for spaces or html formatted stuff / injection attacks?????
+		
+		//call submit on the parent form
+		//get form object
+		var form = $(this).parents("form:first");
+		//this works too
+		//var form = $(this).closest('form');
+
+		
+		form.ajaxSuccess(function (e, x) {
+			//alert(x.message);
+			//TODO since it succeeded then let's clear the text area in case they want to comment again
+			$(this).val("");
+		});
+		
+		
+		// TODO ajax submit this and have some logic for json dealing with the response to show the comment
+		form.submit();
+		
+		/*
+		//get the comment for posting
+		var commentString = $(this).text();
+		//format data for post params
+		
+		var dataString = "{ event : { comment : '" + comment + "'} }";
+		//get the url
+		
+		// TODO figure out how to get this create url without manually building it
+		var urlString = "events/" + <%= @event.id %> + "/comments"; 
+		
+		
+		$.ajax({
+			type: "POST",
+			url: urlString,
+			data: dataString,
+			dataType: "json",
+			success: function(msg) {
+				alert("success submit comment " + msg)
+			},
+			
+			error: function(e) {
+				alert("error submitting ajax req " + e);
+			}
+			
+		});
+		*/
+	}
+	
+	
+	
+	//not sure if return false is needed, the idea is to stop a regular enter press from registering
+	//return false;
+});
+

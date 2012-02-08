@@ -2,15 +2,17 @@ class CommentsController < ApplicationController
 
   before_filter :load_event, :except => :destroy
   before_filter :authenticate, :only => :destroy
+  # TODO this needs validations, all model classes need validations
   
   def create
     @comment = @event.comments.new(params[:comment])
+    @comment.user_id = current_user.id
 	  if @comment.save
 	  
   	  respond_to do |format|
   	    #@event, :notice => "thanks for the comment"
-  	    format.html {redirect_to @event, :notice => "thanks for the comment"}
-  		  format.js
+  	    format.html { redirect_to @event, :notice => "thanks for the comment"}
+  		  format.js { render 'create.js.erb'}
   	  end
 		
   	else 
