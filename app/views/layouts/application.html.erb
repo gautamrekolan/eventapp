@@ -5,7 +5,7 @@
   <%= stylesheet_link_tag :all %>
   <%= javascript_include_tag 'jquery-1.5.2.min.js', 'rails', 'application' %>
   <%= javascript_include_tag 'jquery-ui-1.8.17.custom.min.js' %>
-
+  <%= javascript_include_tag 'jquery.validate.min.js'%>
   <%= csrf_meta_tag %>
 </head>
 <body>
@@ -27,17 +27,20 @@
 				<%= form_tag session_path do %> 
 			    <div id="usernamecontainer">
 			    	<%- # label_tag :email %>
-				    <%= text_field_tag :email %> 
+				    <%= text_field_tag :email, :placeholder => "email@email.com" %> 
 			  	</div>
 			  	<div id="passwordcontainer"> 
 			    	<%- # label_tag :password %> 
 					<%= password_field_tag :password %>
 			  	</div> 
 			  	<%= submit_tag 'login' %> 
-		  	
-				<% end %>
+		  		<div class="signin_container">
+					<%= link_to 'sign up!', "/login" %>
+				</div>
 			</div>
 			<% end %>
+			
+		<% end %>
 		
 		<!--
 		<div id="logingroup">

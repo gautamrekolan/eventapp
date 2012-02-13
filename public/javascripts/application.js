@@ -40,13 +40,19 @@ $(document).ready(function() {
 	//http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js
 	//setTimeout (initTimepicker,3000);
 	// TODO move functionality into page by page document ready functions if possible
-	$('#event_starttime').datetimepicker();
-	$('#event_endtime').datetimepicker();
+	d = new Date();
+	$('#event_starttime').datetimepicker({
+		minDate: 0
+	});
+	$("#event_starttime").datepicker( "option", "showAnim", "fadeIn" );
+	$('#event_endtime').datetimepicker({
+		minDate: 0
+	});
 	
 	
 	/***** validating forms *********/
 	//new event /events/new
-	/*
+	
 	//show end date / time if they want
 	$('.endtime_add a').click(function() {
 		$(this).hide()
@@ -55,17 +61,22 @@ $(document).ready(function() {
 	
 	//add some custom methods to the validator
 	//need only alphanumeric
-	
+	/*
 	$.validator.addMethod("loginRegex", function(value, element) {
 		return this.optional(element) || /^[a-z0-9]+$/i.test(value);
 	}, "Username must contain only letters, numbers, or dashes.");
 	
+	//$('#new_event').validate();
+	
+	
 	
 	$('#new_event').validate({
+		
 		debug: true,
 		ignore: ".ignore",
+		
 		rules: {
-				name: {
+				'event_name' : {
 						required: true,
 						maxlength: 5,
 						loginRegex: true
@@ -73,13 +84,13 @@ $(document).ready(function() {
 		},
 		
 		messages: {
-			name: {
-				required: "username is required",
+			'event_name' : {
+				required: "event name is required",
 				maxlength: "username must be at least 5 characters long",
 				logingRegex: "must be letters and numbers only"
 			}
 		},
-		
+		/*
 		highlight: function (element, errorClass) {                
 			$(element).parent().find('label').css({ "background-color": "#FF0000" });
         },
@@ -95,6 +106,7 @@ $(document).ready(function() {
 			console.log("error " + error.message + " element " + element);
 		},
 		
+		
 		invalidHandler: function(form, validator) {
 		  var errors = validator.numberOfInvalids();
 		  console.log("errors " + errors);
@@ -108,7 +120,7 @@ $(document).ready(function() {
 	        $("div.error").hide();
 			console.log("no errors");
 	      }
-	    }
+	    }	
 	});
 	*/
 	

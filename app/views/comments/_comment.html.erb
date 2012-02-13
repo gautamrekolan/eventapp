@@ -11,19 +11,21 @@
 	<!-- TODO these actions below should be icons of some kind but ok as text for now -->
 	
 	<div class='comment_actions'>
-	   	<%= link_to 'Delete', 
+	   	<%= link_to 'delete', 
 			[@event, comment], 
 			:confirm => 'Are you sure?', 
 			:method => :delete, 
-			:remote => true %>
+			:remote => true,
+			:format => :js %>
     </div>
 	<% elsif comment.owned_by? current_user %>
 	<div class='comment_actions'>
-	   	<%= link_to 'Delete', 
+	   	<%= link_to 'delete', 
 			[@event, comment], 
 			:confirm => 'Are you sure?', 
 			:method => :delete, 
-			:remote => true %>
+			:remote => true,
+			:format => :js %>
     </div>
 	<% else %>
 	<div class="comment_actions">

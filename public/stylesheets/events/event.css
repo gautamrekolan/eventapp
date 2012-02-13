@@ -19,6 +19,11 @@
 	padding-bottom:2px;
 }
 
+.eventcontainer .location {
+	font-style: italic;
+	font-size: 11px;
+}
+
 .eventcontainer .eventdescription {
 	font-size:12px;
 	padding-bottom:2px;

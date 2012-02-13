@@ -1,7 +1,7 @@
 class CommentsController < ApplicationController
 
-  before_filter :load_event, :except => :destroy
-  before_filter :authenticate, :only => :destroy
+  before_filter :load_event #, :except => :destroy
+  before_filter :authenticate #, :only => :destroy
   # TODO this needs validations, all model classes need validations
   
   def create
@@ -19,7 +19,7 @@ class CommentsController < ApplicationController
   	  
   	  #redirect_to @event, :notice => "unable to post comment"
   	  respond_to do |format|
-  	    format.html {redirect_to @event, :alert => "unable to comment"}
+  	    format.html { redirect_to @event, :alert => "unable to comment" }
   		  format.js { render 'fail_create.js.erb'}
   	  end
   	  
@@ -27,17 +27,19 @@ class CommentsController < ApplicationController
   end
   
   def destroy 
-    @event = current_user.events.find(params[:event_id])
+    # @event = current_user.events.find(params[:event_id])
+    # event doesn't necessarily have to belong to a user, could be the own of the event or user who posted the evnet
+    
     @comment = @event.comments.find(params[:id])
 	  @comment.destroy
+	  # puts "CCCOOOOOMMMENT " + @comment.body + " format "
+	  
+	  respond_to do |format|
+  	  format.html { redirect_to @event, :notice => "comment deleted" }
+  	  format.js { render 'destroy.js.erb' }
+  	end
 	
-	
-	redirect_to do |format|
-	  format.html {redirect_to @event, :notice => "comment deleted"}
-	  format.js
-	end
-	
-end
+  end
   
   private 
     def load_event

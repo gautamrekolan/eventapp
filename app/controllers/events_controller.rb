@@ -20,7 +20,7 @@ class EventsController < ApplicationController
       puts "we couldn't find that record"
     end
     respond_to do |format|
-      format.html # show.html.erb
+      format.html show.html.erb
       format.xml  { render :xml => @event }
     end
   end
@@ -31,7 +31,7 @@ class EventsController < ApplicationController
     @event = Event.new
 
     respond_to do |format|
-      format.html # new.html.erb
+      format.html # this will auto find events/new.html.erb
       format.xml  { render :xml => @event }
     end
   end
@@ -51,8 +51,9 @@ class EventsController < ApplicationController
         format.html { redirect_to(@event, :notice => 'Event was successfully created.') }
         format.xml  { render :xml => @event, :status => :created, :location => @event }
       else
-        format.html { render :action => "new" }
+        format.html { render :action => 'new' }
         format.xml  { render :xml => @event.errors, :status => :unprocessable_entity }
+        format.json { render :json => @event.errors }
       end
     end
   end

@@ -1,0 +1,23 @@
+#new_event {
+	width:399px;
+	float:left;
+}
+
+#new_event label {
+	width:150px;
+}
+
+#new_event .row {
+	margin-bottom:4px;
+}
+
+.submit_container {
+	float:right;
+	font-size:11px;
+}
+
+#error_explanation {
+	float:left;
+	width:200px;
+	margin-left:20px;
+}

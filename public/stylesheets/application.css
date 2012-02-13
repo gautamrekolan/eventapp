@@ -5,9 +5,11 @@ body {
 	font-family: "lucida grande",tahoma,verdana,arial,sans-serif;
 }
 
-body h1 {
+body h1, .title {
 	font-size:16px;
 	color:#333333;
+	margin-top:10px;
+	margin-bottom:15px;
 }
 
 h3 {
@@ -16,6 +18,32 @@ h3 {
 
 body {
 	background-color:#FFFFFF;
+}
+
+form label {
+	float:left;
+	text-align:right;
+	padding-top:2px;
+	padding-right:5px;
+	background-color:#DFDFDF;
+	height:20px;
+}
+
+.hidden {
+	display:none;
+}
+
+.error {
+	display: none;
+}
+
+form .row {
+	float:left;
+	padding-bottom:3px;
+}
+
+form input {
+	float:left;
 }
 
 #headerbar {

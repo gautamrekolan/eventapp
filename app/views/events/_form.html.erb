@@ -1,105 +1,101 @@
 <%= form_for(@event) do |f| %>
 
-  	<% if @event.errors.any? %>
-	   <div id="error_explanation">
-	     <h2><%= pluralize(@event.errors.count, "error") %> prohibited this event from being saved:</h2>
-	     <ul>
-	     <% @event.errors.full_messages.each do |msg| %>
-	       <li><%= msg %></li>
-	     <% end %>
-	     </ul>
-	   </div>
-	 <% end %>
-	
-	<%-# TODO prepopulate with name %>
-	 <div class="name_container">
-	   <%= f.label :name %>
-	   <%= f.text_field :name, :placeholder => "event name" %>
+	 <div class="name_container row">
+	   <%= f.label :name, "name" %>
+	   <%= f.text_field :name, :class => "required event_name", :placeholder => "event name" %>
 	 </div>
-	 <div class="starttime_container">
+	 <div class="starttime_container row">
 		<%= f.label :starttime, 'start date / time'%>
-	   <%= f.text_field :starttime %>
+	   <%= f.text_field :starttime, :class => "required", :readonly => "true" %>
 	 </div>
-	 <div class="endtime_container">
-		<%= f.label :endtime %>
-	   <%= f.text_field :endtime %>
+	 <div class="endtime_container row">
+		<%= f.label :endtime, "end date / time" %>
+	   <%= f.text_field :endtime, :class => "required" , :readonly => "true"%>
 	 </div>
-	<%-# TODO prepopulate with location %>
+	<!--
+	<div class="endtime_add">
+		<a href="#" title="add end time">end date / time?</a>
+	</div>
+	-->
 	<%-# TODO need ajaxy search api for locations / addresses. google? %>
-	 <div class="location_container">
-	 	<%= f.label :location %>
-	   <%= f.text_field :location, :placeholder => "location name... ex. Pete's Coffee" %>
+	<%- #TODO find a way to show events with no locations %>
+	 <div class="location_container row required">
+	 	<%= f.label :location, "location" %>
+	   <%= f.text_field :location, :class => "required", :placeholder => "location name... ex. Pete's Coffee" %>
 	 </div>
-	<div class="address">
-		<%= f.label :address %>
-		<%= f.text_field :address, :placeholder => "666 Your Mom's House"%>
+	<div class="full_address_container">
+		<div class="address_container row">
+			<%= f.label :address, "address" %>
+			<%= f.text_field :address, :class => "required", :placeholder => "666 Your Mom's House"%>
+		</div>
+		<div class="city_container row">
+			<%= f.label :city, "city" %>
+			<%= f.text_field :city, :class => "required", :placeholder => "Portland? LA? NY? SF?"%>
+		</div>
+		<div class="state_container row">
+			<%= f.label :state, "state"%>
+			<%= select("event","state", [ 	
+				['State', 'None'],
+				['Alabama', 'AL'], 
+				['Alaska', 'AK'],
+				['Arizona', 'AZ'],
+				['Arkansas', 'AR'], 
+				['California', 'CA'], 
+				['Colorado', 'CO'], 
+				['Connecticut', 'CT'], 
+				['Delaware', 'DE'], 
+				['District Of Columbia', 'DC'], 
+				['Florida', 'FL'],
+				['Georgia', 'GA'],
+				['Hawaii', 'HI'], 
+				['Idaho', 'ID'], 
+				['Illinois', 'IL'], 
+				['Indiana', 'IN'], 
+				['Iowa', 'IA'], 
+				['Kansas', 'KS'], 
+				['Kentucky', 'KY'], 
+				['Louisiana', 'LA'], 
+				['Maine', 'ME'], 
+				['Maryland', 'MD'], 
+				['Massachusetts', 'MA'], 
+				['Michigan', 'MI'], 
+				['Minnesota', 'MN'],
+				['Mississippi', 'MS'], 
+				['Missouri', 'MO'], 
+				['Montana', 'MT'], 
+				['Nebraska', 'NE'], 
+				['Nevada', 'NV'], 
+				['New Hampshire', 'NH'], 
+				['New Jersey', 'NJ'], 
+				['New Mexico', 'NM'], 
+				['New York', 'NY'], 
+				['North Carolina', 'NC'], 
+				['North Dakota', 'ND'], 
+				['Ohio', 'OH'], 
+				['Oklahoma', 'OK'], 
+				['Oregon', 'OR'], 
+				['Pennsylvania', 'PA'], 
+				['Rhode Island', 'RI'], 
+				['South Carolina', 'SC'], 
+				['South Dakota', 'SD'], 
+				['Tennessee', 'TN'], 
+				['Texas', 'TX'], 
+				['Utah', 'UT'], 
+				['Vermont', 'VT'], 
+				['Virginia', 'VA'], 
+				['Washington', 'WA'], 
+				['West Virginia', 'WV'], 
+				['Wisconsin', 'WI'], 
+				['Wyoming', 'WY']]) %>
+		</div>
+		<div class="zip_container row">
+			<%= f.label :zip, "zip" %>
+			<%= f.text_field :zip, :class => "required", :placeholder => "97219"%>
+		</div>
 	</div>
-	<div class="city">
-		<%= f.label :city %>
-		<%= f.text_field :city, :placeholder => "Portland? LA? NY? SF?"%>
-	</div>
-	<div class="state">
-		<%= select(:shipaddress, :state, [ 	
-			['State', 'None'],
-			['Alabama', 'AL'], 
-			['Alaska', 'AK'],
-			['Arizona', 'AZ'],
-			['Arkansas', 'AR'], 
-			['California', 'CA'], 
-			['Colorado', 'CO'], 
-			['Connecticut', 'CT'], 
-			['Delaware', 'DE'], 
-			['District Of Columbia', 'DC'], 
-			['Florida', 'FL'],
-			['Georgia', 'GA'],
-			['Hawaii', 'HI'], 
-			['Idaho', 'ID'], 
-			['Illinois', 'IL'], 
-			['Indiana', 'IN'], 
-			['Iowa', 'IA'], 
-			['Kansas', 'KS'], 
-			['Kentucky', 'KY'], 
-			['Louisiana', 'LA'], 
-			['Maine', 'ME'], 
-			['Maryland', 'MD'], 
-			['Massachusetts', 'MA'], 
-			['Michigan', 'MI'], 
-			['Minnesota', 'MN'],
-			['Mississippi', 'MS'], 
-			['Missouri', 'MO'], 
-			['Montana', 'MT'], 
-			['Nebraska', 'NE'], 
-			['Nevada', 'NV'], 
-			['New Hampshire', 'NH'], 
-			['New Jersey', 'NJ'], 
-			['New Mexico', 'NM'], 
-			['New York', 'NY'], 
-			['North Carolina', 'NC'], 
-			['North Dakota', 'ND'], 
-			['Ohio', 'OH'], 
-			['Oklahoma', 'OK'], 
-			['Oregon', 'OR'], 
-			['Pennsylvania', 'PA'], 
-			['Rhode Island', 'RI'], 
-			['South Carolina', 'SC'], 
-			['South Dakota', 'SD'], 
-			['Tennessee', 'TN'], 
-			['Texas', 'TX'], 
-			['Utah', 'UT'], 
-			['Vermont', 'VT'], 
-			['Virginia', 'VA'], 
-			['Washington', 'WA'], 
-			['West Virginia', 'WV'], 
-			['Wisconsin', 'WI'], 
-			['Wyoming', 'WY']]) %>
-	</div>
-	<div class="zip">
-		<%= f.label :zip %>
-		<%= f.text_field :zip, :placeholder => "97219"%>
-	</div>
-	<div class="description_container">
+	<div class="description_container row">
 		<%= f.label :description, "description"%>
-  		<%= f.text_field :description, :placeholder => "event description..." %>
+  		<%= f.text_field :description, :class => "required", :placeholder => "event description..." %>
 	</div>
 	<%- # TODO change categories to "tags" and get rid of weird shit below %>
 	<!--
@@ -111,11 +107,22 @@
 	  <% end %>
   </div>
 	-->
-  <div class="actions">
+  <div class="submit_container row">
+	<%= f.submit 'Post Event'%><br />or
+	<%= link_to 'cancel', events_path %>
 	<%- # TODO probably change or customize this helper method %>
 	<%- # this method is found in app/helper/appication it is a helper method%>
-	<!--
-    <%= submit_or_cancel(f) %>
-	-->
+    	<%- # submit_or_cancel(f) %>
   </div>
 <% end %>
+
+<% if @event.errors.any? %>
+   <div id="error_explanation">
+     <h2><%= pluralize(@event.errors.count, "error") %> prohibited this event from being saved:</h2>
+     <ul>
+     <% @event.errors.full_messages.each do |msg| %>
+       <li><%= msg %></li>
+     <% end %>
+     </ul>
+   </div>
+ <% end %>

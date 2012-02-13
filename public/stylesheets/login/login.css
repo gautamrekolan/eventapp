@@ -1,0 +1,28 @@
+.login_signup_container {
+	margin: 0 auto;
+	margin-top: 100px;
+}
+
+.login_signup_container .row {
+	width:325px;
+	float:left;
+	padding-bottom:5px;
+}
+
+.login_signup_container label {
+	width:90px;
+}
+
+.login_container {
+	float:left;
+	width:325px;
+	padding-right:50px;
+	border-right: 1px solid #CCCCCC;
+}
+
+.signup_container {
+	float:left;
+	width:325px;
+	padding-left:50px;
+}
+
