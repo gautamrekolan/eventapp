@@ -2,14 +2,12 @@ class EventsController < ApplicationController
 
   before_filter :authenticate, :except => [:index, :show, :notify_friend]
   
+  respond_to :html, :js, :json, :xml
   # GET /events
   def index
     @events = Event.all
-
-    respond_to do |format|
-      format.html # index.html.erb
-      format.xml  { render :xml => @events }
-    end
+    
+    respond_with @events
   end
 
   # GET /events/1
@@ -19,10 +17,8 @@ class EventsController < ApplicationController
     rescue ActiveRecord::RecordNotFound
       puts "we couldn't find that record"
     end
-    respond_to do |format|
-      format.html show.html.erb
-      format.xml  { render :xml => @event }
-    end
+    
+    respond_with @events
   end
 
   # GET /events/new
@@ -30,10 +26,7 @@ class EventsController < ApplicationController
   def new
     @event = Event.new
 
-    respond_to do |format|
-      format.html # this will auto find events/new.html.erb
-      format.xml  { render :xml => @event }
-    end
+    respond_with @event
   end
 
   # GET /events/1/edit
@@ -45,15 +38,11 @@ class EventsController < ApplicationController
   # POST /events.xml
   def create
     @event = current_user.events.new(params[:event])
-
-    respond_to do |format|
-      if @event.save
-        format.html { redirect_to(@event, :notice => 'Event was successfully created.') }
-        format.xml  { render :xml => @event, :status => :created, :location => @event }
-      else
-        format.html { render :action => 'new' }
-        format.xml  { render :xml => @event.errors, :status => :unprocessable_entity }
-        format.json { render :json => @event.errors }
+    if @event.save 
+      respond_with @event
+    else 
+      respond_with(@event) do |format| 
+        format.html { render :new}
       end
     end
   end
@@ -63,15 +52,7 @@ class EventsController < ApplicationController
   def update
     @event = current_user.events.find(params[:id])
 
-    respond_to do |format|
-      if @event.update_attributes(params[:event])
-        format.html { redirect_to(@event, :notice => 'Event was successfully updated.') }
-        format.xml  { head :ok }
-      else
-        format.html { render :action => "edit" }
-        format.xml  { render :xml => @event.errors, :status => :unprocessable_entity }
-      end
-    end
+    respond_with @events
   end
 
   # DELETE /events/1
@@ -79,11 +60,8 @@ class EventsController < ApplicationController
   def destroy
     @event = current_user.events.find(params[:id])
     @event.destroy
-
-    respond_to do |format|
-      format.html { redirect_to(events_url) }
-      format.xml  { head :ok }
-    end
+    # TODO error handling on destroy
+    respond_with @events
   end
   
   def notify_friend

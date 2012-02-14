@@ -85,6 +85,9 @@ input {
 	background-color:#E6F5FF;
 }
 
+/* deals with rails creating errors */
+.field_with_errors { display: inline; }
+
 /* CONTENT */
 
 #maincontainer {

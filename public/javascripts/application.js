@@ -26,8 +26,11 @@ $(document).ready(function() {
 		j = JSON.parse(status)
 		$(this).text(j.message);
 	});
-	
-	$('#new_event').bind('ajax:success', function(){
+
+	$('#new_event').bind('ajax:success', function(data, status, xhr) {
+		alert("failure");
+	});
+	$('#new_event').bind('ajax:success', function(data, status, xhr){
 	  alert("Success!");
 	});
 	

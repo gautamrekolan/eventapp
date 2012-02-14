@@ -16,7 +16,7 @@
 			<%= link_to "eventsite", "/events" %>
 		</div>
 		
-		<%- # if user not logged in then show the top login bar %>
+		<%-# user not logged in then show the top login bar %>
 		
 		<% if !logged_in? %>
 		
@@ -25,36 +25,20 @@
 			<% if controller_name != "sessions" %>
 			<div id="logingroup">
 				<%= form_tag session_path do %> 
-			    <div id="usernamecontainer">
-			    	<%- # label_tag :email %>
-				    <%= text_field_tag :email, :placeholder => "email@email.com" %> 
-			  	</div>
-			  	<div id="passwordcontainer"> 
-			    	<%- # label_tag :password %> 
-					<%= password_field_tag :password %>
-			  	</div> 
-			  	<%= submit_tag 'login' %> 
-		  		<div class="signin_container">
-					<%= link_to 'sign up!', "/login" %>
-				</div>
+			    	<div id="usernamecontainer">
+				    	<%= text_field_tag :email, :placeholder => "email@email.com" %> 
+				  	</div>
+				  	<div id="passwordcontainer"> 
+				    	<%= password_field_tag :password %>
+				  	</div> 
+				  	<%= submit_tag 'login' %> 
+			  		<div class="signin_container">
+						<%= link_to 'sign up!', "/login" %>
+					</div>
+				<% end %>
 			</div>
 			<% end %>
-			
-		<% end %>
 		
-		<!--
-		<div id="logingroup">
-			<form name="input" action="/login" method="get">
-				<div id="usernamecontainer">
-					<input type="text" name="uname" value="username" />
-				</div>
-				<div id="passwordcontainer">
-					<input type="text" name="pass" value="password" />
-				</div>
-				<input type=submit VALUE="log in">
-			</form>
-		</div>
-		-->
 		<% else %>
 			<div id="logoutgroup">
 				<div id="logoutbutton">
@@ -80,6 +64,9 @@
 	
 <%= yield %>
 
+</div>
+
+<div class="footer">
 </div>
 
 </body>
