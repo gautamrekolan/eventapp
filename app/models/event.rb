@@ -6,14 +6,9 @@ class Event < ActiveRecord::Base
 	#validate  :starttime_valid? => true
 	validates :endtime, :presence => true
 	#validate  :endtime_valid? => true, :end_date_after_start_date => true
-	validates :location, :presence => true, :length => { :minimum => 2,
-	                                                     :maximum => 100}
 	validates :description, :presence => true, :length => { :minimum => 20,
 	                                                        :maximum => 1000}
-	validates :state, :presence => true
-	validates :city, :presence => true
-	validates :zip, :presence => true, :numericality => { :only_integer => true }
-	
+	has_one :place
 	belongs_to :user
 	has_and_belongs_to_many :categories
 	has_many :comments
@@ -34,6 +29,10 @@ class Event < ActiveRecord::Base
 	  if event_likes.find_by_user_id(owner.id)
     end
 	end
+	
+	def place 
+    return Place.find(place_id)
+  end
 	
 	def published?
 	  
