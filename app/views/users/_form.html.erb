@@ -1,5 +1,5 @@
 <%= form_for(@user) do |f| %> 
-  <% if @user.errors.any? %> 
+	<% if @user.errors.any? %> 
     <div id="errorExplanation">
       <h2><%= pluralize(@user.errors.count, "error") %> 
 	  prohibited this user from being saved:</h2>
@@ -9,16 +9,26 @@
 	  <% end %> 
 	  </ul>
     </div> 
-<% end %>
-<div class="field"> 
-  <%= f.label :email %><br /> 
-  <%= f.text_field :email %>
-</div> 
-<div class="field">
-  <%= f.label :password %><br />
-  <%= f.password_field :password %> 
-</div>
-<div class="actions">
-  <%= submit_or_cancel(f) %> 
-</div>
+	<% end %>
+	<div class="signup_container">
+		<div class="title">not a member? sign up!</div>
+		<div class="subtitle">post events, follow people's events, let people know what events you're going to</div>
+		<%= form_for User.new do |f| %>
+			<div class="row">
+				<%= f.label :username, 'username' %>
+				<%= f.text_field :username %>
+			</div>
+			<div class="row">
+				<%= f.label :email, 'email'%>
+				<%= f.text_field :email %>
+			</div>
+			<div class="row">
+				<%= f.label :password, 'password' %>
+				<%= f.text_field :password %>
+			</div>
+			<div class="row">
+				<%= f.submit 'sign up!' %> 
+			</div>
+		<% end %>
+	</div>
 <% end %>

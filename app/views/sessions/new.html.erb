@@ -1,41 +1,18 @@
 <%= stylesheet_link_tag 'login/login.css'%>
 
-<div class="login_signup_container">
-	<div class="login_container">
-		<div class="title">log in</div>
-		<%= form_for session_path do |f| %> 
-		  <div class="row">
-		    <%= f.label :email %>
-		    <%= f.text_field :email %> 
-		  </div>
-		  <div class="row"> 
-		    <%= f.label :password %>
-			<%= f.text_field :password %>
-		  </div> 
-		  <div class="row">
-		    <%= f.submit 'Login' %> 
-		  </div>
-		<% end %>
-	</div>
-	<div class="signup_container">
-		<div class="title">not a member? sign up!</div>
-		<div class="subtitle">post events, follow people's events, let people know what events you're going to</div>
-		<%= form_for User.new do |f| %>
-			<div class="row">
-				<%= f.label :username, 'username' %>
-				<%= f.text_field :username %>
-			</div>
-			<div class="row">
-				<%= f.label :email, 'email'%>
-				<%= f.text_field :email %>
-			</div>
-			<div class="row">
-				<%= f.label :password, 'password' %>
-				<%= f.text_field :password %>
-			</div>
-			<div class="row">
-				<%= f.submit 'sign up!' %> 
-			</div>
-		<% end %>
-	</div>
+<div class="login_container">
+	<div class="title">log in</div>
+	<%= form_for session_path do |f| %> 
+	  <div class="row">
+	    <%= f.label :email %>
+	    <%= f.text_field :email %> 
+	  </div>
+	  <div class="row"> 
+	    <%= f.label :password %>
+		<%= f.text_field :password %>
+	  </div> 
+	  <div class="row">
+	    <%= f.submit 'Login' %> 
+	  </div>
+	<% end %>
 </div>

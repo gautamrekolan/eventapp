@@ -29,6 +29,28 @@ form label {
 	height:20px;
 }
 
+
+form input {
+	float:left;
+}
+
+input {
+	background-color:#E6F5FF;
+}
+
+/* popup notices across pages */
+.notice {
+	display:none;
+	position:absolute;
+	left:20px;
+	top:60px;
+	background-color:#E6F5FF;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+	padding:7px;
+	font-size:12px;
+}
+
 .hidden {
 	display:none;
 }
@@ -37,14 +59,16 @@ form label {
 	display: none;
 }
 
+.vertical_divider {
+	float:left;
+}
+
 form .row {
 	float:left;
 	padding-bottom:3px;
 }
 
-form input {
-	float:left;
-}
+/* HEADER */
 
 #headerbar {
 	height:40px;
@@ -59,31 +83,46 @@ form input {
 }
 
 #homelogo {
+	margin-top:10px;
 	float:left;
 }
 
-#headerbar #logingroup {
+#logingroup {
 	float:right;
 	margin-top:10px;
+	width:500px;
 }
 
-#headerbar #logingroup #usernamecontainer {
+#usernamecontainer {
 	float:left;
 	margin-right:10px;
+	height:20px;
 }
 
-#headerbar #logingroup #passwordcontainer {
+#passwordcontainer {
 	float:left;
 	margin-right:10px;
+	height:20px;
+}
+
+#user_login_container {
+	float:left;
 }
 
 #headerbar #logoutgroup {
 	float:right;
 }
 
-input {
-	background-color:#E6F5FF;
+#logoutgroup form {
+	float:left;
 }
+
+#signin_container {
+	float:left;
+}
+
+
+
 
 /* deals with rails creating errors */
 .field_with_errors { display: inline; }

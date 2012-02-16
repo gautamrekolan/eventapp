@@ -9,15 +9,32 @@
 		  <%= link_to event.name, event %>
 		   <span class="location">- at <%= link_to event.location %></span>
 		</h3>
+		<div class="full_address">
+			<div class="address">
+				<%= event.address %>
+			</div>
+			<div class="city">
+				<%= event.city %>
+			</div>
+			<div class="state">
+				<%= event.state %>
+			</div>
+			<div class="zip">
+				<%= event.zip %>
+			</div>
+		</div>
 		<div class="eventdescription">
 			<%= event.description %> 
 		</div>
 		<div class="postedby">
+			<!-- TODO the href below should be updated to something dealt with in the controller -->
 			- by <a class="username" href="/users/<%= event.user.id %>"><%= event.user.username %></a> <%= time_ago_in_words(event.created_at) %> ago
 		</div>
 	<% end %>
 	</div>
+	
 	<!-- go, like, comment, custom button TODO -->
+	
 	<div class="eventactionsbar">
 		<% if logged_in? %>
 		<div class="publicactions">

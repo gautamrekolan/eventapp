@@ -1,0 +1,7 @@
+/* specific to events found in /events or in the index list format */
+
+/* hide addresses to make a more list friendly compact style */
+
+.full_address {
+	display:none;
+}

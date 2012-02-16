@@ -45,7 +45,7 @@ class UsersController < ApplicationController
     if @user.save
       redirect_to events_path, :notice => "user successfully added"
     else 
-	    render :action => 'new'
+	    render :new
 	  end
   end
   

@@ -6,6 +6,8 @@ $(document).ready(function() {
 	
 	console.log("doc ready");
 	
+	$(".notice").show("fadeIn");
+	
 	/********** LIKE LINK - PROBABLY WON'T USE **************/
 	
 	/*

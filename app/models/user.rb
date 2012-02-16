@@ -11,6 +11,8 @@ class User < ActiveRecord::Base
     :length => { :within => 4..20 },
 	  :presence => true,
 	  :if => :password_required?
+	  
+	validates :username, :uniqueness => true
 
   has_one :profile, :dependent => :destroy
   has_many :events, :dependent => :destroy, :order => 'starttime ASC'
