@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120216050954) do
+ActiveRecord::Schema.define(:version => 20120216054741) do
 
   create_table "categories", :force => true do |t|
     t.datetime "created_at"
@@ -29,14 +29,6 @@ ActiveRecord::Schema.define(:version => 20120216050954) do
     t.datetime "updated_at"
     t.integer  "event_id"
     t.integer  "user_id"
-  end
-
-  create_table "connections", :force => true do |t|
-    t.integer  "asking_user_id"
-    t.integer  "asked_user_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.integer  "status",         :limit => 255
   end
 
   create_table "event_likes", :force => true do |t|
