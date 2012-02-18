@@ -1,3 +1,0 @@
-class PlaceController < ApplicationController
-  
-end

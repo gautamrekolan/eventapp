@@ -1,0 +1,12 @@
+#map_canvas_container {
+	width:200px;
+	height:200px;
+	padding:15px;
+	float:left;
+	background-color:#E6F5FF;
+}
+
+#map_canvas { 
+	height: 100%;
+	width:100%;
+}

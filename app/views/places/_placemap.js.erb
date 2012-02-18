@@ -1,0 +1,53 @@
+  //console.log("google maps initialize()");
+
+	
+//var geoReq = "http://maps.googleapis.com/maps/api/geocode/json?address=385+Wall+St,+Ventura,+CA&sensor=false"
+	
+
+function initialize(latLng) {
+	var myOptions = {
+	    center: new google.maps.LatLng(latLng.lat(), latLng.lng()),
+	    zoom: 12,
+	    mapTypeId: google.maps.MapTypeId.ROADMAP
+	  };
+	  var map = new google.maps.Map(document.getElementById("map_canvas"),
+	      myOptions);
+	
+		map.setCenter(latLng);
+		var marker = new google.maps.Marker({
+            map: map,
+            position: latLng
+        });
+	
+}
+
+var geocoder = new google.maps.Geocoder();
+var address = "<%= @event.place.full_address %>";//'385 Wall St Ventura CA 93001';
+
+if (geocoder) {
+   geocoder.geocode({ 'address': address }, function (results, status) {
+      if (status == google.maps.GeocoderStatus.OK) {
+        var latlng = results[0].geometry.location;
+ 		console.log("success " + latlng);
+		initialize(latlng);
+      }
+      else {
+         console.log("Geocoding failed: " + status);
+      }
+   });
+}    
+
+/*
+$.ajax({
+  url: geoReq,
+  dataType: 'json',
+  data: "data",
+  success: function(data, status, xhr) {
+	j = JSON.parse(status)
+	console.log("json = " + j.status);
+  },
+	error: function(e, jqxhr, settings, exception) {
+		console.log("error ajax " + e);
+	}
+});
+*/

@@ -6,5 +6,7 @@ class Place < ActiveRecord::Base
 	validates :city, :presence => true
 	validates :zip, :presence => true, :numericality => { :only_integer => true }
 	
-
+  def full_address
+    " " + address + " " + city + " " + state + " " + zip.to_s
+  end
 end

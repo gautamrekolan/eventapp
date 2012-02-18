@@ -8,6 +8,9 @@ $(document).ready(function() {
 	
 	$(".notice").show("fadeIn");
 	
+	/* GOOGLE MAPS API */
+	//initialize(); //inits google map
+	
 	/********** LIKE LINK - PROBABLY WON'T USE **************/
 	
 	/*
@@ -45,14 +48,10 @@ $(document).ready(function() {
 	//http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js
 	//setTimeout (initTimepicker,3000);
 	// TODO move functionality into page by page document ready functions if possible
-	d = new Date();
-	$('#event_starttime').datetimepicker({
-		minDate: 0
-	});
-	$("#event_starttime").datepicker( "option", "showAnim", "fadeIn" );
-	$('#event_endtime').datetimepicker({
-		minDate: 0
-	});
+	
+	$('#event_starttime').datetimepicker();
+	//$("#event_starttime").datepicker( "option", "showAnim", "fadeIn" );
+	$('#event_endtime').datetimepicker();
 	
 	
 	/***** validating forms *********/
@@ -129,17 +128,6 @@ $(document).ready(function() {
 	});
 	*/
 	
-	
-	/* GOOGLE MAPS API */
-	function initialize() {
-	    var myOptions = {
-          center: new google.maps.LatLng(-34.397, 150.644),
-          zoom: 8,
-          mapTypeId: google.maps.MapTypeId.ROADMAP
-        };
-        var map = new google.maps.Map(document.getElementById("map_canvas"),
-            myOptions);
-      }
 });
 
 

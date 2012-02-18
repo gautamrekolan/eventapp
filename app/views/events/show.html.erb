@@ -1,9 +1,8 @@
-<%= stylesheet_link_tag "events/event.css", "events/single-event.css" %>
+<%= stylesheet_link_tag "events/event.css", "events/single-event.css", "googlemaps/google-maps.css" %>
 
 <%= render @event %>
 
-<div id="map_canvas" class="map">
-</div>
+<%= render 'places/placemap'%>
 
 <!--
 <%= link_to 'Email a friend', '#', :onclick => "$('#notify_friend_form').slideDown()" %> 

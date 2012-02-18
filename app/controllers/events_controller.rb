@@ -18,6 +18,10 @@ class EventsController < ApplicationController
       puts "we couldn't find that record"
     end
     
+    if @event.place?
+      @place = @event.place
+    end
+    
     respond_with @events
   end
 
@@ -25,6 +29,7 @@ class EventsController < ApplicationController
   # GET /events/new.xml
   def new
     @event = Event.new
+    #@place = Place.new
 
     respond_with @event
   end
@@ -37,14 +42,20 @@ class EventsController < ApplicationController
   # POST /events
   # POST /events.xml
   def create
+    
     @event = current_user.events.new(params[:event])
-    if @event.save 
+    @place = Place.new(params[:place])
+    
+    if @event.save && @place.save
+      # event.place_id = place
+      @event.place_id = @place.id
       respond_with @event
     else 
       respond_with(@event) do |format| 
-        format.html { render :new}
+        format.html { render :new }
       end
     end
+    
   end
 
   # PUT /events/1

@@ -33,6 +33,10 @@ class Event < ActiveRecord::Base
 	def place 
     return Place.find(place_id)
   end
+  
+  def place?
+    return true unless !place_id?
+  end
 	
 	def published?
 	  
