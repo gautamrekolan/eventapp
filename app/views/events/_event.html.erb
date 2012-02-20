@@ -4,7 +4,6 @@
 <!-- TODO check that start date is before end date -->
 <% div_for(event, :class => "eventcontainer") do %>
 	<div class="eventcontents">
-	<%= div_for event do %> 
 		<h3>
 		  <%= link_to event.name, event %>
 		</h3>
@@ -32,7 +31,6 @@
 			<!-- TODO the href below should be updated to something dealt with in the controller -->
 			- by <a class="username" href="/users/<%= event.user.id %>"><%= event.user.username %></a> <%= time_ago_in_words(event.created_at) %> ago
 		</div>
-	<% end %>
 	</div>
 	
 	<!-- go, like, comment, custom button TODO -->

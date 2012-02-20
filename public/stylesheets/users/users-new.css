@@ -1,18 +1,18 @@
-#new_event {
+.signup_container {
 	width:400px;
 	float:left;
 }
 
-#new_event label {
+.signup_container label {
 	width:140px;
 	padding-right:4px;
 }
 
-#new_event input {
-	width:250px;
+.signup_container input {
+	
 }
 
-#new_event .row {
+.signup_container .row {
 	margin-bottom:4px;
 }
 

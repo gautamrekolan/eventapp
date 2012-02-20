@@ -5,7 +5,9 @@ gem 'rails', '3.0.5'
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
-gem 'sqlite3'
+#using post
+#gem 'sqlite3'
+gem 'pg'
 
 gem 'rake', '>= 0.9.2.2'
 gem 'rdoc', '~>3.12' 

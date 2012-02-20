@@ -27,11 +27,11 @@
 			<% if controller_name != "sessions" %>
 			<div id="logingroup">
 				<div id="signin_container" class="">
-					<%= link_to 'sign up!', "/signup" %>
+					<%= link_to 'sign up!', :signup %>
 				</div>
 				<span class="vertical_divider">&nbsp;|&nbsp;</span>
 				<%= form_tag session_path do %> 
-			    	<div id="usernamecontainer">
+					<div id="usernamecontainer">
 				    	<%= text_field_tag :email %> 
 				  	</div>
 				  	<div id="passwordcontainer"> 
