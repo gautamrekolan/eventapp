@@ -2,9 +2,9 @@ class Event < ActiveRecord::Base
   
 	validates :name, :presence => true, :length => { :minimum => 2,
 	                                                  :maximum => 100 }
-	validates :starttime, :presence => true #, :datetime_format => true
+	#validates :starttime, :presence => true #, :datetime_format => true
 	#validate  :starttime_valid? => true
-	validates :endtime, :presence => true
+	#validates :endtime, :presence => true
 	#validate  :endtime_valid? => true, :end_date_after_start_date => true
 	validates :description, :presence => true, :length => { :minimum => 20,
 	                                                        :maximum => 1000}
