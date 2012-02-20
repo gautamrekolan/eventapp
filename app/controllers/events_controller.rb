@@ -47,10 +47,12 @@ class EventsController < ApplicationController
     @place = Place.new(params[:place])
     
     if @event.valid? && @place.valid?
+      
       # event.place_id = place
+      @place.save # needs to save before event so it can have an id
       @event.place_id = @place.id
       @event.save 
-      @place.save
+      
       
       respond_with @event
     else 
