@@ -17,10 +17,15 @@ class User < ActiveRecord::Base
   has_one :profile, :dependent => :destroy
   has_many :events, :dependent => :destroy, :order => 'starttime ASC'
   #has_many :replies, :through => :events, :source => :comments
-  has_many :going_tos, :dependent => :destroy, :order => 'starttime ASC'
+  has_many :going_tos, :dependent => :destroy #, :order => 'starttime ASC'
   has_many :comments, :dependent => :destroy
-  
   before_save :encrypt_new_password
+  
+  #events the user is going to 
+  #TODO probably should only return public events
+  def going_tos
+    GoingTo.find_by_user_id(id)
+  end
   
   def self.authenticate(email, password)
     user = find_by_email(email)

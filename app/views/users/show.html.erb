@@ -3,8 +3,7 @@
 <% if @user === @requested_user %>
 	
 	<!-- this is the logged in user's profile -->
-	
-	
+
 	<% if @user.events.length > 0 %>
 		<!-- user has events -->
 		<h1 class="events_title title">your events</h1>
@@ -17,7 +16,6 @@
 <% else %>
 
 	<!-- this is not the logged in user's profile -->
-	
 	
 	<%-# events created by requested user %>
 	<% if @requested_user.events.length > 0 %>
@@ -32,7 +30,7 @@
 	<% end %>
 	
 	<%-# event's this user is going to'%>
-	<% if @requested_user.going_to.count > 0 %>	
+	<% if @requested_user.going_tos.count > 0 %>	
 		<div class="going_tos_container">
 			<div class="going_tos_title title">
 				event's <%= @requested_user.username %> is going to

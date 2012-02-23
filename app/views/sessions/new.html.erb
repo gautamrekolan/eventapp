@@ -1,5 +1,7 @@
 <%= stylesheet_link_tag 'login/login.css'%>
 
+<h1>log in</h1>
+
 <div class="login_container">
 	<!--
 	<div class="title">log in</div>
@@ -19,10 +21,12 @@
 	-->
 	<%= form_tag session_path do %> 
 		<div id="usernamecontainer">
+			<%= label_tag :email%>
 	    	<%= text_field_tag :email %> 
 	  	</div>
 	  	<div id="passwordcontainer"> 
-	    	<%= password_field_tag :password %>
+	    	<%= label_tag :password %>
+			<%= password_field_tag :password %>
 	  	</div> 
 	  	<%= submit_tag 'login', :id => "user_login_button" %> 
 	<% end %>

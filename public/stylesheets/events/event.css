@@ -2,36 +2,45 @@
 	float:left;
 	margin-top:10px;
 	/* border:1px solid black; */
-	width:490px;
 	margin-right:10px;
 }
 
 .eventcontainer .eventcontents {
 	background-color:#DFDFDF;
-	width:490px;
-	padding:5px;
+	width:486px;
+	padding:7px;
 	float:left;
+	-moz-border-top-left-radius: 5px;
+	border-top-left-radius: 5px;
+	-moz-border-top-right-radius: 5px;
+	border-top-right-radius: 5px;
 }
 
-.eventcontainer .event h3 {
+.eventcontents h3 {
 	font-size:14px;
 	line-height:15px;
 	padding-bottom:2px;
+	float:left;
 }
 
-.eventcontainer .location {
+.eventcontainer .place_name {
 	font-style: italic;
 	font-size: 11px;
+	float:left;
 }
 
 .eventcontainer .eventdescription {
 	font-size:12px;
 	padding-bottom:2px;
+	width:490px;
+	float:left;
 }
 
-.eventcontainer .event .postedby {
+.event .postedby {
 	font-size:11px;
 	color:#333333;
+	width:490px;
+	float:left;
 }
 
 .event .postedby .username {
