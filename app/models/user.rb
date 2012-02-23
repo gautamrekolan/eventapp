@@ -24,7 +24,7 @@ class User < ActiveRecord::Base
   #events the user is going to 
   #TODO probably should only return public events
   def going_tos
-    GoingTo.find_by_user_id(id)
+    GoingTo.find_all_by_user_id(id)
   end
   
   def self.authenticate(email, password)

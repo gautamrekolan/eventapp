@@ -2,7 +2,7 @@
 <p id="notice"><%= notice %></p>
 -->
 <!-- TODO check that start date is before end date -->
-<% div_for(event, :class => "eventcontainer") do %>
+<%= div_for(event, :class => "eventcontainer") do %>
 	<div class="eventcontents">
 		<h3>
 		  <%= link_to event.name, event %>
@@ -38,29 +38,14 @@
 	<div class="eventactionsbar">
 		<% if logged_in? %>
 		<div class="publicactions">
-			<!--  FORGET ABOUT LIKE FOR NOW, STICK WITH "GO!" AND "GOING" 
-			<% if event.liked_by? current_user %>
-			<span class="alreadyliked">you and&nbsp;
-			<%= link_to  event.event_likes.count.to_s, 
-				new_event_event_like_path(event, :format => :json), 
-				:class => "likelink", 
-				:remote => true %>
-				&nbsp;people like this
-			<% else %>
-			<%= link_to  "like " + event.event_likes.count.to_s, 
-				new_event_event_like_path(event, :format => :json), 
-				:class => "likelink", 
-				:remote => true %>
-			<% end %>
-			-->
 			<!-- GOING? WHO CARES IF YOU LIKE IT... -->
-			<% if event.going? current_user %>
-				<% if event.going_to.count == 1 %>
+			<% if event.going?(current_user) %>
+				<% if event.going_tos.count == 1 %>
 					<%= link_to "you're going!", 
 					"/fakeurl",
 					:disabled => true, 
 					:class => "goinglink"%>
-				<% elsif event.going_to.count == 2 %>
+				<% elsif event.going_tos.count == 2 %>
 					<%= link_to "you & " + (event.going_to.count - 1).to_s + " person are going",
 						event_going_tos_path(event),
 						:class => "goinglink"%>

@@ -12,8 +12,8 @@ class Event < ActiveRecord::Base
 	belongs_to :user
 	has_and_belongs_to_many :categories
 	has_many :comments
-	has_many :event_likes
-	has_many :going_to
+	#has_many :event_likes
+	has_many :going_tos
 	
 	def owned_by?(owner)
 	  return false unless owner.is_a? User 
@@ -21,7 +21,7 @@ class Event < ActiveRecord::Base
 	end
 	
 	def going?(owner)
-	  if going_to.find_by_user_id(owner.id)
+	  if going_tos.find_by_user_id(owner.id)
 	  end
 	end
 	
