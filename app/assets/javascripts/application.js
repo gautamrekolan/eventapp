@@ -59,9 +59,9 @@ $(document).ready(function() {
 	//setTimeout (initTimepicker,3000);
 	// TODO move functionality into page by page document ready functions if possible
 	
-	//$('#event_starttime').datetimepicker();
-	$("#event_starttime").datepicker();
-	//$('#event_endtime').datetimepicker();
+	$('#event_starttime').datetimepicker();
+	//$("#event_starttime").datepicker();
+	$('#event_endtime').datetimepicker();
 	
 	
 	/***** validating forms *********/
