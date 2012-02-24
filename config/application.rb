@@ -2,12 +2,27 @@ require File.expand_path('../boot', __FILE__)
 
 require 'rails/all'
 
+# next 3 lines are old bundler code from rails 3.0.5
 # If you have a Gemfile, require the gems listed there, including any gems
 # you've limited to :test, :development, or :production.
-Bundler.require(:default, Rails.env) if defined?(Bundler)
+# Bundler.require(:default, Rails.env) if defined?(Bundler)
+
+# updated bundler code
+if defined?(Bundler)
+  # if you precompile assets before deploying to production, use this line
+  Bundler.require *Rails.groups(:assets => %w(development test))
+  # if you want your assets lazily compiled in production, use this line
+  # Bundler.require(:default, :assets, Rails.env)
+end
 
 module Eventapp
   class Application < Rails::Application
+    # enable the assets pipeline
+    config.assets.enabled = true
+
+    # version of you assets, change this if you want to expire all of your assets
+    config.assets.version = '1.0' 
+
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration should go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded.

@@ -25,5 +25,11 @@ Eventapp::Application.configure do
 
   # Only use best-standards-support built into browsers
   config.action_dispatch.best_standards_support = :builtin
+
+  # Do no compress assets
+  config.assets.compress
+
+  # Expands the lines which load the assets
+  config.assets.debug = true
 end
 
