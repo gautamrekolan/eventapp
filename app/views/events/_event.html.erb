@@ -74,7 +74,7 @@
 			<!--
 			<%= link_to "like", "/login", :class => "likelink", :notice => "login to like events" %>&nbsp;&middot;&nbsp;
 			-->
-			<%= link_to "go! (" + event.going_to.count.to_s + ")", "/login", :class => "golink" %>&nbsp;&middot;&nbsp;
+			<%= link_to "go! (" + event.going_tos.count.to_s + ")", "/login", :class => "golink" %>&nbsp;&middot;&nbsp;
 			<%= link_to pluralize(event.comments.count, 'comment'), "/login", :class => "commentlink" %> 
 		</div>
 		<% end %>
