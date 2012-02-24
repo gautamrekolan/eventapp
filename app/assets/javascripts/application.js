@@ -1,10 +1,17 @@
+/*
+ *= require jquery
+ *= require jquery_ujs
+ *= require jquery-ui
+ *= require_self
+ *= require_tree .
+ */
+
 // Place your application-specific JavaScript functions and classes here
 // This file is automatically included by javascript_include_tag :defaults
-
 /* respond to event likes - this needs to find a better home, doubt it's good to keep in top level like this */
 $(document).ready(function() {
 	
-	console.log("doc ready");
+	//console.log("doc ready");
 	
 	$(".notice").show("fadeIn");
 	
@@ -35,11 +42,14 @@ $(document).ready(function() {
 	$('#new_event').bind('ajax:success', function(data, status, xhr) {
 		alert("failure");
 	});
+	
+	
+	/*
 	$('#new_event').bind('ajax:success', function(data, status, xhr){
 	  alert("Success!");
 	});
 	
-	/*
+	
 	$(".eventactionsbar .goinglink").bind('ajax:success', function(data, status, xhr) {
 		$(this).text();
 	});
@@ -49,9 +59,9 @@ $(document).ready(function() {
 	//setTimeout (initTimepicker,3000);
 	// TODO move functionality into page by page document ready functions if possible
 	
-	$('#event_starttime').datetimepicker();
-	//$("#event_starttime").datepicker( "option", "showAnim", "fadeIn" );
-	$('#event_endtime').datetimepicker();
+	//$('#event_starttime').datetimepicker();
+	$("#event_starttime").datepicker();
+	//$('#event_endtime').datetimepicker();
 	
 	
 	/***** validating forms *********/
