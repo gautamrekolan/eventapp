@@ -2,9 +2,10 @@ class GoingTosController < ApplicationController
   
   before_filter :find_event
   # in application controller sets @event
+  # DRY up the respond_to do |format| statements below
   
   def index 
-    @going_tos = @event.going_to
+    @going_tos = @event.going_tos
     
     # probably should sort this going_to array by time the user rsvp'd ex: @going_tos.sort! |going_to| { going_to.created_at }
     # TODO figure out how to sort these arrays
@@ -17,7 +18,7 @@ class GoingTosController < ApplicationController
   end
   
   def new 
-    @goingto = @event.going_to.new
+    @goingto = @event.going_tos.new
     create
   end
   
@@ -26,7 +27,7 @@ class GoingTosController < ApplicationController
     if @goingto.save 
       
       # check if this is the only person going
-      @going_to_count = @event.going_to.count
+      @going_to_count = @event.going_tos.count
       if @going_to_count == 1
         @goingtostring = "you're going!"
       else
@@ -58,7 +59,7 @@ class GoingTosController < ApplicationController
   
   def show 
     respond_to do |format|
-      format.html render @event.going_to
+      format.html render @event.going_tos
       format.xml
     end
   end

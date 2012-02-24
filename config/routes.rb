@@ -27,6 +27,8 @@ Eventapp::Application.routes.draw do
   match '/logout' => "sessions#destroy", :as => "logout"
   
   match '/signup' => "users#new", :as => "signup"
+  
+  #match '/going' => 
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

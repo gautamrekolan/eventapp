@@ -9,6 +9,8 @@ gem 'rails', '3.0.5'
 #gem 'sqlite3'
 gem 'pg'
 
+#gem 'thin' # this breaks everything 
+
 gem 'rake', '>= 0.9.2.2'
 gem 'rdoc', '~>3.12' 
 

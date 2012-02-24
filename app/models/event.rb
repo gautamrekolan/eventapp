@@ -10,7 +10,7 @@ class Event < ActiveRecord::Base
 	                                                        :maximum => 1000}
 	has_one :place
 	belongs_to :user
-	has_and_belongs_to_many :categories
+	#has_and_belongs_to_many :categories
 	has_many :comments
 	#has_many :event_likes
 	has_many :going_tos
@@ -20,9 +20,10 @@ class Event < ActiveRecord::Base
 	  user == owner 
 	end
 	
-	def going?(owner)
-	  if going_tos.find_by_user_id(owner.id)
-	  end
+	def going?(user)
+	  #puts user.id.to_s
+	  going_tos.find_all_by_user_id(user.id).count > 0
+	  #return false #
 	end
 	
 	def liked_by?(owner)

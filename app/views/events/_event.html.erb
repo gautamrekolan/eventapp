@@ -39,6 +39,7 @@
 		<% if logged_in? %>
 		<div class="publicactions">
 			<!-- GOING? WHO CARES IF YOU LIKE IT... -->
+			<%- #TODO move this to a partial or method to dry it up %>
 			<% if event.going?(current_user) %>
 				<% if event.going_tos.count == 1 %>
 					<%= link_to "you're going!", 
@@ -46,11 +47,11 @@
 					:disabled => true, 
 					:class => "goinglink"%>
 				<% elsif event.going_tos.count == 2 %>
-					<%= link_to "you & " + (event.going_to.count - 1).to_s + " person are going",
+					<%= link_to "you & 1 person are going",
 						event_going_tos_path(event),
 						:class => "goinglink"%>
 				<% else %>
-					<%= link_to "you & " + (event.going_to.count - 1).to_s + " others are going",
+					<%= link_to "you & " + (event.going_tos.count - 1).to_s + " others are going",
 						event_going_tos_path(event),
 						:class => "goinglink"%>
 				<% end %>

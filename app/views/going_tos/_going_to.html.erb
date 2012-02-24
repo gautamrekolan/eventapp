@@ -1,8 +1,8 @@
-<%-# why is this not in /going_tos/show.html.erb? %>
+<%-# TODO why is this not in /going_tos/show.html.erb? %>
 <div class="attendee">
 	<div class="pic">	
 	</div>
 	<div class="username">
-		<%= going_to.find_username %>
+		<%= link_to going_to.find_user.username, going_to.find_user %>
 	</div>
 </div>
