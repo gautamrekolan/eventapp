@@ -1,9 +1,0 @@
-# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
-
-one:
-  asking_user_id: MyString
-  asked_user_id: MyString
-
-two:
-  asking_user_id: MyString
-  asked_user_id: MyString
