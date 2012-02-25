@@ -10,7 +10,7 @@ gem 'rails', '3.1.0'
 
 gem 'pg'
 
-#gem 'thin' # this breaks everything 
+gem 'thin' # this breaks everything 
 
 gem 'rake', '>= 0.9.2.2'
 gem 'rdoc', '~>3.12' 
