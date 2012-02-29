@@ -3,7 +3,7 @@
 <%= stylesheet_link_tag "events/event.css", "events/event-comment.css", "events/event-index.css" %>
 
 <h1>upcoming events</h1>
-<div id="geolocation_container"></div>
+
 <!-- TODO create a database full of sample events for the 'new event teaser'... should be prepopulated suggestions of events,
 	then randomly draw from those events and place them in the new event form in a light gray -->
 
@@ -14,3 +14,5 @@
 <div id="events">
   <%= render @events %>
 </div>
+
+<div id="geolocation_container"></div>

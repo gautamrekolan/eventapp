@@ -7,8 +7,8 @@ function displayPosition(position) {
   "<tr><th>Longitude (WGS84)</th><td>" + position.coords.longitude + " deg</td></tr></table>";
 }
 
-function showGoogleMap() {
-	
+function showMap() {
+	$("#geolocation_container").html();
 }
  
 function displayError(positionError) {
@@ -26,7 +26,7 @@ function initGeoLocate() {
 	} catch(e) {}
 
 	if (gl) {
-	  gl.getCurrentPosition(displayPosition, displayError);
+	  gl.getCurrentPosition(showMap, displayError); //used to call displayPosition instead of showMap
 	} else {
 	  alert("Geolocation services are not supported by your web browser.");
 	}	
