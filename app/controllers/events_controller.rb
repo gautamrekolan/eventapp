@@ -22,7 +22,7 @@ class EventsController < ApplicationController
       @place = @event.place
     end
     
-    respond_with @events
+    respond_with @event
   end
 
   # GET /events/new

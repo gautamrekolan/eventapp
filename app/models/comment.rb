@@ -15,7 +15,7 @@ class Comment < ActiveRecord::Base
   
   def owned_by?(owner)
 	  return false unless owner.is_a? User 
-	  puts " " + owner.id.to_s
+	  #puts " " + owner.id.to_s
 	  user == owner 
 	end
 

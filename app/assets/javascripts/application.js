@@ -15,6 +15,28 @@ $(document).ready(function() {
 	
 	$(".notice").show("fadeIn");
 	
+	$(".eventactionsbar .golink").bind('ajax:success', function(data, status, xhr) {
+		//alert(status);
+		j = JSON.parse(status)
+		$(this).text(j.message);
+	});
+
+	$('#new_event').bind('ajax:success', function(data, status, xhr) {
+		alert("failure");
+	});
+	
+	//call js geolocation/geolocation.js
+	initGeoLocate();
+	
+	
+	// TODO move functionality into page by page document ready functions if possible
+	
+	$('#event_starttime').datetimepicker();
+	//$("#event_starttime").datepicker();
+	$('#event_endtime').datetimepicker();
+	
+	
+	
 	/* GOOGLE MAPS API */
 	//initialize(); //inits google map
 	
@@ -33,17 +55,6 @@ $(document).ready(function() {
 	*/
 	/* GOING TO *********/
 	
-	$(".eventactionsbar .golink").bind('ajax:success', function(data, status, xhr) {
-		//alert(status);
-		j = JSON.parse(status)
-		$(this).text(j.message);
-	});
-
-	$('#new_event').bind('ajax:success', function(data, status, xhr) {
-		alert("failure");
-	});
-	
-	
 	/*
 	$('#new_event').bind('ajax:success', function(data, status, xhr){
 	  alert("Success!");
@@ -55,19 +66,11 @@ $(document).ready(function() {
 	});
 	*/
 	
-	//http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js
-	//setTimeout (initTimepicker,3000);
-	// TODO move functionality into page by page document ready functions if possible
-	
-	$('#event_starttime').datetimepicker();
-	//$("#event_starttime").datepicker();
-	$('#event_endtime').datetimepicker();
-	
-	
 	/***** validating forms *********/
 	//new event /events/new
 	
 	//show end date / time if they want
+	
 	$('.endtime_add a').click(function() {
 		$(this).hide()
 		$('.endtime_container').removeClass('hidden');

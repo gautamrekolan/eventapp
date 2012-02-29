@@ -1,0 +1,33 @@
+$map_height: 150px;
+$map_width: 150px;
+
+$light_gray: #EFEFEF;
+
+#place_container {
+	
+	/* width:500px; */
+	
+	
+	
+	#place_address_and_map {
+		float: left;
+		width: 500px;
+		background-color: $light_gray;
+		padding: 7px;
+		.place {
+			float:left;
+		}
+		
+		#map_canvas_container {
+			float: right;
+			width: $map_width;
+			height: $map_height;
+			padding: 0px;
+		}
+	}
+	
+	#place_events_container {
+		width: 500px;
+	}
+	
+}

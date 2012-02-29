@@ -8,7 +8,7 @@
 		  <%= link_to event.name, event %>
 		</h3>
 		<% if event.place_id? %>
-		<span class="place_name">- at <%= link_to event.place.name %></span>
+		<span class="place_name">- at <%= link_to event.place.name, event.place %></span>
 		<div class="full_address">
 			<div class="address">
 				<%= event.place.address %>

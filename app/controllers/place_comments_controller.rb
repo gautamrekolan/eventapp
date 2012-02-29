@@ -1,0 +1,2 @@
+class PlaceCommentsController < ApplicationController
+end

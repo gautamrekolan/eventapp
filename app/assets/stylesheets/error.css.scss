@@ -1,0 +1,36 @@
+$error_red: #FF9494;
+
+/* deals with rails creating errors */
+.field_with_errors { display: inline; }
+
+.error {
+	display: none;
+}
+
+/* error panel */
+
+#error_explanation {
+	
+	float:left;
+	width:300px;
+	margin-left:20px;
+	background-color: $error_red;
+	padding:10px;
+	margin-bottom:5px;
+	-moz-border-radius: 15px;
+	border-radius: 15px;
+	
+	h2 {
+		font-size:13px;
+	}
+	
+	ul li {
+		font-size: 12px;
+		list-style-type:circle;
+	}
+	
+	ul {
+		margin-left:10px;
+		padding-left:10px;
+	}
+}

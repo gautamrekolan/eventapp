@@ -2,14 +2,6 @@ Eventapp::Application.routes.draw do
   
   root :to => "events#index"
   
-  resources :locations
-
-  resources :keywords
-
-  resources :categories
-
-  resources :connections
-  
   resources :events do
     member do
 	    post :notify_friend
@@ -17,6 +9,10 @@ Eventapp::Application.routes.draw do
     resources :comments
     resources :event_likes
     resources :going_tos
+  end
+  
+  resources :places do
+    resources :place_comments
   end
   
   resources :users

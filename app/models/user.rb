@@ -19,6 +19,7 @@ class User < ActiveRecord::Base
   #has_many :replies, :through => :events, :source => :comments
   has_many :going_tos, :dependent => :destroy #, :order => 'starttime ASC'
   has_many :comments, :dependent => :destroy
+  has_many :place_comments, :dependent => :destroy
   before_save :encrypt_new_password
   
   #events the user is going to 

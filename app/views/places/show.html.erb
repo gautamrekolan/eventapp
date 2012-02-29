@@ -1,0 +1,15 @@
+<div id="place_container">
+	
+	<%= render @place %>
+	
+	<div class="place_comments">
+		<div class="place_comments_title title">what people are saying about <%= @place.name %></div>
+		<%= render @place.place_comments %>
+	</div>
+	
+	<div id="place_events_container">
+		<div class="title">upcoming events at <%= @place.name %>
+		<%= render @events %>
+	</div>
+
+</div>

@@ -2,7 +2,7 @@
 
 <%= render @event %>
 
-<%= render 'places/placemap'%>
+<%= render 'places/placemap', :locals => { :place => @event.place } %>
 
 <!--
 <%= link_to 'Email a friend', '#', :onclick => "$('#notify_friend_form').slideDown()" %> 

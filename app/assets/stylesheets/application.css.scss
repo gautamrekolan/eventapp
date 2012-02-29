@@ -1,0 +1,101 @@
+/*
+ *= require_self
+ *= require_tree .
+ */
+
+
+/* h1,h2,h3.... */
+
+/* global vars */
+
+$main_site_color: #E6F5FF;
+$gray_text: #333333;
+$label_background: #DFDFDF;
+
+body {
+	font-family: "lucida grande",tahoma,verdana,arial,sans-serif;
+}
+
+body h1, .title {
+	font-size:16px;
+	color: $gray_text;
+	margin-top:10px;
+	margin-bottom:15px;
+}
+
+h3 {
+	font-size:13px;
+}
+
+body {
+	background-color: $main_site_color;
+}
+
+form label {
+	float:left;
+	text-align:right;
+	padding-top:2px;
+	padding-right:5px;
+	background-color:$label_background;
+	height:20px;
+}
+
+
+form input {
+	float:left;
+}
+
+input {
+	background-color:$label_background;
+}
+
+/* popup notices across pages */
+.notice {
+	display:none;
+	position:absolute;
+	left:20px;
+	top:60px;
+	background-color:#E6F5FF;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+	padding:7px;
+	font-size:12px;
+}
+
+.hidden {
+	display:none;
+}
+
+.vertical_divider {
+	float:left;
+}
+
+form .row {
+	float:left;
+	padding-bottom:3px;
+}
+
+
+
+
+
+/* CONTENT */
+
+#maincontainer {
+	margin: 0 auto;
+	width: 980px;
+}
+
+/* general links */
+
+a {
+	text-decoration: none;
+}
+
+a:hover {
+	color: gray;
+}
+
+a:visited {
+	
+}

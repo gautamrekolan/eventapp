@@ -2,7 +2,9 @@
 
 	
 //var geoReq = "http://maps.googleapis.com/maps/api/geocode/json?address=385+Wall+St,+Ventura,+CA&sensor=false"
-	
+/*
+* call this like this: render 'places/placemap.js, :local { :place => @place } 
+*/	
 
 function initialize(latLng) {
 	var myOptions = {
@@ -18,11 +20,14 @@ function initialize(latLng) {
             map: map,
             position: latLng
         });
+
+		//document.getElementById("map_canvas").style.width = "40px";
+		//document.getElementById("map_canvas").style.height = "40px";
 	
 }
 
 var geocoder = new google.maps.Geocoder();
-var address = "<%= @event.place.full_address %>";//'385 Wall St Ventura CA 93001';
+var address = "<%= @place.full_address %>";//'385 Wall St Ventura CA 93001';
 
 if (geocoder) {
    geocoder.geocode({ 'address': address }, function (results, status) {
