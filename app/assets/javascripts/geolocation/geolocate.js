@@ -6,6 +6,10 @@ function displayPosition(position) {
   "<tr><th>Latitude (WGS84)</th><td>" + position.coords.latitude + " deg</td></tr>" +
   "<tr><th>Longitude (WGS84)</th><td>" + position.coords.longitude + " deg</td></tr></table>";
 }
+
+function showGoogleMap() {
+	
+}
  
 function displayError(positionError) {
   alert("error");
