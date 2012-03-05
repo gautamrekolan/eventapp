@@ -1,52 +1,62 @@
 /* HEADER */
 
 #headerbar {
-	height:40px;
+	height:62px;
 	width:100%;
-	background-color:#CCCCCC;
-	border-bottom:1px solid #0099FF;
+	background-color:#EFEFEF;
+	border-bottom:1px solid #000000;
+	
+	#logoutgroup {
+		float:right;
+	}
+	
+	#headercontentcontainer {
+		width:980px;
+		margin: 0 auto;
+		
+		#homelogo {
+			margin-top:10px;
+			float:left;
+		}
+
+		#logingroup {
+			float:right;
+			margin-top:10px;
+			width:500px;
+			
+			#signin_container {
+				float:left;
+			}	
+		}
+		
+		form {
+			
+			#usernamecontainer {
+				float:left;
+				margin-right:10px;
+				height:20px;
+			}
+			
+			#passwordcontainer {
+				float:left;
+				margin-right:10px;
+				height:20px;
+			}
+			
+		}
+		
+	}
 }
 
-#headercontentcontainer {
-	width:980px;
-	margin: 0 auto;
-}
 
-#homelogo {
-	margin-top:10px;
-	float:left;
-}
 
-#logingroup {
-	float:right;
-	margin-top:10px;
-	width:500px;
-}
 
-#usernamecontainer {
-	float:left;
-	margin-right:10px;
-	height:20px;
-}
-
-#passwordcontainer {
-	float:left;
-	margin-right:10px;
-	height:20px;
-}
 
 #user_login_container {
 	float:left;
-}
-
-#headerbar #logoutgroup {
-	float:right;
 }
 
 #logoutgroup form {
 	float:left;
 }
 
-#signin_container {
-	float:left;
-}

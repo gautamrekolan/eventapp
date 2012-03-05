@@ -1,18 +1,28 @@
-<!-- events -->
-
-<%= stylesheet_link_tag "events/event.css", "events/event-comment.css", "events/event-index.css" %>
-
-<h1>upcoming events</h1>
-
-<!-- TODO create a database full of sample events for the 'new event teaser'... should be prepopulated suggestions of events,
-	then randomly draw from those events and place them in the new event form in a light gray -->
+<!-- /events -->
 
 <div id="newevent">
 	<%= link_to 'create new event', new_event_path %>
 </div>
 
-<div id="events">
-  <%= render @events %>
+<!-- using a two column format that should keep loading down the entire page as user scrolls -->
+<div class="col1 column">
+	<div class="title">upcoming events</div>
+	<div class="events">
+		<%= render @events %>
+	</div>
 </div>
+
+<div class="col2 column">
+	<div class="title">other events</div>
+	<div class="events">
+		<%= render @events %>
+	</div>
+</div>
+
+
+
+<!-- TODO create a database full of sample events for the 'new event teaser'... should be prepopulated suggestions of events,
+	then randomly draw from those events and place them in the new event form in a light gray -->
+
 
 <div id="geolocation_container"></div>

@@ -2,6 +2,13 @@
 
 /* hide addresses to make a more list friendly compact style */
 
+.column {
+	
+	float:left;
+	width:500px;
+}
+
 .full_address {
 	display:none;
 }
+
