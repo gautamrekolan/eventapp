@@ -27,9 +27,9 @@ class Event < ActiveRecord::Base
 	end
 	
 	def going?(user)
-	  #puts user.id.to_s
+	  # puts user.id.to_s
 	  going_tos.find_all_by_user_id(user.id).count > 0
-	  #return false #
+	  # return false #
 	end
 	
 	def liked_by?(owner)
