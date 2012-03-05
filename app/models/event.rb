@@ -15,6 +15,12 @@ class Event < ActiveRecord::Base
 	#has_many :event_likes
 	has_many :going_tos
 	
+	# this indexing must come after any associations
+	# uses thinking sphinx and a running Sphinx daemon
+	define_index do
+	  
+	end
+	
 	def owned_by?(owner)
 	  return false unless owner.is_a? User 
 	  user == owner 

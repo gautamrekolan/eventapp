@@ -12,6 +12,9 @@ gem 'pg'
 
 gem 'thin' # this breaks everything 
 
+gem 'thinking-sphinx', '2.0.10' #this could be installed as a "plugin"
+# but supposedly gemfile is where all the app dependencies go
+
 gem 'rake', '>= 0.9.2.2'
 gem 'rdoc', '~>3.12' 
 
