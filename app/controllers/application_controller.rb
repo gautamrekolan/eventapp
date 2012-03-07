@@ -15,6 +15,14 @@ class ApplicationController < ActionController::Base
 	#make current method available in other templates as a helper
 	helper_method :current_user
   
+  protected
+  def current_user?(user)
+    user == current_user
+  end
+  # make current_user? method available in other
+  helper_method :current_user?
+  
+  # TODO isn't this an unneeded method / helper since @user.events would yeild the array of user events?
 	protected
 	def user_events(user)
     return Event.where(:user_id => user.id)

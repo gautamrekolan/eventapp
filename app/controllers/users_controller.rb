@@ -4,6 +4,22 @@ class UsersController < ApplicationController
   #helper method authenticate made available from ApplicationController
   before_filter :authenticate, :only => [:index, :show]
   
+  
+  
+  def following
+    @title = "following"
+    @user = User.find(params[:id])
+    @users = @user.following #.paginate(:page => params[:page]) - some shit from Ruby on Rails 3 Tutorial
+    render 'show_follow'
+  end
+  
+  def followers
+    @title = "followers"
+    @user = User.find(params[:id])
+    @users = @user.followers #.paginate(:page => params[:page])
+    render 'show_follow'
+  end
+  
   def index 
     @user = current_user
     respond_to do |format|
@@ -12,8 +28,10 @@ class UsersController < ApplicationController
     end
   end
   
+  
+  
   def show
-    
+    # @user should never be set to current_user, @user should always be set to User.find(:params[:id])
     @user = current_user
     
     # TODO need to check if it's the current user or if it's another user

@@ -1,4 +1,5 @@
 require 'digest'
+
 class User < ActiveRecord::Base
 
   attr_accessor :password 
@@ -20,6 +21,11 @@ class User < ActiveRecord::Base
   has_many :going_tos, :dependent => :destroy #, :order => 'starttime ASC'
   has_many :comments, :dependent => :destroy
   has_many :place_comments, :dependent => :destroy
+  has_many :relationships, :foreign_key => "follower_id", :dependent => :destroy
+  has_many :reverse_relationships, :foreign_key => "followed_id", :class_name => "Relationship", :dependent => :destroy
+  has_many :followers, :through => :reverse_relationships
+  has_many :following, :through => :relationships, :source => :followed
+  
   before_save :encrypt_new_password
   
   #events the user is going to 
@@ -27,6 +33,18 @@ class User < ActiveRecord::Base
   #def going_tos
   #  GoingTo.find_all_by_user_id(id)
   #end
+  
+  def following?(followed)
+    relationships.find_by_followed_id(followed)
+  end
+  
+  def follow!(followed)
+    relationships.create!(:followed_id => followed.id)
+  end
+  
+  def unfollow!(followed)
+    relationships.find_by_followed_id(followed.id).destroy
+  end
   
   def self.authenticate(email, password)
     user = find_by_email(email)

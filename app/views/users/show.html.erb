@@ -1,6 +1,5 @@
-<%= stylesheet_link_tag "events/user-event.css", "events/event.css", "events/event-comment.css"%>
-
-<% if @user === @requested_user %>
+<!-- users/show -->
+<% if current_user?(@requested_user) %>
 	
 	<!-- this is the logged in user's profile -->
 
@@ -12,6 +11,9 @@
 		<!-- user doesn't have any events -->
 		<h1>has not created any events</h2>
 	<% end %>
+	
+	<!-- following -->
+	<%= render 'shared/following' %>
 	
 <% else %>
 
@@ -42,7 +44,10 @@
 		</div>
 	<% end %>
 		
-	<%-# TODO add connections / friends / following. i think following / or subscribing is better than 'friends' %>
-	<div class="following">FOLLOWING</div>
+	<!-- following -->
+	<%= render 'shared/following'%>
+	
+	<%= render 'follow_form' %>
+	
 	<div class="related_events">RELATED EVENTS???</div>
 <% end %>

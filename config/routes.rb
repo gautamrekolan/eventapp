@@ -15,7 +15,13 @@ Eventapp::Application.routes.draw do
     resources :place_comments
   end
   
-  resources :users
+  resources :users do
+    member do
+      get :following, :followers
+    end
+  end
+
+  resources :relationships, :only => [:create, :destroy]
   
   resource :session
   
