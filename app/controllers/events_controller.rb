@@ -12,11 +12,8 @@ class EventsController < ApplicationController
 
   # GET /events/1
   def show
-    begin
-      @event = Event.find(params[:id])
-    rescue ActiveRecord::RecordNotFound
-      puts "we couldn't find that record"
-    end
+    
+    @event = Event.find(params[:id])
     
     if @event.place?
       @place = @event.place

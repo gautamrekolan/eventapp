@@ -4,7 +4,7 @@ class UsersController < ApplicationController
   #helper method authenticate made available from ApplicationController
   before_filter :authenticate, :only => [:index, :show]
   
-  
+  respond_to :html, :js
   
   def following
     @title = "following"
@@ -21,36 +21,21 @@ class UsersController < ApplicationController
   end
   
   def index 
-    @user = current_user
-    respond_to do |format|
-      format.html
-      format.xml { render :xml => @user}
-    end
+    @users = User.all.limit(100) 
+    respond_with @users
   end
-  
-  
   
   def show
     # @user should never be set to current_user, @user should always be set to User.find(:params[:id])
-    @user = current_user
-    
+    @user = User.find(params[:id])
+    # puts "--------------------- " + @user.username.to_s
     # TODO need to check if it's the current user or if it's another user
     # if it's not the current user obviously they need to see a restricted version of another person's profile
     
     # TODO why doesn't this work? Event.find_by_user_id(@user.id) usind where clause as it gives the results i'm looking for
     
-    @requested_user = User.find(params[:id])
-    
-    if @requested_user === @user
-    end
-    # this will give you either the current logged in user's events or the somebody else's profile
-    # @userevents = user_events(@requested_user) don't need this 
-    
-    # puts "USER askjdf" + params[:id].to_s
-    respond_to do |format|
-      format.html # show.html.erb
-      format.xml  { render :xml => @user }
-    end
+    # puts "USER " + params[:id]
+    respond_with @user
     
   end
   

@@ -1,5 +1,6 @@
 <!-- users/show -->
-<% if current_user?(@requested_user) %>
+<%# TODO make this more DRY %>
+<% if current_user?(@user) %>
 	
 	<!-- this is the logged in user's profile -->
 
@@ -15,15 +16,28 @@
 	<!-- following -->
 	<%= render 'shared/following' %>
 	
+	<%-# event's this user is going to'%>
+	<% if @user.going_tos.count > 0 %>	
+		<div class="going_tos_container">
+			<div class="going_tos_title title">
+				event's <%= @user.username %> is going to
+			</div>
+			<% @user.going_tos.each do |going_to| %>
+				<%- # looks like not having error checking%>
+				<%= render Event.find(going_to.event_id)%>
+			<% end %>
+		</div>
+	<% end %>
+	
 <% else %>
 
 	<!-- this is not the logged in user's profile -->
 	
 	<%-# events created by requested user %>
-	<% if @requested_user.events.length > 0 %>
+	<% if @user.events.length > 0 %>
 		<!-- user has events -->
-		<div class="eventstitle title"><%= @requested_user.username %>'s events</div>
-		<%= render @requested_user.events %>
+		<div class="eventstitle title"><%= @user.username %>'s events</div>
+		<%= render @user.events %>
 	<% else %>
 		<!-- user doesn't have any events -->
 		<div>has not created any events</div>
@@ -32,12 +46,12 @@
 	<% end %>
 	
 	<%-# event's this user is going to'%>
-	<% if @requested_user.going_tos.count > 0 %>	
+	<% if @user.going_tos.count > 0 %>	
 		<div class="going_tos_container">
 			<div class="going_tos_title title">
-				event's <%= @requested_user.username %> is going to
+				event's <%= @user.username %> is going to
 			</div>
-			<% @requested_user.going_tos.each do |going_to| %>
+			<% @user.going_tos.each do |going_to| %>
 				<%- # looks like not having error checking%>
 				<%= render Event.find(going_to.event_id)%>
 			<% end %>
