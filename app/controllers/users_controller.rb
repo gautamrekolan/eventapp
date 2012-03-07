@@ -26,17 +26,10 @@ class UsersController < ApplicationController
   end
   
   def show
-    # @user should never be set to current_user, @user should always be set to User.find(:params[:id])
     @user = User.find(params[:id])
-    # puts "--------------------- " + @user.username.to_s
-    # TODO need to check if it's the current user or if it's another user
-    # if it's not the current user obviously they need to see a restricted version of another person's profile
-    
     # TODO why doesn't this work? Event.find_by_user_id(@user.id) usind where clause as it gives the results i'm looking for
     
-    # puts "USER " + params[:id]
     respond_with @user
-    
   end
   
   def new 
