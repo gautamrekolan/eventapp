@@ -9,7 +9,11 @@ class EventsController < ApplicationController
     
     # get the user's address (city / state) from request
     # to create a map, also probably store that in the user's location
-    @address = request.location.city + ", " + request.location.state
+    if Rails.env.production?
+      @address = request.location.city + ", " + request.location.state
+    else 
+      @address = "Ventura, CA"
+    end
     
     @events = Event.all
     
@@ -28,8 +32,6 @@ class EventsController < ApplicationController
     respond_with @event
   end
 
-  # GET /events/new
-  # GET /events/new.xml
   def new
     @event = Event.new
     #@place = Place.new
@@ -42,8 +44,6 @@ class EventsController < ApplicationController
     @event = current_user.events.find(params[:id])
   end
 
-  # POST /events
-  # POST /events.xml
   def create
     
     @event = current_user.events.new(params[:event])

@@ -12,3 +12,15 @@
 	display:none;
 }
 
+.col2 {
+	.user_location_map {
+		width:500px;
+		height:500px;
+		
+		#map_canvas_container {
+			height:480px;
+			width:480px;
+		}
+	}
+}
+
