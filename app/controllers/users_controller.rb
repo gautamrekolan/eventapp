@@ -46,6 +46,7 @@ class UsersController < ApplicationController
   end
   
   def edit 
+    # TODO error check if this is the current user every time
     @user = current_user # was: User.find(params[:id]) details in application controller
   end
   

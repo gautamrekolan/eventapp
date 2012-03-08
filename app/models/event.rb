@@ -18,7 +18,7 @@ class Event < ActiveRecord::Base
 	# this indexing must come after any associations
 	# uses thinking sphinx and a running Sphinx daemon
 	define_index do
-	  
+	  indexes :name
 	end
 	
 	def owned_by?(owner)

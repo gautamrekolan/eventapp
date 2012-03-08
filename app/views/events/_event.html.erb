@@ -6,38 +6,40 @@
 	<div class="eventcontents">
 		<div class="avatar">
 		<% if event.user.avatar? %>
-			<%= image_tag @user.avatar.url(:thumb) %>
+			<%= image_tag event.user.avatar.url(:thumb) %>
 		<% else %>
 			<%= image_tag 'users/sample-icon.jpg'%>
 		<% end %>
 		</div>
-		<h3>
-		  <%= link_to event.name, event %>
-		</h3>
-		<% if event.place_id? %>
-		<!-- TODO move this into a partial for just a place -->
-		<span class="place_name">- at <%= link_to event.place.name, event.place %></span>
-		<div class="full_address">
-			<div class="address">
-				<%= event.place.address %>
+		<div class="event_body">
+			<div class="event_title">
+			  <%= link_to event.name, event %>
 			</div>
-			<div class="city">
-				<%= event.place.city %>
+			<% if event.place_id? %>
+			<!-- TODO move this into a partial for just a place -->
+			<span class="place_name">- at <%= link_to event.place.name, event.place %></span>
+			<div class="full_address">
+				<div class="address">
+					<%= event.place.address %>
+				</div>
+				<div class="city">
+					<%= event.place.city %>
+				</div>
+				<div class="state">
+					<%= event.place.state %>
+				</div>
+				<div class="zip">
+					<%= event.place.zip %>
+				</div>
 			</div>
-			<div class="state">
-				<%= event.place.state %>
+			<% end %>
+			<div class="eventdescription">
+				<%= event.description %> 
 			</div>
-			<div class="zip">
-				<%= event.place.zip %>
+			<div class="postedby">
+				<!-- TODO the href below should be updated to something dealt with in the controller -->
+				- by <a class="username" href="/users/<%= event.user.id %>"><%= event.user.username %></a> <%= time_ago_in_words(event.created_at) %> ago
 			</div>
-		</div>
-		<% end %>
-		<div class="eventdescription">
-			<%= event.description %> 
-		</div>
-		<div class="postedby">
-			<!-- TODO the href below should be updated to something dealt with in the controller -->
-			- by <a class="username" href="/users/<%= event.user.id %>"><%= event.user.username %></a> <%= time_ago_in_words(event.created_at) %> ago
 		</div>
 	</div>
 	

@@ -21,6 +21,8 @@
 	<!-- following -->
 	<%= render 'shared/following' %>
 	
+	<%= link_to "edit profile", edit_user_path(@user)%>
+	
 	<%-# event's this user is going to'%>
 	<% if @user.going_tos.count > 0 %>	
 		<div class="going_tos_container">
@@ -44,7 +46,6 @@
 		<%= image_tag 'users/sample-icon.jpg'%>
 	<% end %>
 	
-	<%-# events created by requested user %>
 	<% if @user.events.length > 0 %>
 		<!-- user has events -->
 		<div class="eventstitle title"><%= @user.username %>'s events</div>
