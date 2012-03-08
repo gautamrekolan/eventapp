@@ -3,6 +3,8 @@
 <% if current_user?(@user) %>
 	
 	<!-- this is the logged in user's profile -->
+	
+	<%= image_tag @user.avatar.url(:thumb) %>
 
 	<% if @user.events.length > 0 %>
 		<!-- user has events -->

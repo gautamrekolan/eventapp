@@ -18,6 +18,12 @@ gem 'thinking-sphinx', '2.0.10' #this could be installed as a "plugin"
 # geocoding library for rails 3 - uses google maps default http://rubygeocoder.com/
 gem 'geocoder'
 
+# paperclip for file attachments
+gem "paperclip", :git => "git://github.com/thoughtbot/paperclip.git"
+
+# amazon aws for use with paperclip
+gem 'aws-sdk' # didn't use 'aws-s3' because i read that this is more extensive for multiple languages
+
 gem 'rake', '>= 0.9.2.2'
 gem 'rdoc', '~>3.12' 
 

@@ -27,6 +27,14 @@ class User < ActiveRecord::Base
   has_many :following, :through => :relationships, :source => :followed
   
   before_save :encrypt_new_password
+
+  # paperclip function to show that users have attached images
+  has_attached_file :avatar, :styles => { :medium => "300x300>", :thumb => "100x100>" },
+              :storage => :s3,
+              :s3_credentials => "#{Rails.root}/config/s3.yml",
+              :path => ":attachment/:id/:style/:basename.:extension",
+              :bucket => 'eventsbucket'
+              
   
   #events the user is going to 
   #TODO probably should only return public events

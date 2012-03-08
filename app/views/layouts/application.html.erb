@@ -37,9 +37,12 @@
 			<% end %>
 		
 		<% else %>
+			<div class="loggedin_user">
+				<%= link_to "#{current_user.username}", current_user %>
+			</div>
 			<div id="logoutgroup">
 				<div id="logoutbutton">
-					<%= link_to "#{current_user.username} logout", logout_path %>
+					<%= link_to "logout", logout_path %>
 				</div>
 			</div>
 		<% end %>
