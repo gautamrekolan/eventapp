@@ -4,6 +4,7 @@
 	<div>city: <%= request.location.city %></div>
 	<div>country: <%= request.location.country %></div>
 </div>
+
 <div id="newevent">
 	<%= link_to 'create new event', new_event_path %>
 </div>
@@ -17,6 +18,10 @@
 </div>
 
 <div class="col2 column">
+	<div class="user_location_map">
+		<%= render 'places/placemap', :locals => {:address => @address} %>
+	</div>
+	
 	<div class="title">other events</div>
 	<div class="events">
 		<%= render @events %>

@@ -27,7 +27,7 @@ function initialize(latLng) {
 }
 
 var geocoder = new google.maps.Geocoder();
-var address = "<%= @place.full_address %>";//'385 Wall St Ventura CA 93001';
+var address = "<%= @address %>";//'385 Wall St Ventura CA 93001';
 
 if (geocoder) {
    geocoder.geocode({ 'address': address }, function (results, status) {

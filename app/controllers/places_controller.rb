@@ -18,6 +18,8 @@ class PlacesController < ApplicationController
   end
   
   def index 
+    redirect_to events_path, :notice => "places are unavailable at this time"
+    return
     #think of a clever way to show places 
     if params[:search].present?
       @places = Place.near(params[:search], 50, :order => :distance)

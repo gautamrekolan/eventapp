@@ -6,6 +6,11 @@ class EventsController < ApplicationController
   # GET /events
   def index
     #puts "---------------" + request.location.country
+    
+    # get the user's address (city / state) from request
+    # to create a map, also probably store that in the user's location
+    @address = request.location.city + ", " + request.location.state
+    
     @events = Event.all
     
     respond_with @events
