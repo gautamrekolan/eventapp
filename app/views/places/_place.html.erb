@@ -16,6 +16,6 @@
 			<%= place.zip %>
 		</div>
 	</div>
-	<!-- maybe this map shouldn't be part of a place, but for now it does -->
-	<%= render 'places/placemap', :locals => { :place => @place, :width => 40, :height => 40 } %>
+	<!-- maybe this map shouldn't be part of a place, but for now it is -->
+	<%= render 'places/placemap', :locals => { :place => place} %>
 </div>

@@ -19,9 +19,12 @@ class PlacesController < ApplicationController
   
   def index 
     #think of a clever way to show places 
-    @places = Place.all
-    
-    respond_with @place
+    if params[:search].present?
+      @places = Place.near(params[:search], 50, :order => :distance)
+    else 
+      @places = Place.all
+    end
+    respond_with @places  
   end
   
   def create

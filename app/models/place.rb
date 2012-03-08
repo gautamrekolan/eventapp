@@ -8,6 +8,10 @@ class Place < ActiveRecord::Base
 	
 	has_many :place_comments
 	
+	# geocoder gem
+	geocoded_by :full_address
+	after_validation :geocode, :if => :address_changed?
+	
   def full_address
     "#{address} #{city} #{state} #{zip.to_s}"
   end

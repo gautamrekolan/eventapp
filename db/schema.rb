@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120306022303) do
+ActiveRecord::Schema.define(:version => 20120307205506) do
 
   create_table "categories", :force => true do |t|
     t.string   "name"
@@ -83,8 +83,8 @@ ActiveRecord::Schema.define(:version => 20120306022303) do
     t.string   "state"
     t.string   "city"
     t.integer  "zip"
-    t.float    "lat"
-    t.float    "lng"
+    t.float    "latitude"
+    t.float    "longitude"
   end
 
   create_table "profiles", :force => true do |t|
