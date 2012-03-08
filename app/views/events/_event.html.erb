@@ -4,6 +4,13 @@
 <!-- TODO check that start date is before end date -->
 <%= div_for(event, :class => "eventcontainer") do %>
 	<div class="eventcontents">
+		<div class="avatar">
+		<% if event.user.avatar? %>
+			<%= image_tag @user.avatar.url(:thumb) %>
+		<% else %>
+			<%= image_tag 'users/sample-icon.jpg'%>
+		<% end %>
+		</div>
 		<h3>
 		  <%= link_to event.name, event %>
 		</h3>

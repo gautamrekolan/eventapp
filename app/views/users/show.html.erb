@@ -3,9 +3,12 @@
 <% if current_user?(@user) %>
 	
 	<!-- this is the logged in user's profile -->
+	<% if @user.avatar? %>
+		<%= image_tag @user.avatar.url(:thumb) %>
+	<% else %>
+		<%= image_tag 'users/sample-icon.jpg'%>
+	<% end %>
 	
-	<%= image_tag @user.avatar.url(:thumb) %>
-
 	<% if @user.events.length > 0 %>
 		<!-- user has events -->
 		<h1 class="events_title title">your events</h1>
@@ -34,6 +37,12 @@
 <% else %>
 
 	<!-- this is not the logged in user's profile -->
+	
+	<% if @user.avatar? %>
+		<%= image_tag @user.avatar.url(:thumb) %>
+	<% else %>
+		<%= image_tag 'users/sample-icon.jpg'%>
+	<% end %>
 	
 	<%-# events created by requested user %>
 	<% if @user.events.length > 0 %>
