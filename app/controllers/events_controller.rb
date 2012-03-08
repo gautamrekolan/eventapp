@@ -5,6 +5,7 @@ class EventsController < ApplicationController
   respond_to :html, :js, :json, :xml
   # GET /events
   def index
+    #puts "---------------" + request.location.country
     @events = Event.all
     
     respond_with @events
