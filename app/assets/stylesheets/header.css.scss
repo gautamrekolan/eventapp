@@ -1,14 +1,12 @@
 /* HEADER */
 
+@import "colors";
+
 #headerbar {
 	height:62px;
 	width:100%;
-	background-color:#EFEFEF;
+	background-color:$header_color;
 	border-bottom:1px solid #000000;
-	
-	#logoutgroup {
-		float:right;
-	}
 	
 	#headercontentcontainer {
 		width:980px;
@@ -18,6 +16,23 @@
 			margin-top:10px;
 			float:left;
 		}
+		
+		.loggedin_user_menu {
+			background-color: $header_color;
+			width: 150px;
+			float: right;
+			margin-top: 5px;
+			position: absolute;
+			right: 175px;
+			
+			li {
+				border:1px solid black;
+			}
+			ul ul {
+				display:none;
+			}
+		}
+		
 
 		#logingroup {
 			float:right;

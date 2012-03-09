@@ -10,7 +10,13 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120308055536) do
+ActiveRecord::Schema.define(:version => 20120309073103) do
+
+  create_table "account_settings", :force => true do |t|
+    t.boolean  "profile_is_public"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "categories", :force => true do |t|
     t.string   "name"

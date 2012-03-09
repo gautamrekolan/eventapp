@@ -16,35 +16,17 @@
 		
 		<%-# user not logged in then show the top login bar %>
 		
-		<% if !logged_in? %>
+		<% if logged_in? %>
 		
+			<%= render 'layouts/loggedin_user_menu'%>
+		
+		<% else %>
 			<%- # don't show top login bar if the user is on login "sessions" page'%>
 			
 			<% if controller_name != "sessions" %>
-			<div id="logingroup">
-				<%= form_tag session_path do %> 
-					<div id="usernamecontainer">
-				    	<%= label_tag 'email' %><br />
-						<%= text_field_tag :email %> 
-				  	</div>
-				  	<div id="passwordcontainer"> 
-						<%= label_tag 'password'%><br />
-				    	<%= password_field_tag :password %>
-				  	</div> 
-				  	<%= submit_tag 'login', :id => "user_login_button" %> 
-				<% end %>
-			</div>
+				<%= render 'shared/login'%>
 			<% end %>
-		
-		<% else %>
-			<div class="loggedin_user">
-				<%= link_to "#{current_user.username}", current_user %>
-			</div>
-			<div id="logoutgroup">
-				<div id="logoutbutton">
-					<%= link_to "logout", logout_path %>
-				</div>
-			</div>
+
 		<% end %>
 	</div>
 </div>
@@ -53,12 +35,6 @@
 <%= content_tag :p, notice, :class => 'notice' if notice.present? %> 
 <%= content_tag :p, alert, :class => 'alert' if alert.present? %>
 
-<!--content based on logged in or not -->
-<% if logged_in? %>
-
-<% else %>
-
-<% end %>
 
 <div id="maincontainer">
 
