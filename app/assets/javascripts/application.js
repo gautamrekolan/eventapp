@@ -2,6 +2,7 @@
  *= require jquery
  *= require jquery_ujs
  *= require jquery-ui
+ *= require jquery.datePicker
  *= require_self
  *= require_tree ../../../vendor/assets/javascripts/.
  *= require_tree .
