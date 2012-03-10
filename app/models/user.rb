@@ -36,9 +36,10 @@ class User < ActiveRecord::Base
   # paperclip function to show that users have attached images
   has_attached_file :avatar, 
               :styles => { 
-                :large => { :geometry => "500x500>", :processors => [:cropper]}, 
+                :large => "500x500>", 
                 :medium => "300x300>", 
-                :thumb => "50x50>" },
+                :thumb => "50x50>" }, 
+                :processors => [:cropper],
                # tells paperclip how to crop the image  
               :storage => :s3,
               :s3_credentials => "#{Rails.root}/config/s3.yml",
