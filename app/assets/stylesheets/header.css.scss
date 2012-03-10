@@ -7,11 +7,14 @@
 	width:100%;
 	background-color:$header_color;
 	border-bottom:1px solid #000000;
-	
+	//position:fixed;
+	z-index: 250;
+	top:0;
+	left:0;
+	width: 100%;
 	#headercontentcontainer {
 		width:980px;
 		margin: 0 auto;
-		
 		#homelogo {
 			margin-top:10px;
 			float:left;

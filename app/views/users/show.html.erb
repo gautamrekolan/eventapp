@@ -9,6 +9,12 @@
 		<%= image_tag 'users/sample-icon.jpg'%>
 	<% end %>
 	
+	<!-- following -->
+	<%= render 'shared/following' %>
+	
+	<%= link_to "edit profile", edit_user_path(@user)%>
+	
+	
 	<% if @user.events.length > 0 %>
 		<!-- user has events -->
 		<h1 class="events_title title">your events</h1>
@@ -18,10 +24,6 @@
 		<h1>has not created any events</h2>
 	<% end %>
 	
-	<!-- following -->
-	<%= render 'shared/following' %>
-	
-	<%= link_to "edit profile", edit_user_path(@user)%>
 	
 	<%-# event's this user is going to'%>
 	<% if @user.going_tos.count > 0 %>	

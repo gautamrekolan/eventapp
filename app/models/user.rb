@@ -3,6 +3,8 @@ require 'digest'
 class User < ActiveRecord::Base
 
   attr_accessor :password 
+  # for submissions from users/crop.html.erb cropping avatar etc
+  attr_accessor :crop_x, :crop_y, :crop_h, :crop_w
 
   validates :email, :uniqueness => true,
     :length => { :within => 5..50 },
@@ -27,9 +29,17 @@ class User < ActiveRecord::Base
   has_many :following, :through => :relationships, :source => :followed
   
   before_save :encrypt_new_password
+  
+  # cropping images in crop.html.erb
+  after_update :reprocess_avatar, :if => :cropping?
 
   # paperclip function to show that users have attached images
-  has_attached_file :avatar, :styles => { :medium => "300x300>", :thumb => "50x50>" },
+  has_attached_file :avatar, 
+              :styles => { 
+                :large => { :geometry => "500x500>", :processors => [:cropper]}, 
+                :medium => "300x300>", 
+                :thumb => "50x50>" },
+               # tells paperclip how to crop the image  
               :storage => :s3,
               :s3_credentials => "#{Rails.root}/config/s3.yml",
               :path => ":attachment/:id/:style/:basename.:extension",
@@ -41,6 +51,8 @@ class User < ActiveRecord::Base
   #def going_tos
   #  GoingTo.find_all_by_user_id(id)
   #end
+  
+  
   
   def following?(followed)
     relationships.find_by_followed_id(followed)
@@ -62,12 +74,6 @@ class User < ActiveRecord::Base
   def authenticated?(password)
     self.hashed_password == encrypt(password)
   end
-  
-  protected
-  def encrypt_new_password
-	  return if password.blank?
-	  self.hashed_password = encrypt(password)
-	end
 	
 	def password_required?
 	  hashed_password.blank? || password.present?
@@ -80,4 +86,26 @@ class User < ActiveRecord::Base
   def after_create
     puts "will send an email to the user later"
   end
+  
+  # cropping avatar or other images in crop.html.erb
+  def cropping?
+    !crop_x.blank? && !crop_y.blank? && !crop_w.blank? && !crop_h.blank? 
+  end
+
+  def avatar_geometry(style = :original) 
+    @geometry ||= {}
+    @geometry[style] ||= Paperclip::Geometry.from_file(avatar.to_file(style))
+  end
+  
+  protected
+  def encrypt_new_password
+	  return if password.blank?
+	  self.hashed_password = encrypt(password)
+	end
+  
+  private
+  def reprocess_avatar
+    avatar.reprocess!
+  end
+  
 end

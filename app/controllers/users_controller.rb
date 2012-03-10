@@ -21,7 +21,7 @@ class UsersController < ApplicationController
   end
   
   def index 
-    @users = User.all.limit(100) 
+    @users = User.all 
     respond_with @users
   end
   
@@ -39,7 +39,11 @@ class UsersController < ApplicationController
   def create
     @user = User.new(params[:user])
     if @user.save
-      redirect_to events_path, :notice => "user successfully added"
+      if params[:user][:avatar].blank?
+        redirect_to events_path, :notice => "user successfully added"
+      else 
+        render 'crop'
+      end
     else 
 	    render :new
 	  end
@@ -51,9 +55,13 @@ class UsersController < ApplicationController
   end
   
   def update
-    @user = current_user # was: User.find(params[:id])
+    @user = User.find(params[:id])
 	  if @user.update_attributes(params[:user])
-  	  redirect_to events_path, :notic => "user updated successfully"
+	    if params[:user][:avatar].blank?
+        redirect_to events_path, :notice => "user successfully added"
+      else 
+        render 'crop'
+      end
   	else 
   	  render :action => 'edit'
   	end
