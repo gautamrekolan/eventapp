@@ -92,17 +92,41 @@ class EventsController < ApplicationController
   private
 
   def set_start_end_datetimes
-    # params[:event][:starttime] = params[:event][:starttime] + " " + full_start_time 
-    # params[:event][:endtime] = params[:event][:endtime] + " " + full_end_time 
+    # this adds the time onto the datetime object for convenience
+    # in theory, there should always be a start time
+    params[:event][:starttime] = params[:event][:starttime] + " " + full_start_time 
+    if params[:event][:endtime].blank?
+      # TODO not sure what to do here, error checking of some kind
+    else
+      params[:event][:endtime] = params[:event][:endtime] + " " + full_end_time
+    end
   end
   
   def full_start_time
-    # if
-    # params[:event][:starttime_hour] + ":" params[:event][:starttime_minute]
+    # TODO it's possible this should only be done in the client
+    if params[:starttime_ampm] == "PM"
+      # then add 12 hours to it to format to the database
+      # since we are using 12 hour time for american friends
+      @hours = (params[:starttime_hour].to_i + 12).to_s 
+    else
+      @hours = params[:starttime_hour]
+    end
+    return @hours + ":" + params[:starttime_minute] + ":00"
   end
   
   def full_end_time
-  
+    # TODO it's possible this should only be done in the client
+    if params[:endtime_ampm] == "PM"
+      # then add 12 hours to it to format to the database
+      # since we are using 12 hour time for american friends
+      @hours = (params[:endtime_hour].to_i + 12).to_s 
+    else
+      @hours = params[:endtime_hour]
+    end
+    return @hours + ":" + params[:endtime_minute] + ":00"
   end
   
+  def format_pm_hours
+    
+  end
 end

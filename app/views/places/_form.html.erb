@@ -1,0 +1,76 @@
+<%= fields_for :place do |fp| %>	
+	<div class="full_address_container">
+		<div class="place_name_container row required">
+		 	<%= fp.label :name, "location" %>
+		   <%= fp.text_field :name, :class => "required", :placeholder => "location name... ex. Pete's Coffee" %>
+		 </div>
+		<div class="address_container row">
+			<%= fp.label :address, "address" %>
+			<%= fp.text_field :address, :class => "required", :placeholder => "666 Your Mom's House"%>
+		</div>
+		<div class="city_container row">
+			<%= fp.label :city, "city" %>
+			<%= fp.text_field :city, :class => "required", :placeholder => "Portland? LA? NY? SF?"%>
+		</div>
+		<div class="state_container row">
+			<%= fp.label :state, "state"%>
+			<%= select("place","state", [ 	
+				['State', 'None'],
+				['Alabama', 'AL'], 
+				['Alaska', 'AK'],
+				['Arizona', 'AZ'],
+				['Arkansas', 'AR'], 
+				['California', 'CA'], 
+				['Colorado', 'CO'], 
+				['Connecticut', 'CT'], 
+				['Delaware', 'DE'], 
+				['District Of Columbia', 'DC'], 
+				['Florida', 'FL'],
+				['Georgia', 'GA'],
+				['Hawaii', 'HI'], 
+				['Idaho', 'ID'], 
+				['Illinois', 'IL'], 
+				['Indiana', 'IN'], 
+				['Iowa', 'IA'], 
+				['Kansas', 'KS'], 
+				['Kentucky', 'KY'], 
+				['Louisiana', 'LA'], 
+				['Maine', 'ME'], 
+				['Maryland', 'MD'], 
+				['Massachusetts', 'MA'], 
+				['Michigan', 'MI'], 
+				['Minnesota', 'MN'],
+				['Mississippi', 'MS'], 
+				['Missouri', 'MO'], 
+				['Montana', 'MT'], 
+				['Nebraska', 'NE'], 
+				['Nevada', 'NV'], 
+				['New Hampshire', 'NH'], 
+				['New Jersey', 'NJ'], 
+				['New Mexico', 'NM'], 
+				['New York', 'NY'], 
+				['North Carolina', 'NC'], 
+				['North Dakota', 'ND'], 
+				['Ohio', 'OH'], 
+				['Oklahoma', 'OK'], 
+				['Oregon', 'OR'], 
+				['Pennsylvania', 'PA'], 
+				['Rhode Island', 'RI'], 
+				['South Carolina', 'SC'], 
+				['South Dakota', 'SD'], 
+				['Tennessee', 'TN'], 
+				['Texas', 'TX'], 
+				['Utah', 'UT'], 
+				['Vermont', 'VT'], 
+				['Virginia', 'VA'], 
+				['Washington', 'WA'], 
+				['West Virginia', 'WV'], 
+				['Wisconsin', 'WI'], 
+				['Wyoming', 'WY']]) %>
+		</div>
+		<div class="zip_container row">
+			<%= fp.label :zip, "zip" %>
+			<%= fp.text_field :zip, :class => "required", :placeholder => "97219"%>
+		</div>
+	</div>
+<% end %>

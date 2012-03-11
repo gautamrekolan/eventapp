@@ -1,6 +1,6 @@
 <%# called like this render 'shared/time_select', :locals => { :prepend_id => 'starttime'} to insure that the id's are unique for post vars%>
-<div id="<%= @prepend_id %>_select_container time_select_container">
-	<select name="<%= @prepend_id %>_hour">
+<div id="<%= prepend_id %>_select_container time_select_container">
+	<select name="<%= prepend_id %>_hour">
 		<option value="1">
 			1
 		</option>
@@ -38,7 +38,7 @@
 			12
 		</option>
 	</select> : 
-	<select name="<%= @prepend_id %>_minute">
+	<select name="<%= prepend_id %>_minute">
 		<option value="0">
 			00
 		</option>
@@ -220,7 +220,7 @@
 			59
 		</option>
 	</select> 
-	<select name="<%= @prepend_id %>_ampm">
+	<select name="<%= prepend_id %>_ampm">
 		<option value="0">
 			AM
 		</option>

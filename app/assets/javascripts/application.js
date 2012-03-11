@@ -16,12 +16,6 @@ $(document).ready(function() {
 	//console.log("doc ready");
 	
 	$(".notice").show("fadeIn");
-	
-	$(".eventactionsbar .golink").bind('ajax:success', function(data, status, xhr) {
-		//alert(status);
-		j = JSON.parse(status)
-		$(this).text(j.message);
-	});
 
 	$('#new_event').bind('ajax:success', function(data, status, xhr) {
 		alert("failure");

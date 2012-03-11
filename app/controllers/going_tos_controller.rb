@@ -4,17 +4,15 @@ class GoingTosController < ApplicationController
   # in application controller sets @event
   # DRY up the respond_to do |format| statements below
   
+  respond_to :js, :json
+  
   def index 
     @going_tos = @event.going_tos
     
     # probably should sort this going_to array by time the user rsvp'd ex: @going_tos.sort! |going_to| { going_to.created_at }
     # TODO figure out how to sort these arrays
     
-    respond_to do |format|
-      format.html
-      format.xml
-    end
-    
+    respond_with @going_tos
   end
   
   def new 
@@ -41,27 +39,20 @@ class GoingTosController < ApplicationController
       end
       @data = ActiveSupport::JSON.encode( { :message => @goingtostring.to_s } )
       
-      respond_to do |format|
-        format.html
-        format.xml
-        format.js { render :nothing => true }
-        format.json { render :json => @data.to_json }
-      end
+      respond_with @data
+      # respond_to do |format|
+      #         format.html
+      #         format.xml
+      #         format.js { render :nothing => true }
+      #         format.json { render :json => @data.to_json }
+      #       end
     else
-      respond_to do |format|
-        format.html
-        format.xml
-        format.js { render :nothing => false }
-        format.json { render :json => false }
-      end
+      respond_with @data
     end
   end
   
   def show 
-    respond_to do |format|
-      format.html render @event.going_tos
-      format.xml
-    end
+    respond_with @event.going_tos
   end
 
 end
