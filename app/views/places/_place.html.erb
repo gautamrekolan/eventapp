@@ -1,21 +1,5 @@
 <div id="place_address_and_map">
-	<div class="place">
-		<div class="name">
-			<%= place.name %>
-		</div>
-		<div class="address">
-			<%= place.address %>
-		</div>
-		<div class="city">
-			<%= place.city %>
-		</div>
-		<div class="state">
-			<%= place.state %>
-		</div>
-		<div class="zip">
-			<%= place.zip %>
-		</div>
-	</div>
+	<%= render 'places/address', :locals => {:place => @place }%>
 	<!-- maybe this map shouldn't be part of a place, but for now it is -->
-	<%= render 'places/placemap', :locals => { :place => place} %>
+	<%= render 'places/placemap', :locals => { :place => @place} %>
 </div>

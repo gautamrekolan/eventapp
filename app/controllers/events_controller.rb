@@ -45,7 +45,7 @@ class EventsController < ApplicationController
   end
 
   def create
-    
+    set_start_end_datetimes
     @event = current_user.events.new(params[:event])
     @place = Place.new(params[:place])
     
@@ -87,6 +87,22 @@ class EventsController < ApplicationController
     @event = Event.find(params[:id])
 	  Notifier.email_friend(@event, params[:name], params[:email]).deliver 
 	  redirect_to @event, :notice => "message sent successfully"
+  end
+  
+  private
+
+  def set_start_end_datetimes
+    # params[:event][:starttime] = params[:event][:starttime] + " " + full_start_time 
+    # params[:event][:endtime] = params[:event][:endtime] + " " + full_end_time 
+  end
+  
+  def full_start_time
+    # if
+    # params[:event][:starttime_hour] + ":" params[:event][:starttime_minute]
+  end
+  
+  def full_end_time
+  
   end
   
 end

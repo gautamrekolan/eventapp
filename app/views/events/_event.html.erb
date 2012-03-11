@@ -16,22 +16,7 @@
 			  <%= link_to event.name, event %>
 			</div>
 			<% if event.place_id? %>
-			<!-- TODO move this into a partial for just a place -->
-			<span class="place_name">- at <%= link_to event.place.name, event.place %></span>
-			<div class="full_address">
-				<div class="address">
-					<%= event.place.address %>
-				</div>
-				<div class="city">
-					<%= event.place.city %>
-				</div>
-				<div class="state">
-					<%= event.place.state %>
-				</div>
-				<div class="zip">
-					<%= event.place.zip %>
-				</div>
-			</div>
+			<%= render 'places/address', :locals => { :place => event.place }%>
 			<% end %>
 			<div class="eventdescription">
 				<%= event.description %> 

@@ -8,10 +8,18 @@
 		<%= f.label :starttime, 'start date / time'%>
 	   <%= f.text_field :starttime, :class => "required", :readonly => "true" %>
 	 </div>
+	<div class="starttime_time_container">
+		<input id="starttime_time" type="text" value="02:30">
+	</div>
+	<div class="endtime_time_container">
+		<input id="endtime_time" type="text" value="02:30">
+	</div>
+	<%#= render 'shared/time_select', :locals => { :prepend_id => 'starttime'} %>
 	 <div class="endtime_container row">
 		<%= f.label :endtime, "end date / time" %>
 	   <%= f.text_field :endtime, :class => "required" , :readonly => "true"%>
 	 </div>
+	<%#= render 'shared/time_select', :locals => { :prepend_id => 'starttime'} %>
 	<!--
 	<div class="endtime_add">
 		<a href="#" title="add end time">end date / time?</a>
