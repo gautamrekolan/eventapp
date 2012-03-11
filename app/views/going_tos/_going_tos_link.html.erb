@@ -1,21 +1,23 @@
 <% if event.going?(current_user) %>
 	<% if event.going_tos.count == 1 %>
 		<%= link_to "you're going!", 
-			event_going_tos_path(event, :format => :json),
+			event_going_tos_path(event, :format => :js),
 			:disabled => true, 
 			:class => "goinglink",
 			:remote => true %>
 	<% elsif event.going_tos.count == 2 %>
 		<%= link_to "you & 1 person are going",
-			event_going_tos_path(event, :format => :json),
+			event_going_tos_path(event, :format => :js),
 			:class => "goinglink",
 			:remote => true %>
 	<% else %>
 		<%= link_to "you & " + (event.going_tos.count - 1).to_s + " others are going",
-			event_going_tos_path(event, :format => :json),
+			event_going_tos_path(event, :format => :js),
 			:class => "goinglink",
 			:remote => true %>
 	<% end %>
+	<div class="going_tos">
+	</div>
 <% else %>
 	<%= link_to "go!", 
 		new_event_going_to_path(event, :format => :json), 

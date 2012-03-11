@@ -4,14 +4,14 @@ class GoingTosController < ApplicationController
   # in application controller sets @event
   # DRY up the respond_to do |format| statements below
   
-  respond_to :js, :json
+  respond_to :html, :js, :json
   
   def index 
     @going_tos = @event.going_tos
     
     # probably should sort this going_to array by time the user rsvp'd ex: @going_tos.sort! |going_to| { going_to.created_at }
     # TODO figure out how to sort these arrays
-    
+    # puts @going_tos.to_json
     respond_with @going_tos
   end
   
@@ -52,7 +52,7 @@ class GoingTosController < ApplicationController
   end
   
   def show 
-    respond_with @event.going_tos
+    respond_with @event.going_tos.to_json
   end
 
 end
