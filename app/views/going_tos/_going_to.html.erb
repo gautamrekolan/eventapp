@@ -1,8 +1,2 @@
-<%-# TODO why is this not in /going_tos/show.html.erb? %>
-<div class="attendee">
-	<div class="pic">	
-	</div>
-	<div class="username">
-		<%= link_to going_to.find_user.username, going_to.find_user %>
-	</div>
-</div>
+<%-# TODO why is this not in /going_tos/show.html.erb? i think because show should only show 1 by id ex: /event/:id/going_tos/:id %>
+<%= render :partial => 'users/user', :locals => { :user => going_to.find_user }%>

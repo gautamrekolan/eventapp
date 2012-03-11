@@ -1,6 +1,8 @@
 <div class="user">
-	<div class="pic"></div>
+	<div class="pic">
+		<%= image_tag user.avatar.path(:thumb)%>
+	</div>
 	<div class="username">
-		<%= link_to @user.username, user_path(@user) %>
+		<%= link_to user.username, user %>
 	</div>
 </div>
