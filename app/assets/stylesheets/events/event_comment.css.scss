@@ -1,0 +1,30 @@
+@import 'colors';
+
+.events {
+	
+	.comments_container {
+		float:left;
+		z-index: 1;
+		.comment {
+			//because of drop shadow
+			margin-left: 3px;
+			width:475px;
+			padding:7px;
+			font-size:12px;
+			background-color: $event_background_color;
+			margin-top:1px;
+			margin-bottom:1px;
+			
+			.comment_actions {
+				float:right;
+			}
+		}
+	}
+	.comment_form_container {
+		float:left;
+		margin-left: 3px;
+		width:475px;
+		background-color: $event_background_color;
+		padding:7px;
+	}
+}
