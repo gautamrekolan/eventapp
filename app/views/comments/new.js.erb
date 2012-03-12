@@ -1,5 +1,11 @@
 //first things first, disable the comment link so they can't
-$("#event_<%=@event.id%> .commentlink").hide('fast');
+//$("#event_<%=@event.id%> .comment_link").hide('fast');
+$("#event_<%=@event.id%> .comment_link").click(function(e) {
+	alert("click")
+	$(this).removeAttr("href")
+    e.preventDefault();
+    //do other stuff when a click happens
+});
 
 //TODO comment this
 $("<%= escape_javascript render(:file => 'comments/new.html.erb') %>").insertAfter('#event_<%=params[:event_id]%>'); 
@@ -36,7 +42,7 @@ $(".comment_body").keypress(function(e) {
 		form.ajaxSuccess(function (e, x) {
 			//alert(x.message);
 			//TODO since it succeeded then let's clear the text area in case they want to comment again
-			$(this).val("");
+			$(this).find("textarea").val("");
 		});
 		
 		

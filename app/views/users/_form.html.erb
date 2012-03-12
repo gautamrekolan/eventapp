@@ -1,8 +1,12 @@
 <%= form_for(@user) do |f| %> 
 	<div class="signup_container">
 		<div class="row">
-			<%= f.label :username, 'username' %>
-			<%= f.text_field :username %>
+			<%= f.label :firstname, 'first name' %>
+			<%= f.text_field :firstname %>
+		</div>
+		<div class="row">
+			<%= f.label :lastname, 'last name' %>
+			<%= f.text_field :lastname %>
 		</div>
 		<div class="row">
 			<%= f.label :email, 'email'%>
@@ -15,6 +19,10 @@
 		</div>
 		<div class="row">
 			<%= f.file_field :avatar %>
+		</div>
+		<div class="row">
+			<%= f.label :zip, 'zip' %>
+			<%= f.text_field :zip %>
 		</div>
 		<div class="row">
 			<%= f.submit 'sign up!' %> 

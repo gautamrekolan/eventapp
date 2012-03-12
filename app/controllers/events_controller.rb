@@ -10,9 +10,11 @@ class EventsController < ApplicationController
     # get the user's address (city / state) from request
     # to create a map, also probably store that in the user's location
     if Rails.env.production?
-      @address = request.location.city + ", " + request.location.state
+      # @address = request.location.city + ", " + request.location.state
+      # has changed to zip and will probably change again
+      @address = current_user.zip
     else 
-      @address = "Ventura, CA" # the homeland
+      @address = current_user.zip #"Ventura, CA" # the homeland
     end
     
     @events = Event.find(:all, :order => 'created_at DESC')

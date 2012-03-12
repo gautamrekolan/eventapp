@@ -15,8 +15,9 @@ class User < ActiveRecord::Base
 	  :presence => true,
 	  :if => :password_required?
 	  
-	validates :username, :uniqueness => true
-
+	validates :firstname, :presence => true
+  validates :lastname, :presence => true
+  
   #has_one :profile, :dependent => :destroy
   has_many :events, :dependent => :destroy, :order => 'starttime ASC'
   #has_many :replies, :through => :events, :source => :comments
@@ -53,7 +54,10 @@ class User < ActiveRecord::Base
   #  GoingTo.find_all_by_user_id(id)
   #end
   
-  
+  def username 
+    # used to be a field in db username, but now we want firstname and last name
+    "#{firstname} #{lastname}"
+  end
   
   def following?(followed)
     relationships.find_by_followed_id(followed)
