@@ -10,14 +10,14 @@ class UsersController < ApplicationController
     @title = "following"
     @user = User.find(params[:id])
     @users = @user.following #.paginate(:page => params[:page]) - some shit from Ruby on Rails 3 Tutorial
-    render 'show_follow'
+    render 'show_follow.js.erb'
   end
   
   def followers
     @title = "followers"
     @user = User.find(params[:id])
     @users = @user.followers #.paginate(:page => params[:page])
-    render 'show_follow'
+    render 'show_follow.js.erb'
   end
   
   def index 
