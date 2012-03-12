@@ -1,81 +1,56 @@
 <!-- users/show -->
+
 <%# TODO make this more DRY %>
-<% if current_user?(@user) %>
-	
+
+<div id="user_profile">	
 	<!-- this is the logged in user's profile -->
-	<% if @user.avatar? %>
-		<%= image_tag @user.avatar.url(:thumb) %>
-	<% else %>
-		<%= image_tag 'users/sample-icon.jpg'%>
-	<% end %>
-	
-	<!-- following -->
-	<%= render 'shared/following' %>
-	
-	<%= link_to "edit profile", edit_user_path(@user)%>
-	
-	
+	<div id="user_info">
+		<% if @user.avatar? %>
+			<%= image_tag @user.avatar.url(:medium) %>
+		<% else %>
+			<%= image_tag '/assets/users/sample-icon.jpg'%>
+		<% end %>
+
+		<!-- following -->
+		<%= render 'shared/following' %>
+
+		<% if current_user?(@user) %>
+			<%= link_to "edit profile", edit_user_path(@user)%>
+		<% else %>
+			<%= render 'follow_form' %>
+		<% end %>
+	</div>
+
 	<% if @user.events.length > 0 %>
 		<!-- user has events -->
-		<h1 class="events_title title">your events</h1>
-		<%= render @user.events %>
+		<div class="events">
+			<div class="events_title title">
+				<% if current_user?(@user) %>
+				your events
+				<% else %>
+				<%= @user.username %>'s events
+				<% end %>
+			</div>
+			<%= render @user.events %>
+		</div>
 	<% else %>
 		<!-- user doesn't have any events -->
 		<h1>has not created any events</h2>
 	<% end %>
-	
-	
-	<%-# event's this user is going to'%>
-	<% if @user.going_tos.count > 0 %>	
-		<div class="going_tos_container">
-			<div class="going_tos_title title">
-				event's <%= @user.username %> is going to
-			</div>
-			<% @user.going_tos.each do |going_to| %>
-				<%- # looks like not having error checking%>
-				<%= render Event.find(going_to.event_id)%>
-			<% end %>
-		</div>
-	<% end %>
-	
-<% else %>
 
-	<!-- this is not the logged in user's profile -->
-	
-	<% if @user.avatar? %>
-		<%= image_tag @user.avatar.url(:thumb) %>
-	<% else %>
-		<%= image_tag 'users/sample-icon.jpg'%>
-	<% end %>
-	
-	<% if @user.events.length > 0 %>
-		<!-- user has events -->
-		<div class="eventstitle title"><%= @user.username %>'s events</div>
-		<%= render @user.events %>
-	<% else %>
-		<!-- user doesn't have any events -->
-		<div>has not created any events</div>
-		<div>create and event! suggest and event!</div>
-		<%-# TODO find a clever way to request fantasy events or "dream events", "future events" %>
-	<% end %>
-	
+
 	<%-# event's this user is going to'%>
 	<% if @user.going_tos.count > 0 %>	
 		<div class="going_tos_container">
 			<div class="going_tos_title title">
 				event's <%= @user.username %> is going to
 			</div>
+			<%-# there a better way to do this? %>
 			<% @user.going_tos.each do |going_to| %>
 				<%- # looks like not having error checking%>
 				<%= render Event.find(going_to.event_id)%>
 			<% end %>
 		</div>
 	<% end %>
-		
-	<!-- following -->
-	<%= render 'shared/following'%>
-	
-	<%= render 'follow_form' %>
-	
-	<div class="related_events">RELATED EVENTS???</div>
-<% end %>
+
+</div>

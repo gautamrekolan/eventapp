@@ -12,10 +12,10 @@ class EventsController < ApplicationController
     if Rails.env.production?
       @address = request.location.city + ", " + request.location.state
     else 
-      @address = "Ventura, CA"
+      @address = "Ventura, CA" # the homeland
     end
     
-    @events = Event.all
+    @events = Event.find(:all, :order => 'created_at DESC')
     
     respond_with @events
   end

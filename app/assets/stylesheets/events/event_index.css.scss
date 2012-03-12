@@ -8,14 +8,11 @@
 	width:500px;
 }
 
-.full_address {
-	display:none;
-}
 
-.eventcontainer {
+
+.event {
 	
 	.avatar {
-		float:left;
 		width:50px;
 		height:50px;
 	}
@@ -25,11 +22,8 @@
 		float: left;
 		width: 428px;
 		
-		.event_title {
-			float: left;
-		}
-		.place_name {
-			float: left;
+		.place_address {
+			display:none;
 		}
 	}
 	

@@ -2,7 +2,7 @@
 <p id="notice"><%= notice %></p>
 -->
 <!-- TODO check that start date is before end date -->
-<%= div_for(event, :class => "eventcontainer") do %>
+<%= div_for(event) do %>
 	<div class="eventcontents">
 		<div class="avatar">
 		<% if event.user.avatar? %>
@@ -12,16 +12,17 @@
 		<% end %>
 		</div>
 		<div class="event_body">
-			<div class="event_title">
-			  <%= link_to event.name, event %>
-			</div>
+			<%= link_to event.name, event, :class => "event_title" %>
+			
 			<% if event.place_id? %>
-			<%= render :partial => 'places/address', :locals => { :place => event.place }%>
+				<%= link_to "@ #{event.place.name}", event.place, :class => "place_name" %>
+				<%= render :partial => 'places/address', :locals => { :place => event.place }%>
 			<% end %>
-			<div class="eventdescription">
+			
+			<div class="event_description">
 				<%= event.description %> 
 			</div>
-			<div class="postedby">
+			<div class="posted_by">
 				<!-- TODO the href below should be updated to something dealt with in the controller -->
 				- by <a class="username" href="/users/<%= event.user.id %>"><%= event.user.username %></a> <%= time_ago_in_words(event.created_at) %> ago
 			</div>

@@ -1,0 +1,20 @@
+#user_profile {
+	
+	margin-top:10px;
+	
+	#user_info {
+		width: 600px;
+		float: left;
+		img {
+			float:left;
+		}
+		.following_and_followers {
+			float: left;
+		}
+	}
+}
+
+.events {
+	width: 500px;
+	float: left;
+}

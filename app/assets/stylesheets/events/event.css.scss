@@ -1,31 +1,67 @@
-.eventcontainer {
+@import 'colors';
+
+.event {
 	float:left;
 	margin-top:10px;
 	/* border:1px solid black; */
 	margin-right:10px;
+	-moz-box-shadow: 0 0 5px #888;
+	-webkit-box-shadow: 0 0 5px#888;
+	box-shadow: 0 0 5px #888;
 	
 	.eventcontents {
-		background-color:#EFEFEF;
+		background-color:$event_background_color;
 		width:486px;
 		padding:7px;
 		float:left;
-		-moz-border-top-left-radius: 5px;
-		border-top-left-radius: 5px;
-		-moz-border-top-right-radius: 5px;
-		border-top-right-radius: 5px;
-	}
-	
-	.place_name {
-		font-style: italic;
-		font-size: 11px;
-		float:left;
-	}
-	
-	.eventdescription {
-		font-size:12px;
-		padding-bottom:2px;
-		width:490px;
-		float:left;
+		//-moz-border-top-left-radius: 5px;
+		//border-top-left-radius: 5px;
+		//-moz-border-top-right-radius: 5px;
+		//border-top-right-radius: 5px;
+		
+		.avatar {
+			float: left;
+		}
+		
+		.event_body {
+			
+			.event_title {
+				float: left;
+				font-size: 14px;
+				font-weight: bold;
+				color: $event_title_text_color;
+				
+				&:hover {
+					color: $event_title_text_hover_color;
+				}
+			}
+			
+			.place_name {
+				color: $event_place_name_text_color;
+				float: left;
+				font-style: italic;
+				font-size: 11px;
+				float:left;
+				margin-left: 5px;
+				margin-top:1px;
+			}
+
+			.event_description {
+				font-size:12px;
+				margin-top: 3px;
+				padding-bottom:2px;
+				width:490px;
+				float:left;
+			}
+			
+			.posted_by {
+				margin-top:4px;
+				font-size:11px;
+				color:#333333;
+				width:490px;
+				float:left;
+			}
+		}
 	}
 	
 	.eventactionsbar {
@@ -64,13 +100,6 @@
 	float:left;
 }
 
-.event .postedby {
-	margin-top:4px;
-	font-size:11px;
-	color:#333333;
-	width:490px;
-	float:left;
-}
 
 /*
 .eventactionsbar .likelink {

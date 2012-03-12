@@ -1,4 +1,4 @@
-<div id="follow">
+<div class="following_and_followers">
 	<%= link_to "following #{@user.following.count}", following_user_path(@user, :format => :js),
 			:remote => true,
 			:class => "following_link" %>
@@ -6,16 +6,4 @@
 			:remote => true,
 			:class => "followers_link"
 			%>
-	<!--
-	<a href="<%= following_user_path(@user) %>" class="following_link">
-		<span class="following">
-			followers <%= @user.following.count %>
-		</span>
-	</a>
-	<a href="<%= followers_user_path(@user) %>" class="followers_link">
-		<span class="followers">
-			following <%= @user.followers.count %>
-		</span>
-	</a>
-	-->
 </div>
