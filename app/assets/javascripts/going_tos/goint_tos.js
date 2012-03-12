@@ -8,7 +8,7 @@ $(document).ready(function() {
 	});	
 	
 	$(".goinglink").bind('ajax:success', function(evt, data, status, xhr) {
-		alert(xhr.responseText);
+		//alert(xhr.responseText);
 		//j = JSON.parse(status)
 		//alert(j.message);
 	});
