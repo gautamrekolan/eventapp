@@ -1,3 +1,5 @@
+//TODO move to lib/assets/javascripts
+
 var gl;
  
 function displayPosition(position) {

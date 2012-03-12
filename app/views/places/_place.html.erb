@@ -1,5 +1,5 @@
 <div id="place_address_and_map">
-	<%= render 'places/address', :locals => {:place => @place }%>
+	<%= render :partial => 'places/address', :locals => { :place => place }%>
 	<!-- maybe this map shouldn't be part of a place, but for now it is -->
-	<%= render 'places/placemap', :locals => { :place => @place} %>
+	<%= render :partial => 'places/placemap', :locals => { :place => place} %>
 </div>
