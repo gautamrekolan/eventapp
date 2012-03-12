@@ -3,15 +3,18 @@
 .event {
 	float:left;
 	margin-top:10px;
+	// to show the shadow hack
+	margin-left: 3px;
 	/* border:1px solid black; */
 	margin-right:10px;
+	
 	-moz-box-shadow: 0 0 5px #888;
 	-webkit-box-shadow: 0 0 5px#888;
 	box-shadow: 0 0 5px #888;
 	
-	.eventcontents {
+	.event_contents {
 		background-color:$event_background_color;
-		width:486px;
+		//width:476px;
 		padding:7px;
 		float:left;
 		//-moz-border-top-left-radius: 5px;
@@ -50,7 +53,6 @@
 				font-size:12px;
 				margin-top: 3px;
 				padding-bottom:2px;
-				width:490px;
 				float:left;
 			}
 			
@@ -64,18 +66,17 @@
 		}
 	}
 	
-	.eventactionsbar {
+	.event_actions_bar {
 		padding-left:5px;
 		padding-right:5px;
 		padding-bottom:3px;
 		background-color:#FFFFFF;
-		width:490px;
 		float:left;
 		
-		.publicactions {
+		.public_actions {
 			float:left;
 			
-			.pipeseparator {
+			.pipe_separator {
 				color:#CCCCCC;
 			}
 		}
@@ -84,7 +85,7 @@
 			font-size:12px;
 		}
 		
-		.currentuseractions {
+		.current_user_actions {
 			font-size:12px;
 			float:right;
 		}
@@ -92,29 +93,3 @@
 	}
 	
 }
-
-.eventcontents h3 {
-	font-size:14px;
-	line-height:15px;
-	padding-bottom:2px;
-	float:left;
-}
-
-
-/*
-.eventactionsbar .likelink {
-	font-size:12px;
-}
-
-.eventactionsbar .commentlink {
-	font-size:12px;
-}
-
-.eventactionsbar .golink {
-	font-size:12px;
-}
-
-.eventactionsbar .goinglink {
-	font-size:12px;
-}
-*/

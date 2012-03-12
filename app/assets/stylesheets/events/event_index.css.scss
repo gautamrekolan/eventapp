@@ -5,28 +5,41 @@
 .column {
 	
 	float:left;
-	width:500px;
+	width:492px;
+	margin-right: 10px;
 }
-
-
 
 .event {
 	
-	.avatar {
-		width:50px;
-		height:50px;
-	}
-	
-	.event_body {
-		margin-left:7px;
-		float: left;
-		width: 428px;
-		
-		.place_address {
-			display:none;
+	.event_contents {
+		width: 475px;
+		.avatar {
+			width:50px;
+			height:50px;
+		}
+
+		.event_body {
+			margin-left:7px;
+			float: left;
+			width: 400px;
+
+			.place_address {
+				display:none;
+			}
+
+			.event_description {
+				width: 405px;
+			}
+
+			.posted_by {
+				width: 405px;
+			}
 		}
 	}
 	
+	.event_actions_bar {
+		width: 477px;
+	}
 }
 
 .col2 {

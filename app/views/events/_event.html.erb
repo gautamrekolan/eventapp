@@ -3,7 +3,7 @@
 -->
 <!-- TODO check that start date is before end date -->
 <%= div_for(event) do %>
-	<div class="eventcontents">
+	<div class="event_contents">
 		<div class="avatar">
 		<% if event.user.avatar? %>
 			<%= image_tag event.user.avatar.url(:thumb) %>
@@ -31,31 +31,31 @@
 	
 	<!-- go, like, comment, custom button TODO -->
 	
-	<div class="eventactionsbar">
+	<div class="event_actions_bar">
 		<% if logged_in? %>
-		<div class="publicactions">
+		<div class="public_actions">
 			<!-- GOING? WHO CARES IF YOU LIKE IT... -->
 			<%- #TODO move this to a partial or method to dry it up %>
 			<%= render :partial => 'going_tos/going_tos_link', :locals => { :event => event } %>
 			<!-- COMMENT -->
-			<span class="pipeseparator">&nbsp;&middot;&nbsp;</span>
+			<span class="pipe_separator">&nbsp;&middot;&nbsp;</span>
 			<%= link_to pluralize(event.comments.count, 'comment'), 
 				new_event_comment_path(event, :format => :js), 
 				:remote => true, 
-				:class => 'commentlink' %>	
+				:class => 'comment_link' %>	
 		</div>
 		<% else %>
-		<div class="publicactions">
+		<div class="public_actions">
 			<!--
-			<%= link_to "like", "/login", :class => "likelink", :notice => "login to like events" %>&nbsp;&middot;&nbsp;
+			<%= link_to "like", "/login", :class => "like_link", :notice => "login to like events" %>&nbsp;&middot;&nbsp;
 			-->
-			<%= link_to "go! (" + event.going_tos.count.to_s + ")", "/login", :class => "golink" %>&nbsp;&middot;&nbsp;
-			<%= link_to pluralize(event.comments.count, 'comment'), "/login", :class => "commentlink" %> 
+			<%= link_to "go! (" + event.going_tos.count.to_s + ")", "/login", :class => "go_link" %>&nbsp;&middot;&nbsp;
+			<%= link_to pluralize(event.comments.count, 'comment'), "/login", :class => "comment_link" %> 
 		</div>
 		<% end %>
 		
 		<% if event.owned_by? current_user %>
-		<div class='currentuseractions'>
+		<div class='current_user_actions'>
 	      <%= link_to "edit", edit_event_path(event) %>
 	      <%= link_to "delete", event, :confirm => "Are you sure?", :method => :delete %>
 	    </div> 
