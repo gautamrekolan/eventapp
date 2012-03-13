@@ -19,6 +19,7 @@ class Event < ActiveRecord::Base
 	# uses thinking sphinx and a running Sphinx daemon
 	define_index do
 	  indexes :name
+	  indexes :description
 	end
 	
 	def owned_by?(owner)

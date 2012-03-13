@@ -17,6 +17,7 @@ class User < ActiveRecord::Base
 	  
 	validates :firstname, :presence => true
   validates :lastname, :presence => true
+  validates :zip, :presence => true
   
   #has_one :profile, :dependent => :destroy
   has_many :events, :dependent => :destroy, :order => 'starttime ASC'
