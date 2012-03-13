@@ -4,3 +4,4 @@ log/*.log
 tmp/
 rdoc/*
 .sass-cache/
+public/assets/*
