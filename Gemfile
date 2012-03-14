@@ -27,6 +27,11 @@ gem 'aws-sdk' # didn't use 'aws-s3' because i read that this is more extensive f
 gem 'rake', '>= 0.9.2.2'
 gem 'rdoc', '~>3.12' 
 
+# development specific gems
+group :development do
+	gem 'ffaker', '~> 1.13.0'
+end
+
 # asset pipeline
 group :assets do
   gem 'sass-rails', "~> 3.1.0"

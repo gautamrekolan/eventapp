@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120312230107) do
+ActiveRecord::Schema.define(:version => 20120314051711) do
 
   create_table "account_settings", :force => true do |t|
     t.boolean  "profile_is_public"
@@ -88,7 +88,7 @@ ActiveRecord::Schema.define(:version => 20120312230107) do
     t.string   "address"
     t.string   "state"
     t.string   "city"
-    t.integer  "zip"
+    t.string   "zip"
     t.float    "latitude"
     t.float    "longitude"
   end
