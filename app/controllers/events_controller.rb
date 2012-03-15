@@ -9,19 +9,23 @@ class EventsController < ApplicationController
     
     # get the user's address (city / state) from request
     # to create a map, also probably store that in the user's location
-    if logged_in?
-      # has changed to zip and will probably change again
-      @address = current_user.zip #"Ventura, CA" # the homeland
-    else 
-      # then we need to use a different technology for finding location
-      # since the zip isn't available
-      # @address = "not logged in"
-      if Rails.env.production?
-        @address = request.location.city + ", " + request.location.state
-      else # we are in test or dev so we should fake city, state 
+    if params[:city].blank?
+      if logged_in?
+        # has changed to zip and will probably change again
+        @address = current_user.zip #"Ventura, CA" # the homeland
+      else 
+        # then we need to use a different technology for finding location
+        # since the zip isn't available
         # @address = "not logged in"
-        @address = "93001" # request.location.city + ", " + request.location.state
+        if Rails.env.production?
+          @address = request.location.city + ", " + request.location.state
+        else # we are in test or dev so we should fake city, state 
+          # @address = "not logged in"
+          @address = "93001" # request.location.city + ", " + request.location.state
+        end
       end
+    else 
+      @address = params[:city]
     end
     
     @events = Event.find(:all, :limit => 50, :order => 'created_at DESC')

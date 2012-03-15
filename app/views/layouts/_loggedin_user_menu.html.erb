@@ -1,7 +1,11 @@
 <div class="loggedin_user_menu">
 	<ul>
 		<li>
-			<%= image_tag current_user.avatar.url(:thumb) %>
+			<% if current_user.avatar? %>
+				<%= image_tag current_user.avatar.url(:thumb) %>
+			<% else %>
+				<%= image_tag '/assets/users/icon.png' %>
+			<% end %>
 			<%= link_to "#{current_user.username}", current_user %>
 		</li>
 		<ul class="actions">

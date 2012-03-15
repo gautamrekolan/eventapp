@@ -46,6 +46,23 @@
 	.user_location_map {
 		width:500px;
 		height:500px;
+		.user_location_actions {
+			height: 41px;
+			width: 500px;
+			.search_city {
+				display: none;
+				padding-top: 0px;
+			}
+
+			.title {
+				float: left;
+				width: 480px;
+				.incorrect_city {
+					margin-left: 20px;
+					font-size: 12px;
+				}
+			}
+		}
 		
 		#map_canvas_container {
 			height:480px;

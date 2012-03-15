@@ -1,6 +1,10 @@
 <div class="user">
 	<div class="pic">
-		<%= image_tag user.avatar.path(:thumb)%>
+		<% if user.avatar? %>
+			<%= image_tag user.avatar.path(:thumb)%>
+		<% else %>
+			<%= image_tag '/assets/users/icon.png' %>
+		<% end %>
 	</div>
 	<div class="username">
 		<%= link_to user.username, user %>

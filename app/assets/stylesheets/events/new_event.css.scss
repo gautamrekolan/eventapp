@@ -1,22 +1,69 @@
-#new_event {
-	width:400px;
-	float:left;
-}
+@import 'layout';
+#new_event_container {
 
-#new_event label {
-	width:140px;
-	padding-right:4px;
-}
+	padding: 15px;
+	-moz-box-shadow: $box_shadow;
+	-webkit-box-shadow: $box_shadow;
+	box-shadow: $box_shadow;
+	float: left;
+	margin-bottom: 20px;
+	margin-left: 5px;
+		
+	#new_event {
+		width:400px;
+		float: left;
+		
+		.date {
+			label {
+				width: 80px;
+			}
+			input {
+				width: 70px;
+			}
+			
+			.time {
+				label {
+					float: left;
+					width: 50px;
+					margin-left: 15px;
+					margin-right: 5px;
+				}
+				.time_select_container {
+					float: left;
+					select {
+						float: left;
+						width: 45px;
+					}
+					.colon_separator {
+						float: left;
+					}
+				}
+			}
+		}
+		
+		label {
+			width:140px;
+			padding-right:4px;
+		}
 
-#new_event input {
-	width:250px;
-}
+		input {
+			width:250px;
+		}
 
-#new_event .row {
-	margin-bottom:4px;
-}
+		.row {
+			margin-bottom:4px;
+			.time {
+				float: left;
+			}
+		}
 
-.submit_container {
-	float:right;
-	font-size:11px;
+		.submit_container {
+			float:right;
+			font-size:11px;
+			input {
+				width:100px;	
+			}
+		}
+	}
+		
 }

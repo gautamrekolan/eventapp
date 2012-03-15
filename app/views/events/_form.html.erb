@@ -1,60 +1,70 @@
-<%= form_for(@event) do |f| %>
+<div id="new_event_container">
+	<%= form_for(@event) do |f| %>
 
-	<div class="name_container row">
-		<%= f.label :name, "name" %>
-		<%= f.text_field :name, :class => "required event_name", :placeholder => "event name" %>
-	</div>
-	<div class="starttime_container row">
-		<%= f.label :starttime, 'start date / time'%>
-		<%= f.text_field :starttime, :class => "required", :readonly => "true" %>
-	</div>
-	<%= render :partial => 'shared/time_select', :locals => { :prepend_id => "starttime" }  %>
-	<div class="endtime_container row">
-		<%= f.label :endtime, "end date / time" %>
-	    <%= f.text_field :endtime, :class => "required" , :readonly => "true" %>
-	</div>
-	<%= render :partial => 'shared/time_select', :locals => { :prepend_id => "endtime" } %>
-	<!--
-	<div class="endtime_add">
-		<a href="#" title="add end time">end date / time?</a>
-	</div>
-	-->
-	<%-# TODO need ajaxy search api for locations / addresses. google? %>
-	<%- #TODO find a way to show events with no address %>
+		<div class="name_container row">
+			<%= f.label :name, "name" %>
+			<%= f.text_field :name, :class => "required event_name", :placeholder => "event name" %>
+		</div>
+		<div class="description_container row">
+			<%= f.label :description, "description"%>
+	  		<%= f.text_field :description, :class => "required", :placeholder => "event description..." %>
+		</div>
+		<div class="starttime_container date row">
+			<%= f.label :starttime, 'start date'%>
+			<%= f.text_field :starttime, :class => "required", :readonly => "true" %>
+			<div class="time">
+				<%= label_tag 'time'%>
+				<%= render :partial => 'shared/time_select', :locals => { :prepend_id => "starttime" }  %>
+			</div>
+		</div>
+		
+		<div class="endtime_container date row hidden">
+			<%= f.label :endtime, "end date" %>
+		    <%= f.text_field :endtime, :class => "required" , :readonly => "true" %>
+			<div class="time">
+				<%= label_tag 'time'%>
+				<%= render :partial => 'shared/time_select', :locals => { :prepend_id => "endtime" } %>
+			</div>
+		</div>
+		<div class="endtime_add">
+			<a href="#" title="add end time">end date / time? (not required)</a>
+		</div>
+		<%-# TODO need ajaxy search api for locations / addresses. google? %>
+		<%- #TODO find a way to show events with no address %>
 	
-	<%= render 'places/form' %>
+		<%= render 'places/form' %>
 	
-	<div class="description_container row">
-		<%= f.label :description, "description"%>
-  		<%= f.text_field :description, :class => "required", :placeholder => "event description..." %>
-	</div>
-	<%- # TODO change categories to "tags" and get rid of weird shit below %>
-	<!--
-  <div class="categories"> 
-    <%= f.label "Categories" %><br /> 
-	  <% for category in Category.all %>
-        <%= check_box_tag 'event[category_ids][]', category.id, @event.category_ids.include?(category.id), :id => dom_id(category) %>
-        <%= label_tag dom_id(category), category.name, :class => "check_box_label" %> 
-	  <% end %>
-  </div>
-	-->
-  <div class="submit_container row">
-	<%= f.submit 'Post Event'%><br />or
-	<%= link_to 'cancel', events_path %>
-	<%- # TODO probably change or customize this helper method %>
-	<%- # this method is found in app/helper/appication it is a helper method%>
-    	<%- # submit_or_cancel(f) %>
-  </div>
-<% end %>
+		<%- # TODO change categories to "tags" and get rid of weird shit below %>
+		<!--
+	  <div class="categories"> 
+	    <%= f.label "Categories" %><br /> 
+		  <% for category in Category.all %>
+	        <%= check_box_tag 'event[category_ids][]', category.id, @event.category_ids.include?(category.id), :id => dom_id(category) %>
+	        <%= label_tag dom_id(category), category.name, :class => "check_box_label" %> 
+		  <% end %>
+	  </div>
+		-->
+	  <div class="submit_container row">
+		<%= f.submit 'Post Event'%>
+		<!--
+		<br />or
+		<%= link_to 'cancel', events_path %>
+		-->
+		<%- # TODO probably change or customize this helper method %>
+		<%- # this method is found in app/helper/appication it is a helper method%>
+	    	<%- # submit_or_cancel(f) %>
+	  </div>
+	<% end %>
 
-<% if @event.errors.any? %>
-	<!-- TODO add place errors here -->
-   <div id="error_explanation">
-     <h2><%= pluralize(@event.errors.count, "error") %> prohibited this event from being saved:</h2>
-     <ul>
-     <% @event.errors.full_messages.each do |msg| %>
-       <li><%= msg %></li>
-     <% end %>
-     </ul>
-   </div>
- <% end %>
+	<% if @event.errors.any? %>
+		<!-- TODO add place errors here -->
+	   <div id="error_explanation">
+	     <h2><%= pluralize(@event.errors.count, "error") %> prohibited this event from being saved:</h2>
+	     <ul>
+	     <% @event.errors.full_messages.each do |msg| %>
+	       <li><%= msg %></li>
+	     <% end %>
+	     </ul>
+	   </div>
+	 <% end %>
+</div>
