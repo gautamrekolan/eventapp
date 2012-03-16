@@ -38,7 +38,7 @@ module Eventapp
 
 
     # this is a hack to try to fix heroku sass syntaxerror problem
-    config.assets.initialize_on_precompile = false
+    # config.assets.initialize_on_precompile = false
     
     # Activate observers that should always be running.
     # config.active_record.observers = :cacher, :garbage_collector, :forum_observer
