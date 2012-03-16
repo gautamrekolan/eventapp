@@ -5,6 +5,7 @@ Eventapp::Application.routes.draw do
   resources :events do
     member do
 	    post :notify_friend
+	    get :tickets
 	  end
     resources :comments
     resources :event_likes

@@ -3,6 +3,11 @@ class EventsController < ApplicationController
   before_filter :authenticate, :except => [:index, :show, :notify_friend]
   
   respond_to :html, :js, :json, :xml
+  
+  def tickets 
+    @event = Event.find(params[:id])
+  end 
+  
   # GET /events
   def index
     #puts "---------------" + request.location.country
