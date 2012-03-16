@@ -36,6 +36,10 @@ module Eventapp
     # :all can be used as a placeholder for all plugins not explicitly named.
     # config.plugins = [ :exception_notification, :ssl_requirement, :all ]
 
+
+    # this is a hack to try to fix heroku sass syntaxerror problem
+    config.assets.initialize_on_precompile = false
+    
     # Activate observers that should always be running.
     # config.active_record.observers = :cacher, :garbage_collector, :forum_observer
 
