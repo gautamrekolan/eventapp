@@ -5,15 +5,18 @@
 <div id="user_profile">	
 	<!-- this is the logged in user's profile -->
 	<div id="user_info">
+		
 		<% if @user.avatar? %>
 			<%= image_tag @user.avatar.url(:medium) %>
 		<% else %>
-			<%= image_tag '/assets/users/sample-icon.jpg'%>
+			<%= image_tag '/assets/users/icon.png'%>
 		<% end %>
 
-		<!-- following -->
-		<%= render 'shared/following' %>
+		<%= link_to @user.username, @user, :class => "username"%>
 
+		<!-- stats -->
+		<%= render 'stats' %>
+		
 		<% if current_user?(@user) %>
 			<%= link_to "edit profile", edit_user_path(@user)%>
 		<% else %>

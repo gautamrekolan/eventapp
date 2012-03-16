@@ -1,9 +1,13 @@
-<div class="following_and_followers">
-	<%= link_to "following #{@user.following.count}", following_user_path(@user, :format => :js),
-			:remote => true,
-			:class => "following_link" %>
-	<%= link_to "followers #{@user.followers.count}", followers_user_path(@user, :format => :js), 
-			:remote => true,
-			:class => "followers_link"
-			%>
-</div>
+
+<%= link_to(following_user_path(@user, :format => :js), {
+	:remote => true,
+	:class => "following_link" }) do %>
+	<span class="following_count count"><%= "#{@user.following.count}" %></span><br />
+	<span class="following_text text">following</span>
+<% end %>
+
+<%= link_to(followers_user_path(@user, :format => :js), { :remote => true,
+	:class => "followers_link" }) do %>
+	<span class="followers_count count"><%= "#{@user.followers.count}" %></span><br />
+	<span class="followers_text text">followers</span>
+<% end %>

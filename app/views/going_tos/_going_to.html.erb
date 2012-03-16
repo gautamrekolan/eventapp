@@ -1,2 +1,3 @@
 <%-# TODO why is this not in /going_tos/show.html.erb? i think because show should only show 1 by id ex: /event/:id/going_tos/:id %>
+<%-# TODO these can be very long, they should be paginated, probably should do pagination for all pages that need at one time %>
 <%= render :partial => 'users/user', :locals => { :user => going_to.find_user }%>

@@ -6,6 +6,20 @@ class UsersController < ApplicationController
   
   respond_to :html, :js
   
+  def events_gone_to
+    @title = "events gone to"
+    @user = User.find(params[:id])
+    @events = Event.find_all_gone_to_by_user_id(@user.id)
+    render 'user_events.js.erb'
+  end
+  
+  def events_created 
+    @title = "events gone to"
+    @user = User.find(params[:id])
+    @events = Event.find_all_by_user_id(@user.id)
+    render 'user_events.js.erb'
+  end
+  
   def following
     @title = "following"
     @user = User.find(params[:id])
@@ -51,14 +65,16 @@ class UsersController < ApplicationController
   
   def edit 
     # TODO error check if this is the current user every time
-    @user = current_user # was: User.find(params[:id]) details in application controller
+    if current_user == User.find(params[:id])
+      @user = current_user # was: User.find(params[:id]) details in application controller
+    end
   end
   
   def update
     @user = User.find(params[:id])
 	  if @user.update_attributes(params[:user])
 	    if params[:user][:avatar].blank?
-        redirect_to events_path, :notice => "user successfully added"
+        redirect_to events_path, :notice => "your account was updated"
       else 
         render 'crop'
       end

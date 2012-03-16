@@ -1,0 +1,21 @@
+<div class="stats">
+	<!-- following -->
+	<%= render 'shared/following' %>
+
+	<!-- events created -->
+	<%= link_to(events_created_user_path(@user), { :class => "events_created",
+			:remote => true,
+			:format => :js }) do %>	
+		<span class="events_created_count count"><%= @user.going_tos.count %></span><br />
+		<span class="events_created_text text">events created</span>
+	<% end %>
+
+	<!-- events gone to -->
+	<%= link_to(events_gone_to_user_path(@user), { :class => "events_gone_to",
+			:remote => true,
+			:format => :js }) do %>	
+		<span class="events_going_to_count count"><%= @user.going_tos.count %></span><br />
+		<span class="events_going_to_text text">attended</span>
+	<% end %>
+	
+</div>

@@ -10,7 +10,7 @@
 }
 
 .event {
-	
+	margin-bottom: 15px;
 	.event_contents {
 		width: 475px;
 		.avatar {
@@ -21,7 +21,11 @@
 		.event_body {
 			margin-left:7px;
 			float: left;
-			width: 400px;
+			width: 417px;
+			
+			.place_name {
+				font-size: 11px;
+			}
 
 			.place_address {
 				display:none;

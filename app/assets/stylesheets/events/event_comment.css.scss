@@ -8,7 +8,7 @@
 		.comment {
 			//because of drop shadow
 			margin-left: 3px;
-			width:475px;
+			width:469px;
 			padding:7px;
 			font-size:12px;
 			background-color: $event_background_color;
@@ -23,7 +23,8 @@
 	.comment_form_container {
 		float:left;
 		margin-left: 3px;
-		width:475px;
+		margin-bottom: 3px;
+		width:469px;
 		background-color: $event_background_color;
 		padding:7px;
 	}

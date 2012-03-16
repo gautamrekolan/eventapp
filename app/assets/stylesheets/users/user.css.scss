@@ -1,16 +1,55 @@
+@import 'colors';
+@import 'layout';
+
 #user_profile {
 	
 	margin-top:10px;
 	
 	#user_info {
-		width: 600px;
+		width: 500px;
 		float: left;
+		@include box_shadow;
+		background-color: $event_background_color;
+		padding: 7px;
+		margin-left: 3px;
 		img {
 			float:left;
 		}
-		.following_and_followers {
-			float: left;
+		
+		.stats {
+			
 		}
+		
+		.stats {
+			float: left;
+			a {
+				float: left;
+				background-color: #FFFFFF;
+				border-right: 2px solid #000000;
+				padding: 4px;
+				.count {
+					font-size: 14px;
+					font-weight: bold;
+					color: $event_title_text_color;
+				}
+				
+				.text {
+					font-size: 12px;
+					color: lighten($event_title_text_color, 20%);
+				}
+				
+				&:hover {
+					
+				}
+			}
+			.events_gone_to {
+				border-right: none;
+			}
+		}
+	}
+	
+	.events {
+		width: 500px;
 	}
 }
 

@@ -1,4 +1,5 @@
 @import 'colors';
+@import 'layout';
 
 .event {
 	float:left;
@@ -8,19 +9,12 @@
 	margin-right:10px;
 	z-index: 2;
 	
-	-moz-box-shadow: 0 0 5px #888;
-	-webkit-box-shadow: 0 0 5px#888;
-	box-shadow: 0 0 5px #888;
+	@include box_shadow;
 	
 	.event_contents {
 		background-color:$event_background_color;
-		//width:476px;
 		padding:7px;
 		float:left;
-		//-moz-border-top-left-radius: 5px;
-		//border-top-left-radius: 5px;
-		//-moz-border-top-right-radius: 5px;
-		//border-top-right-radius: 5px;
 		
 		.avatar {
 			float: left;
@@ -33,7 +27,7 @@
 				font-size: 14px;
 				font-weight: bold;
 				color: $event_title_text_color;
-				
+				width: 100%;
 				&:hover {
 					color: $event_title_text_hover_color;
 				}
@@ -43,10 +37,10 @@
 				color: $event_place_name_text_color;
 				float: left;
 				font-style: italic;
-				font-size: 11px;
+				font-weight: bold;
 				float:left;
-				margin-left: 5px;
-				margin-top:1px;
+				margin-top:2px;
+				width: 100%;
 			}
 
 			.event_description {
@@ -54,13 +48,14 @@
 				margin-top: 3px;
 				padding-bottom:2px;
 				float:left;
+				width: 100%;
 			}
 			
 			.posted_by {
 				margin-top:4px;
 				font-size:11px;
 				color:#333333;
-				width:490px;
+				width:100%;
 				float:left;
 			}
 		}

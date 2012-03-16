@@ -1,1 +1,13 @@
+
+// box shadows
 $box_shadow: 0 0 5px #888;
+
+@mixin box_shadow () {
+	-moz-box-shadow: 0 0 5px #888;
+	-webkit-box-shadow: 0 0 5px#888;
+	box-shadow: 0 0 5px #888;
+}
+
+//header
+	//user logged in menu
+$user_logged_in_menu_dropdown_width: 150px;

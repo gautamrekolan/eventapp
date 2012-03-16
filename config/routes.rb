@@ -17,7 +17,7 @@ Eventapp::Application.routes.draw do
   
   resources :users do
     member do
-      get :following, :followers
+      get :following, :followers, :events_gone_to, :events_created
     end
   end
 

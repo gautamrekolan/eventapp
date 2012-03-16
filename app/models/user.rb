@@ -40,11 +40,12 @@ class User < ActiveRecord::Base
               :styles => { 
                 :large => "500x500>", 
                 :medium => "300x300>", 
-                :thumb => "50x50>" }, 
+                :thumb => "50x50>",
+                :smaller => "30x30>" }, 
                 :processors => [:cropper],
                # tells paperclip how to crop the image  
               :storage => :s3,
-              :s3_credentials => "#{Rails.root}/config/s3.yml",
+              :s3_credentials => "#{Rails.root}/config/s3.yml", # TODO 
               :path => ":attachment/:id/:style/:basename.:extension",
               :bucket => 'eventsbucket'
               

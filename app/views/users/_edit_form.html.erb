@@ -1,0 +1,37 @@
+<%= form_for(@user) do |f| %> 
+	<div class="signup_container">
+		<div class="row">
+			<%= f.label :firstname, 'first name' %>
+			<%= f.text_field :firstname %>
+		</div>
+		<div class="row">
+			<%= f.label :lastname, 'last name' %>
+			<%= f.text_field :lastname %>
+		</div>
+		<div class="row">
+			<%= f.label :email, 'email'%>
+			<%= f.text_field :email %>
+		</div>
+		<div class="row">
+			<%= f.file_field :avatar %>
+		</div>
+		<div class="row">
+			<%= f.label :zip, 'zip' %>
+			<%= f.text_field :zip %>
+		</div>
+		<div class="row">
+			<%= f.submit 'submit' %> 
+		</div>
+	</div>
+<% end %>
+<% if @user.errors.any? %> 
+<div id="error_explanation">
+  <h2><%= pluralize(@user.errors.count, "error") %> 
+  prohibited this user from being saved:</h2>
+  <ul> 
+  <% @user.errors.full_messages.each do |msg| %>
+    <li><%= msg %></li> 
+  <% end %> 
+  </ul>
+</div> 
+<% end %>

@@ -1,6 +1,7 @@
 /* HEADER */
 
 @import "colors";
+@import "layout";
 
 #headerbar {
 	height:62px;
@@ -21,18 +22,64 @@
 		}
 		
 		.loggedin_user_menu {
-			background-color: $header_color;
-			width: 150px;
+			//width: 150px;
 			float: right;
-			margin-top: 5px;
+			margin-top: 10px;
 			position: absolute;
-			right: 175px;
+			right: 185px;
+			display: block;
 			
-			li {
-				border:1px solid black;
+			.user_button {
+				@include box_shadow; 
+				font-size: 14px;
+				font-weight: bold;	
+				background-color: $header_color;
+				
+				a {
+					padding: 5px;
+					display: block;
+					color: $event_title_text_color;
+					height: 30px;
+					min-width: $user_logged_in_menu_dropdown_width;
+					
+					span {
+						float: left;
+						margin-top: 10px;
+					}
+					
+					img {
+						float: right;
+					}
+					
+				}
 			}
-			ul ul {
+			
+			//TODO add an arrow or something to connect to the user thingy
+		 	ul {
+				@include box_shadow; 
+				z-index: 1000;
 				display:none;
+				margin-top: 10px;
+				//padding-top: 10px;
+				width: $user_logged_in_menu_dropdown_width;
+				background-color: $header_color;
+				
+				li {
+					a {
+						display: block;
+						padding: 3px;
+						width: 100%;
+						color: $event_title_text_color;
+						&:hover { 
+							//color: lighten($event_title_text_color, 20%);
+							background-color: lighten($header_color, 20%);
+						}
+						span {
+							width: 100%;
+							//padding: 3px;
+						}
+					}
+				}
 			}
 		}
 		

@@ -1,9 +1,9 @@
 <div class="user">
 	<div class="pic">
 		<% if user.avatar? %>
-			<%= image_tag user.avatar.path(:thumb)%>
+			<%= image_tag user.avatar.path(:smaller)%>
 		<% else %>
-			<%= image_tag '/assets/users/icon.png' %>
+			<%= image_tag '/assets/users/icon-smaller.png' %>
 		<% end %>
 	</div>
 	<div class="username">

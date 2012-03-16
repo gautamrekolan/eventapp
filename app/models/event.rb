@@ -22,6 +22,10 @@ class Event < ActiveRecord::Base
 	  indexes :description
 	end
 	
+	def find_all_gone_to_by_user_id(id)
+	  Event.find(:all, :where => 'starttime < #{Time.now}', :user_id => id)
+	end
+	
 	def owned_by?(owner)
 	  return false unless owner.is_a? User 
 	  user == owner 
