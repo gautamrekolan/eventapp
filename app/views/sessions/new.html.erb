@@ -1,22 +1,8 @@
 <h1>log in</h1>
 
+<%= render 'shared/login'%>
+<!--
 <div class="login_container">
-	<!--
-	<div class="title">log in</div>
-	<%= form_for session_path do |f| %> 
-	  <div class="row">
-	    <%= f.label :email %>
-	    <%= f.text_field :email %> 
-	  </div>
-	  <div class="row"> 
-	    <%= f.label :password %>
-		<%= f.text_field :password %>
-	  </div> 
-	  <div class="row">
-	    <%= f.submit 'Login' %> 
-	  </div>
-	<% end %>
-	-->
 	<%= form_tag session_path do %> 
 		<div id="usernamecontainer">
 			<%= label_tag :email%>
@@ -29,3 +15,4 @@
 	  	<%= submit_tag 'login', :id => "user_login_button" %> 
 	<% end %>
 </div>
+-->

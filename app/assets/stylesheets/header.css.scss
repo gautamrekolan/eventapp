@@ -84,32 +84,30 @@
 		}
 		
 
-		#logingroup {
+		#login_group {
 			float:right;
 			margin-top:10px;
 			width:280px;
 			
-			#signin_container {
-				float:left;
+			form {
+
+				.field_container {
+					float:left;
+					margin-right:10px;
+					height:20px;
+					width: 100px;
+				}
+				
+				#username_container {
+					margin-right: 10px;
+				}
+
+				#password_container {
+					
+				}
+
 			}	
 		}
-		
-		form {
-			
-			#usernamecontainer {
-				float:left;
-				margin-right:10px;
-				height:20px;
-			}
-			
-			#passwordcontainer {
-				float:left;
-				margin-right:10px;
-				height:20px;
-			}
-			
-		}
-		
 	}
 }
 
