@@ -1,8 +1,8 @@
-require 'ffaker'
 
 namespace :db do
   desc "Fill database with sample data" 
   task :populate => :environment do
+    require 'ffaker' # moved inside task and namespace method because it chokes on heroku
     Rake::Task['db:reset'].invoke
     make_users
     make_places
