@@ -29,12 +29,12 @@ gem 'rdoc', '~>3.12'
 
 # development specific gems
 group :development do
-	gem 'ffaker', '~> 1.13.0'
+	gem 'ffaker', '~> 1.13.0', :require => false
 end
 
 # asset pipeline
 group :assets do
-  gem 'sass-rails', "~> 3.1.0"
+  gem 'sass-rails' #, "~> 3.1.0"
   gem 'coffee-rails', "~> 3.1.0"
   gem 'uglifier'
 end
