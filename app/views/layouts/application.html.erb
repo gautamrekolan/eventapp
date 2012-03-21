@@ -38,10 +38,8 @@
 
 <div id="maincontainer">
 
-	<% if !logged_in? && controller_name != 'signup'%>
-	<div id="signup_message" class="">
-		<%= link_to 'sign up!', :signup %>
-	</div>
+	<% if !logged_in? %>
+		<%= render 'shared/signup_message' %>
 	<% end %>
 	
 <%= yield %>

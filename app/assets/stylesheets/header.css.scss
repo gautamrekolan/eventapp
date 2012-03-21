@@ -87,7 +87,7 @@
 		#login_group {
 			float:right;
 			margin-top:10px;
-			width:280px;
+			//width:280px;
 			
 			form {
 
@@ -95,11 +95,15 @@
 					float:left;
 					margin-right:10px;
 					height:20px;
-					width: 100px;
+					width: 120px;
 				}
 				
 				#username_container {
 					margin-right: 10px;
+				}
+				
+				#user_login_button {
+					margin-top: 22px;
 				}
 
 				#password_container {

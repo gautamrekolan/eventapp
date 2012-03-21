@@ -7,6 +7,7 @@
 
 /* h1,h2,h3.... */
 
+@import "layout";
 @import "colors";
 
 body {
@@ -43,7 +44,7 @@ form input {
 }
 
 input {
-	background-color:#FFFFFF;
+	background-color: $input_color;
 }
 
 /* popup notices across pages */
@@ -52,11 +53,11 @@ input {
 	position:absolute;
 	left:20px;
 	top:60px;
-	background-color:#E6F5FF;
-	-moz-border-radius: 5px;
-	border-radius: 5px;
+	background-color: $notice_color;
 	padding:7px;
 	font-size:12px;
+	@include rounded_corners(5px);
+	@include box_shadow;
 }
 
 .hidden {

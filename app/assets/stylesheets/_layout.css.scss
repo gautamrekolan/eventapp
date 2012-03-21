@@ -4,8 +4,13 @@ $box_shadow: 0 0 5px #888;
 
 @mixin box_shadow () {
 	-moz-box-shadow: 0 0 5px #888;
-	-webkit-box-shadow: 0 0 5px#888;
+	-webkit-box-shadow: 0 0 5px #888;
 	box-shadow: 0 0 5px #888;
+}
+
+@mixin rounded_corners($size: 5px) {
+	-moz-border-radius: $size;
+	border-radius: $size;
 }
 
 //header
