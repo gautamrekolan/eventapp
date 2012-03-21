@@ -38,7 +38,7 @@
 
 <div id="maincontainer">
 
-	<% if !logged_in? %>
+	<% if !logged_in? && controller_name != 'signup'%>
 	<div id="signup_message" class="">
 		<%= link_to 'sign up!', :signup %>
 	</div>

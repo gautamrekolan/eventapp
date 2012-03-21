@@ -1,7 +1,6 @@
 <%= div_for comment do %> 
 	<span class="commenter_name">
-		<%= link_to User.find(comment.user_id).username,
-		 	"/users/" + comment.user.id.to_s %>
+		<%= link_to comment.user.username, comment.user %>
 	</span> 
 	<span class="comment_body">
 		<%= comment.body %>
