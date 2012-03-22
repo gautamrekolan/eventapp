@@ -9,9 +9,18 @@
 <body>
 
 <div id="headerbar">
-	<div id="headercontentcontainer">
-		<div id="homelogo">
-			<%= link_to "eventsite", "/events" %>
+	<div id="header_content_container">
+		
+		<div id="new_event_button_container">
+			<div id="new_event_button">
+				<%= link_to 'create event', new_event_path %>
+			</div>
+		</div>
+		
+		<div id="home_logo_container">
+			<div id="home_logo">
+				<%= link_to SiteSettings::NAME, "/events" %>
+			</div>
 		</div>
 		
 		<%-# user not logged in then show the top login bar %>

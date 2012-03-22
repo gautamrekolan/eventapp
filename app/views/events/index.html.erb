@@ -7,10 +7,6 @@
 </div>
 -->
 
-<div id="newevent">
-	<%= link_to 'create new event', new_event_path %>
-</div>
-
 <!-- using a two column format that should keep loading down the entire page as user scrolls -->
 <div class="col1 column">
 	<div class="title">upcoming events</div>
@@ -27,7 +23,6 @@
 				<a class="incorrect_city">
 					not your city?
 				</a>
-			
 			</div>
 			<div class="search_city hidden">
 				<%= form_tag(events_path, :method => :get) do %>

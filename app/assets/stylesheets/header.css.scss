@@ -6,20 +6,40 @@
 #headerbar {
 	height:62px;
 	width:100%;
-	background-color:$header_color;
-	border-bottom:1px solid #000000;
+	background-color: $header_color;
+	border-bottom: 1px solid #000000;
 	//position:fixed;
-	z-index: 250;
+	//z-index: 250;
 	top:0;
 	left:0;
 	width: 100%;
-	#headercontentcontainer {
+	
+	#header_content_container {
 		width:980px;
 		margin: 0 auto;
-		#homelogo {
-			margin-top:10px;
-			float:left;
+		
+		#new_event_button_container {
+			#new_event_button {
+				float: left;
+				padding: 10px;
+				border: 1px solid black;		
+			}
 		}
+			
+		#home_logo_container {
+			margin: 0px auto;
+			width: 30%;
+			
+			#home_logo {
+				margin: 0px auto;
+				width: 50%;
+				//margin-top:10px;
+				a {
+					position: center;
+				}
+			}
+		}
+		
 		
 		.loggedin_user_menu {
 			//width: 150px;

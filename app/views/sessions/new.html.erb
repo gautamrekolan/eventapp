@@ -1,18 +1,5 @@
-<h1>log in</h1>
-
-<%= render 'shared/login'%>
-<!--
-<div class="login_container">
-	<%= form_tag session_path do %> 
-		<div id="usernamecontainer">
-			<%= label_tag :email%>
-	    	<%= text_field_tag :email %> 
-	  	</div>
-	  	<div id="passwordcontainer"> 
-	    	<%= label_tag :password %>
-			<%= password_field_tag :password %>
-	  	</div> 
-	  	<%= submit_tag 'login', :id => "user_login_button" %> 
-	<% end %>
+<div id="login_container">
+	<div class="title">log in</div>
+	<%= render 'shared/login'%>
+	<!-- TODO add some signup functionality on the left -->
 </div>
--->

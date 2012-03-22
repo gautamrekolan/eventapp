@@ -1,11 +1,11 @@
 <div id="login_group">
 	<%= form_tag session_path do %> 
 		<div id="username_container" class="field_container">
-	    	<%= label_tag 'email' %><br />
+	    	<%= label_tag :email, "email" %><br />
 			<%= text_field_tag :email %> 
 	  	</div>
 	  	<div id="password_container" class="field_container"> 
-			<%= label_tag 'password'%><br />
+			<%= label_tag :password, 'password'%><br />
 	    	<%= password_field_tag :password %>
 	  	</div> 
 	  	<%= submit_tag 'login', :id => "user_login_button" %> 
