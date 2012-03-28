@@ -21,9 +21,20 @@ function initialize(latLng) {
             position: latLng
         });
 
-		//document.getElementById("map_canvas").style.width = "40px";
-		//document.getElementById("map_canvas").style.height = "40px";
-	
+		<% if @places_near != nil %>
+		
+		//alert("has places near")
+		//if it has places then add markers
+			var markers_count = 0;
+			var markers = new Array();
+			<% @places_near.each do |p| %>
+				markers[markers_count] = new google.maps.Marker({
+				      position: new google.maps.LatLng(<%= p.latitude %>, <%= p.longitude %>),
+				      map: map,
+				      title: "<%= p.name %>"
+				});
+			<% end %>
+		<% end %>
 }
 
 var geocoder = new google.maps.Geocoder();
@@ -41,6 +52,10 @@ if (geocoder) {
       }
    });
 }    
+
+
+
+
 
 /*
 $.ajax({

@@ -21,9 +21,12 @@ $(document).ready(function() {
 		alert("failure");
 	});
 	
+	$('#new_event_button').click(function() {
+		window.location.href = $(this).find('a').attr('href');
+	});
+	
 	//call js geolocation/geolocation.js
 	initGeoLocate();
-	
 	
 	// TODO move functionality into page by page document ready functions if possible
 	
@@ -63,7 +66,7 @@ $(document).ready(function() {
 	//show end date / time if they want
 	
 	$('.endtime_add a').click(function() {
-		$(this).hide()
+		$(this).hide();
 		$('.endtime_container').removeClass('hidden');
 	});
 	

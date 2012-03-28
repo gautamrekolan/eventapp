@@ -1,14 +1,13 @@
-.user_location_map {
 	
-	#map_canvas_container {
-		-moz-box-shadow: 0 0 5px #888;
-		-webkit-box-shadow: 0 0 5px#888;
-		box-shadow: 0 0 5px #888;
-		float:left;
-		
-		#map_canvas { 
-			height: 100%;
-			width:100%;
-		}
-	}	
-}
+#map_canvas_container {
+	-moz-box-shadow: 0 0 5px #888;
+	-webkit-box-shadow: 0 0 5px#888;
+	box-shadow: 0 0 5px #888;
+	float:left;
+	
+	#map_canvas { 
+		height: 100%;
+		width:100%;
+	}
+}	
+

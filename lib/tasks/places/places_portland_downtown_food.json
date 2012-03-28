@@ -1,0 +1,306 @@
+{
+   "html_attributions" : [],
+   "results" : [
+      {
+         "geometry" : {
+            "location" : {
+               "lat" : 45.5228460,
+               "lng" : -122.6847790
+            }
+         },
+         "icon" : "http://maps.gstatic.com/mapfiles/place_api/icons/restaurant-71.png",
+         "id" : "b5b137d1156fc1e9575530daa943ef06070a4beb",
+         "name" : "Crystal Ballroom",
+         "rating" : 3.80,
+         "reference" : "CnRnAAAA69kJoeKGl4yzRA8PSDyi1bsh0FN1DFrY-62_j6WHSMQBWFxQ7KqjjdS7Ic1czhk0_l8mtwcnJ3d9LEsfm79PKY6ldrjcYMvtzWnG3uB9KZg-GpFiWZI2CpS6GtA1pgHEL6ENwgjxdQqsy2o2k2KBbRIQNibRggfkg98GEGTjktqwiBoUI_-MH7vaR8aR5yLsHuTrQgEjVZ8",
+         "types" : [ "restaurant", "food", "establishment" ],
+         "vicinity" : "1332 West Burnside Street, Portland"
+      },
+      {
+         "geometry" : {
+            "location" : {
+               "lat" : 45.5221780,
+               "lng" : -122.6819010
+            }
+         },
+         "icon" : "http://maps.gstatic.com/mapfiles/place_api/icons/restaurant-71.png",
+         "id" : "766ea2968bb1adf882b78431dcbef0a13bc5658a",
+         "name" : "Kenny & Zuke's Delicatessen",
+         "rating" : 4.10,
+         "reference" : "CoQBcgAAAL6xCEm0nC1qWc4_M4kuq0PRQL3jICWOGGEJmykZGDc5eWHNtk3M4rgL6FSCagTlz0vMnf-XL3D1_VPvnxKMthjmVXOVFCh9_MZP0ZsUReTKsQpKBAAu6v1RQ7kjzXKGYswQ_KZC4CXhBRA4wj0rZhS9TQlpC2MfjNz03VyJfZX4EhCoqZopimoI8tpw5L2CVGG8GhShJLVA4jEreKzpMD1hJ7oLiKptyg",
+         "types" : [ "restaurant", "meal_delivery", "food", "establishment" ],
+         "vicinity" : "1038 Southwest Stark Street, Portland"
+      },
+      {
+         "geometry" : {
+            "location" : {
+               "lat" : 45.522970,
+               "lng" : -122.6736780
+            }
+         },
+         "icon" : "http://maps.gstatic.com/mapfiles/place_api/icons/restaurant-71.png",
+         "id" : "5da81fde0d718b3bf2cdf5cdcf212e237f546e31",
+         "name" : "Dante's Caffe Italiano",
+         "rating" : 3.60,
+         "reference" : "CnRtAAAAuuTuF5m3uyE_dOnCsYvDxwZzzQUYO3uUq1HD2q_K-Iy46hIyv3RBB2tWL1PIvj4XR5u-PPLxD5yo5UhHLcPZ6jG8COgUSECG19Ea3Hea2owFNatQM4PeKx03ySV47SyWv5FZQAYmSn-prI0-VDv53BIQwdgOeuDsDxG2M3c0t-1-oxoUJWdkyn_acd6zfUfTfNO7UV-_l68",
+         "types" : [ "restaurant", "food", "establishment" ],
+         "vicinity" : "350 West Burnside, Portland"
+      },
+      {
+         "geometry" : {
+            "location" : {
+               "lat" : 45.5199840,
+               "lng" : -122.6535510
+            }
+         },
+         "icon" : "http://maps.gstatic.com/mapfiles/place_api/icons/restaurant-71.png",
+         "id" : "893bbfc8ad628b7e3d0e5762f108a260c4f5e64b",
+         "name" : "Red & Black Cafe",
+         "rating" : 3.60,
+         "reference" : "CnRnAAAA9TkUiiObsaidXc9YeXFzWR3oE2oWEdXWJudh_JjvGR6fbCDOxDgA9VWnc9FBLrugFLCd0cMcocCvKyy7mz8n2oDMcfj6LbdhzqVrrhp6FEW3FVfOkPIsZKaYt_8iLBb-N39rS_Qr4gEhxULq1q6ZvxIQK1I2Dy-hwZTuBU_tLOBS4BoUeL0baqa9bFKekvFa93IdxsDT8mE",
+         "types" : [ "restaurant", "food", "establishment" ],
+         "vicinity" : "400 SE 12th Avenue, Portland, OR 97214"
+      },
+      {
+         "geometry" : {
+            "location" : {
+               "lat" : 45.559080,
+               "lng" : -122.6424090
+            }
+         },
+         "icon" : "http://maps.gstatic.com/mapfiles/place_api/icons/restaurant-71.png",
+         "id" : "251e5f532883e8bc2938bf8483ec9fd2abc766b6",
+         "name" : "Townshend's Alberta Street Teahouse",
+         "rating" : 4.60,
+         "reference" : "CoQBeAAAAFYtUnmauFm8tR5pelImmhJoNXWOe3OWUG5oFZNrMslUwNOpnma7TZ8g2wiZcfLgWHb2g7ppbgsSafYmupnCTCQFepz4lWHIR_xcEWtBVxTuGrkTP8Ep_uo-onKCeYvzEkLHSyGNZCTB1JHFKBEEdsA9PTv6avzoKHAYxJLq8T35EhAnXp0f6_fuXbpwkFptXRu7GhQ1JgjtbIwoxMqYRg9XthY4wDpcyQ",
+         "types" : [ "restaurant", "food", "establishment" ],
+         "vicinity" : "2223 NE Alberta Street, Portland"
+      },
+      {
+         "geometry" : {
+            "location" : {
+               "lat" : 45.5645620,
+               "lng" : -122.6298180
+            }
+         },
+         "icon" : "http://maps.gstatic.com/mapfiles/place_api/icons/restaurant-71.png",
+         "id" : "3034b91e1575507c251c92049b03ee0579bd4107",
+         "name" : "Kennedy School",
+         "rating" : 4.0,
+         "reference" : "CnRkAAAAUuSmtLBJySNAv-Sw_9qYNsVo_DjD7rWUGB4MLujT5IxlCbNudgPGn6Jy-xW_sxK98LJv_G6O0YkASuQg9aB01tGpdYPU3xkx5Nmcep8I4Pj6x2tVniuCmmu6_CMjHwnBduD2i1MmFL-dSBAvr-wzUBIQQ4biUgCZegUVh9b4ZfAaJxoUBX2noS6w5oYLZDBjTFm5uFROp4s",
+         "types" : [ "restaurant", "lodging", "food", "establishment" ],
+         "vicinity" : "5736 N.E. 33rd Avenue, Portland"
+      },
+      {
+         "geometry" : {
+            "location" : {
+               "lat" : 45.5221590,
+               "lng" : -122.6758580
+            }
+         },
+         "icon" : "http://maps.gstatic.com/mapfiles/place_api/icons/restaurant-71.png",
+         "id" : "59daf0d6bb4bb0270c5adc0bf817d4545c8270e2",
+         "name" : "Portland City Grill",
+         "rating" : 4.0,
+         "reference" : "CnRpAAAAJFSgLed_dYMat0UkbbTWq66BYnecfHdIMCR4pajWfOJ_VRFng_qY8aSzbkvCnlt32T48zIe4Se__waUwsEq2e9R9pL93asIkL9GwBLYSJWvMlPvRwhhluBzbQ-G-ouKB23egRnv99kLQ_s5b92GbWhIQUKFsnpBNzotW7hhaGb_mqBoUsGd8MMI9k4nJQcJZFN1RjOyRKOI",
+         "types" : [ "restaurant", "food", "establishment" ],
+         "vicinity" : "111 SW 5th Ave, Portland"
+      },
+      {
+         "geometry" : {
+            "location" : {
+               "lat" : 45.5245410,
+               "lng" : -122.6818280
+            }
+         },
+         "icon" : "http://maps.gstatic.com/mapfiles/place_api/icons/bar-71.png",
+         "id" : "3dfdfca675301a6c0be38cef4f2430d1fc0a61e7",
+         "name" : "Deschutes Brewery Portland Public House",
+         "rating" : 4.20,
+         "reference" : "CoQBfQAAAOBC4ieMTzT52suKBdoXbH7lGMGrCHqyy5vamz7CtqHEXZi1SQ5lyJeTWtHy23I3ptsbBTgm6LnaLtT0ThUjPyR3ptKy7ArpVHFk3O3yMEeJNc0ILQ8A_YmLLUIqHNDohBb1s6mUaaLgY4IlB8q8Y-fo7YX0qYpspPzAfVPmrnc6EhBRgXTUbE2RAxQ2gLAcVtTNGhQH5EDzjbyI5cWI56F5p4UCs6Fy1w",
+         "types" : [ "bar", "restaurant", "food", "establishment" ],
+         "vicinity" : "210 Northwest 11th Avenue, Portland"
+      },
+      {
+         "geometry" : {
+            "location" : {
+               "lat" : 45.5163550,
+               "lng" : -122.6262860
+            }
+         },
+         "icon" : "http://maps.gstatic.com/mapfiles/place_api/icons/restaurant-71.png",
+         "id" : "57d23ec8cb7720f45d1d808751a76118b4ead77f",
+         "name" : "Pine State Biscuits",
+         "rating" : 4.40,
+         "reference" : "CnRpAAAANFf68zAxbuAcmaWeSZZ2IwLhmOjdXSqoCpq-E5ZS_eIgFdJmTAYBiP3b-ISZQWIo91YpGL6PPifSWg_51LDoN5a_TH584lT7xxCwDcoJreCxrlUug8G52tSniKjMrKK1sf2_DprHKcEMM-r5D2HQ3RIQ6NjrcMverEp4ApTeyP6CwxoUIb1f1LoMwNCEJE4KhBEkTdXPX0U",
+         "types" : [ "restaurant", "food", "establishment" ],
+         "vicinity" : "3640 Southeast Belmont Street, Portland"
+      },
+      {
+         "geometry" : {
+            "location" : {
+               "lat" : 45.5259220,
+               "lng" : -122.685150
+            }
+         },
+         "icon" : "http://maps.gstatic.com/mapfiles/place_api/icons/restaurant-71.png",
+         "id" : "81d6b8447d1d20077d7a0e2d594a09a3cec83b1e",
+         "name" : "Rogue Ales Public House",
+         "rating" : 3.80,
+         "reference" : "CnRuAAAAs4xyhrVWwYfYvCad4-H7DbrYpXxQ175ESV3-eYwbk2_8BMPTbyBMA5T1n0lIqXV_BY_Qeb6tPwvp95R2EoOyk80RpGhcTsTajzIjeWQKrYcZFX7wdJUrZ0Pa6he6-nSt3e5AvW93rBKiRfjBtBem3xIQBX7Ay3IXlo57uMttw0H9aBoUlYgI4hgj6VKg4M2bERH4Okd8frE",
+         "types" : [ "restaurant", "food", "establishment" ],
+         "vicinity" : "1339 Northwest Flanders Street, Portland"
+      },
+      {
+         "geometry" : {
+            "location" : {
+               "lat" : 45.5217450,
+               "lng" : -122.6733460
+            }
+         },
+         "icon" : "http://maps.gstatic.com/mapfiles/place_api/icons/restaurant-71.png",
+         "id" : "442f3d7b3aa3eaaa7971444d942460baacdebf70",
+         "name" : "Stumptown Coffee Roasters",
+         "rating" : 4.50,
+         "reference" : "CnRvAAAAAQ4ulNOsS2wjzOBJZzIf9_1hQsUp7vnDrY2Uzd8bdxsjK_QKTW2emMVGJjjJb2dfwKlMjTBSHbLqJgIe86OLDpZo0AjKE95zGLEMVP0DWNZ17iFqfMWzY8ZFBBN44_BsRsIarBpAQU0MTE3ZN9ZbZxIQksFyzWNhWn0rgYVWJxtl3BoUDtNNyDnkhUcXhXtgGg_auhmc4Xo",
+         "types" : [ "restaurant", "food", "establishment" ],
+         "vicinity" : "128 Southwest 3rd Avenue, Portland"
+      },
+      {
+         "geometry" : {
+            "location" : {
+               "lat" : 45.5308320,
+               "lng" : -122.6853130
+            }
+         },
+         "icon" : "http://maps.gstatic.com/mapfiles/place_api/icons/restaurant-71.png",
+         "id" : "0177a86df2c3c931b029cf6bf36f9caff90e7eda",
+         "name" : "Bridgeport BrewPub & Bakery",
+         "rating" : 3.80,
+         "reference" : "CoQBcQAAAPh9SXa_cGYWoSAtQ_ICQ1McozaRVBCtFlc1qA7e3qylQeAq_3a9K2lZ_Rt074KR3mDAUfC2y00AHcNzJ-f7qtJZRR6Ko5kBi7yRXjviJPqsT_Mki7647oSBGvjUm-u25Od03KWcN3hRQ-T8hXGI3HeBjq1l941STcjs3wKFRTHcEhApLickRTUTpFmWXizIP3lQGhT1WiQJfNovw4xFKx0Uetluq66suQ",
+         "types" : [ "restaurant", "food", "establishment" ],
+         "vicinity" : "1318 Northwest Northrup Street, Portland"
+      },
+      {
+         "geometry" : {
+            "location" : {
+               "lat" : 45.5225880,
+               "lng" : -122.6834550
+            }
+         },
+         "icon" : "http://maps.gstatic.com/mapfiles/place_api/icons/restaurant-71.png",
+         "id" : "19d0276e169f020ccb205408cc34f44fb279df1a",
+         "name" : "Jake's Famous Crawfish",
+         "rating" : 4.10,
+         "reference" : "CnRsAAAAXEdtc-9LO0m4dKjA_ZqN8vTdlOw5EbmH9pH3Ur9U8kneolSk8yfVBinfPaWPhFLBuLUM94N4xfxezXqhq5NLUZ09WGvjVBi25Zw5rfwbBBEOKEOSrKzNyzoCJjqcLUi-g28mvggnopjArexiRPNR9BIQn0ErU5hqJvb0_1R8OSp6ohoUj1TBcbTeV8RZOcIWg822wIEj1rc",
+         "types" : [ "restaurant", "food", "establishment" ],
+         "vicinity" : "401 Southwest 12th Avenue, Portland"
+      },
+      {
+         "geometry" : {
+            "location" : {
+               "lat" : 45.5199740,
+               "lng" : -122.6736710
+            }
+         },
+         "icon" : "http://maps.gstatic.com/mapfiles/place_api/icons/restaurant-71.png",
+         "id" : "981edf650518e07db8edfff2bf4f27f44067e098",
+         "name" : "Mother's Bistro",
+         "rating" : 4.10,
+         "reference" : "CnRmAAAAS4EcrSNaLxEjb-TDq2J0B_rvwrKL6IBgoQPmoCy-f-DEexsTYuR7YcjDMHftTEwHd1F8Ic9_qcJCjA25GwmgkPb7AElyWwdTckZ9voXkf76hmCx3Kz5mxLyGNHufkj1A8n3ge4X6lJ4qUuNPNffoyRIQXY_CV0egEGn_y2yI2cXF8BoU85gdoRacWZuKB-NNmJWTUKTJhro",
+         "types" : [ "restaurant", "food", "establishment" ],
+         "vicinity" : "212 Southwest Stark Street, Portland"
+      },
+      {
+         "geometry" : {
+            "location" : {
+               "lat" : 45.5127060,
+               "lng" : -122.6564230
+            }
+         },
+         "icon" : "http://maps.gstatic.com/mapfiles/place_api/icons/bar-71.png",
+         "id" : "07e89e30136477717c186eb433446c26a8b062a3",
+         "name" : "Lucky Labrador Brew Pub",
+         "rating" : 3.90,
+         "reference" : "CnRuAAAAuhyTiU78a0re2gQSDJ4CiyP6uC9m99ahANeRW-J-3Ygnl3r597m4487RAFs64phV4dTFcVMM1EEeEsbygyayq7dnnpZ3Q1jhNHi7BGfJJStWuptpQ9Y_81OwhM2SoVzZsigYUtAr-YBnfYpKVZ7JjhIQOew9HOYqv4mg9h4xdKLsMhoU7QL_mZLIHVl5gNrQ7vlieHhKpeg",
+         "types" : [ "bar", "restaurant", "food", "establishment" ],
+         "vicinity" : "915 Southeast Hawthorne Boulevard, Portland"
+      },
+      {
+         "geometry" : {
+            "location" : {
+               "lat" : 45.5221020,
+               "lng" : -122.6814120
+            }
+         },
+         "icon" : "http://maps.gstatic.com/mapfiles/place_api/icons/restaurant-71.png",
+         "id" : "51b737bfe8429085725018d059dc3a37e953354e",
+         "name" : "Clyde Common",
+         "rating" : 4.30,
+         "reference" : "CnRiAAAAH0g-QpYBIGj1ujneAogpU5DYD5GWwYBdfFVBjKbWVG7JP_oo9AhOx_0mtUasl6HnfdbgtiJYW97Zb8DsAYLLoHj4ot_MJThAINlkXDws3nwgBKlyJ6gA83jBRCoxEEPBMkZfQTTmx6n3zI8NLkw8YRIQdpkiprglcxP35kaZhj-m0hoUtO4kSfnj5rgFdHx8lrLp4ksnuYo",
+         "types" : [ "restaurant", "food", "establishment" ],
+         "vicinity" : "1014 Southwest Stark Street, Portland"
+      },
+      {
+         "geometry" : {
+            "location" : {
+               "lat" : 45.5227790,
+               "lng" : -122.6578320
+            }
+         },
+         "icon" : "http://maps.gstatic.com/mapfiles/place_api/icons/restaurant-71.png",
+         "id" : "bb456af960b5fbabd4c64a9400fd0faf4874ed80",
+         "name" : "LePigeon",
+         "rating" : 4.40,
+         "reference" : "CmRfAAAAIOZXK6y8QFEbgQFH2LrXL3rJ0MuOnE96DDX-EMWXlxsFVTWaehxbcLme5-iuW2EoDUcgWZwwJVJnupJ8lixHgv1igfhLUh93LZSvMWGUhwW4v40QIbteZIfJjo_XNeeTEhBDSFpwCm8KYfl0D2Gdbp_yGhR0jZ0S07mNR7FH-KYQZFr2PE8qFw",
+         "types" : [ "restaurant", "food", "establishment" ],
+         "vicinity" : "738 East Burnside Street, Portland"
+      },
+      {
+         "geometry" : {
+            "location" : {
+               "lat" : 45.5171920,
+               "lng" : -122.6809840
+            }
+         },
+         "icon" : "http://maps.gstatic.com/mapfiles/place_api/icons/restaurant-71.png",
+         "id" : "a85ae5a4a058635d22671ad3bf712ef819b732c2",
+         "name" : "Heathman Restaurant",
+         "rating" : 4.40,
+         "reference" : "CnRqAAAARRRX5RSFNRGl2rz7tIovgTVYCOIkSKlliyIwgpYzkJLzTMZGZC_vOgYwnEQ8ZKcYHayRLg75njmYYdE_UfHyrw8rJhUA6m8RHY5E1Eb6b47doU0Ie7cjo15QE3Yg-GFkjPu432ufzqBjZFzFRZN4ERIQ2M7og2bsihG57lgPxKkKAhoUlwZg7BzYlKZ-qjCbWy_fo7ru9Go",
+         "types" : [ "restaurant", "food", "establishment" ],
+         "vicinity" : "1001 Southwest Broadway, Portland"
+      },
+      {
+         "geometry" : {
+            "location" : {
+               "lat" : 45.5227760,
+               "lng" : -122.656760
+            }
+         },
+         "icon" : "http://maps.gstatic.com/mapfiles/place_api/icons/restaurant-71.png",
+         "id" : "589d927c99011b4477709525a556a7ef2d630672",
+         "name" : "Doug Fir Restaurant",
+         "rating" : 3.80,
+         "reference" : "CnRpAAAAIznvNDqiB0irz051z7rwXTvRU2EYDx2qb_A1jiYuxfLOp31iMIKLXxmoEGMeX5bge3sABvfEItgtIhldMIzBGL5hMGJ7hkOS5r_hYk-4_lQGNgmBxjlnvdE0b0umbp6BxCsxZjYbcriE5NSsgN0dbBIQTckxAFhCMp2FdfvBBgaOFRoUeNcR2MegFcQ_D1lj9qh3tNgR10I",
+         "types" : [ "restaurant", "food", "establishment" ],
+         "vicinity" : "830 East Burnside Street, Portland"
+      },
+      {
+         "geometry" : {
+            "location" : {
+               "lat" : 45.5231060,
+               "lng" : -122.6830140
+            }
+         },
+         "icon" : "http://maps.gstatic.com/mapfiles/place_api/icons/restaurant-71.png",
+         "id" : "2e4d40d72f72e896b930224c9cc08e80f8c0a991",
+         "name" : "Henry's 12th Street Tavern",
+         "rating" : 3.60,
+         "reference" : "CnRwAAAADBSam9rGNvxEJ1RNGvMsuf69utTzBptdCUQNF84nNkV9D4xTa9L56xaNL7ya1okW_rrqJSPvhai4TZMR8o5IrQ_sfVjrgpwb4QBrQYVVqUQQgQFNs0YButB3EMgKVVFdFnbP921Ir3sDLktRUDaYBhIQKgmvWUopjtrJk698-0eSKBoU86frVjN44RKR49vKyv-vPzP5QB0",
+         "types" : [ "restaurant", "food", "establishment" ],
+         "vicinity" : "10 Northwest 12th Avenue, Portland"
+      }
+   ],
+   "status" : "OK"
+}

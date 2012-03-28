@@ -11,6 +11,8 @@ class PlacesController < ApplicationController
   def show
     @place = Place.find(params[:id])
     
+    @address = @place.address
+    
     #show events that are at this place
     @events = Event.find_all_by_place_id(params[:id])
     

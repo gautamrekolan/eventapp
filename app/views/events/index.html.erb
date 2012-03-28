@@ -29,10 +29,10 @@
 					<%= text_field_tag 'city', 'city or zip' %>
 				 	<%= submit_tag 'submit' %>
 				<% end %>	
-				<a href="#" class="cancel">cancel</span>
+				<a href="#" class="cancel">cancel</a>
 			</div>
 		</div>
-		<%= render 'places/placemap', :locals => {:address => @address} %>
+		<%= render 'places/placemap', :locals => {:address => @address, :places_near => @places_near } %>
 	</div>
 	
 	<div class="title">other events</div>

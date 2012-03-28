@@ -28,23 +28,51 @@ def make_users
   end 
 end
 
+
 def make_places
-  100.times do |n|
-    # switch = n % 2
-    @name = Faker::Lorem.word
-    @address = Faker::Address.street_address
-    @state = Faker::Address.us_state
-    @city = Faker::Address.city
-    @zip = Faker::Address.zip_code
-    Place.create!(:name => @name,
-                    :address => @address,
-                    :state => @state,
-                    :city => @city,
-                    :zip => @zip)
+  make_portland_places
+  # 100.times do |n|
+  #     # switch = n % 2
+  #     @name = Faker::Lorem.word
+  #     @address = Faker::Address.street_address
+  #     @state = Faker::Address.us_state
+  #     @city = Faker::Address.city
+  #     @zip = Faker::Address.zip_code
+  #     Place.create!(:name => @name,
+  #                     :address => @address,
+  #                     :state => @state,
+  #                     :city => @city,
+  #                     :zip => @zip)
+  #   end
+end
+
+def make_portland_places 
+  json_result = JSON.parse(open("/Users/sword/Sites/eventapp/lib/tasks/places/places_portland_downtown_food.json").read)
+  
+  res = json_result["results"]
+  
+  res.each do |r|
+     @name = r["name"]
+     @address = r["vicinity"].split(",")[0]
+     @state = "OR"
+     @city = r["vicinity"].split(",")[1]
+     @zip = "none"
+     Place.create!(:name => @name,
+                      :address => @address,
+                      :state => @state,
+                      :city => @city,
+                      :zip => @zip)
   end
 end
 
 def make_events
+  make_events_today
+  make_events_tomorrow
+  make_events_this_week
+  make_events_this_month
+end
+
+def make_events_today
   User.all(:limit => 20).each do |user|
     @accumulator = 1 # id's start with 1 not 0
     5.times do |n|
@@ -62,9 +90,25 @@ def make_events
                           :description => @description,
                           :place_id => @place_id)
       
-      @accumulator += 1
+      if @accumulator > 19
+        @accumulator = 1
+      else
+        @accumulator += 1
+      end
     end 
   end
+end
+
+def make_events_tomorrow
+  
+end
+
+def make_events_this_week
+  
+end
+
+def make_events_this_month
+  
 end
 
 def make_event_comments

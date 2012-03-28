@@ -4,104 +4,123 @@
 @import "layout";
 
 #headerbar {
-	height:62px;
+	height: $headerbar_height;
 	width:100%;
 	background-color: $header_color;
 	border-bottom: 1px solid #000000;
-	//position:fixed;
-	//z-index: 250;
-	top:0;
-	left:0;
-	width: 100%;
 	
 	#header_content_container {
-		width:980px;
+		width: $header_content_container_width;
 		margin: 0 auto;
 		
-		#new_event_button_container {
-			#new_event_button {
-				float: left;
-				padding: 10px;
-				border: 1px solid black;		
-			}
-		}
-			
-		#home_logo_container {
-			margin: 0px auto;
-			width: 30%;
-			
-			#home_logo {
-				margin: 0px auto;
-				width: 50%;
-				//margin-top:10px;
-				a {
-					position: center;
-				}
-			}
-		}
-		
-		
-		.loggedin_user_menu {
-			//width: 150px;
-			float: right;
-			margin-top: 10px;
-			position: absolute;
-			right: 185px;
-			display: block;
-			
-			.user_button {
-				@include box_shadow; 
-				font-size: 14px;
-				font-weight: bold;	
-				background-color: $header_color;
-				
-				a {
-					padding: 5px;
-					display: block;
-					color: $event_title_text_color;
-					height: 30px;
-					min-width: $user_logged_in_menu_dropdown_width;
-					
-					span {
-						float: left;
-						margin-top: 10px;
-					}
-					
-					img {
-						float: right;
-					}
-					
-				}
-			}
-			
-			//TODO add an arrow or something to connect to the user thingy
-		 	ul {
-				@include box_shadow; 
-				z-index: 1000;
-				display:none;
-				margin-top: 10px;
-				//padding-top: 10px;
-				width: $user_logged_in_menu_dropdown_width;
-				background-color: $header_color;
-				
-				li {
+		#header_left_content_container {
+			float: left;
+			width: 25%;
+			#new_event_button_container {
+				#new_event_button {
+					cursor: pointer;
+					//position: absolute;
+					//float: right;
+					padding: 10px;
+					//border: 1px solid black;
+					width: 120px;
+					height: 19px;
+					margin-top: 10px;
+					//display: block;	
+					@include box_shadow; 
 					a {
-						display: block;
-						padding: 3px;
-						width: 100%;
 						color: $event_title_text_color;
-						&:hover { 
-							//color: lighten($event_title_text_color, 20%);
-							background-color: lighten($header_color, 20%);
-						}
-						span {
-							width: 100%;
-							//padding: 3px;
-						}
+						font-weight: bold;
+						font-size: 14px;	
 					}
 				}
+			}	
+		}
+		
+		#header_center_content_container {
+			width: 50%;
+			float: left;
+			#home_logo_container {
+				
+				#home_logo {
+					//margin-top:10px;
+					a {
+						//margin: 0px auto;
+						//width: 100%;
+						//position: center;
+					}
+				}
+			}	
+		}	
+		
+		#header_right_content_container {
+			width: 25%;
+			float: left;
+			#loggedin_user_menu_container {
+				.loggedin_user_menu {
+					//width: 150px;
+					margin-top: 7px;
+					position: absolute;
+					right: 205px;
+					display: block;
+
+					.user_button {
+						@include box_shadow; 
+						font-size: 14px;
+						font-weight: bold;	
+						background-color: $header_color;
+
+						a {
+							padding: 5px;
+							display: block;
+							color: $event_title_text_color;
+							height: 30px;
+							min-width: $user_logged_in_menu_dropdown_width;
+
+							span {
+								float: left;
+								margin-top: 10px;
+							}
+
+							img {
+								float: right;
+							}
+
+						}
+					}
+
+					//TODO add an arrow or something to connect to the user thingy
+				 	ul {
+						@include box_shadow; 
+						z-index: 1000;
+						display:none;
+						margin-top: 10px;
+						//padding-top: 10px;
+						width: $user_logged_in_menu_dropdown_width;
+						background-color: $header_color;
+
+						li {
+							a {
+								display: block;
+								padding: 3px;
+								width: 100%;
+								color: $event_title_text_color;
+								&:hover { 
+									//color: lighten($event_title_text_color, 20%);
+									background-color: lighten($header_color, 20%);
+								}
+								span {
+									width: 100%;
+									//padding: 3px;
+								}
+							}
+						}
+					}
+				} 
+				
 			}
 		}
+		
 		
 
 		#login_group {
