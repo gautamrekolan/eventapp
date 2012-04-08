@@ -11,6 +11,10 @@
 
 <% @events_array.each_with_index do |days_events, i|%>
 
+<%-# check if there are any events at all, if not break %>
+
+<% break if days_events.count < 1 %>
+
 <div class="section">
 	<div class="section_title">
 		<% if i == 0 %>
