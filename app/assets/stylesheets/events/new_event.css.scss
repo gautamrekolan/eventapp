@@ -1,4 +1,6 @@
 @import 'layout';
+@import 'colors';
+
 #new_event_container {
 
 	padding: 15px;
@@ -41,9 +43,42 @@
 			}
 		}
 		
+		.full_address_container {
+			.state_and_zip_container {
+				.state_container {
+					float:left;
+					width:200px;
+					
+					label {
+						width: 50px;
+					}
+					select {
+						width: 60px;
+					}
+				}
+				.zip_container {
+					float: left;
+					width: 200px;
+					label {
+						width: 35px;
+					}
+					input {
+						width: 65px;
+					}
+				}
+			}
+		}
+		
+		.endtime_add {
+			font-size: 11px;
+			padding-bottom: 5px;
+			padding-left: 4px;
+		}
+		
 		label {
-			width:140px;
-			padding-right:4px;
+			width:135px;
+			text-align: left;
+			padding-left: 4px;
 		}
 
 		input {
@@ -52,16 +87,21 @@
 
 		.row {
 			margin-bottom:4px;
+			background-color: $event_background_color;
+			width: 100%;
+			padding-top: 5px;
+			padding-right: 5px;
 			.time {
 				float: left;
 			}
 		}
 
 		.submit_container {
-			float:right;
+			float:left;
 			font-size:11px;
 			input {
-				width:100px;	
+				width:75px;
+				float: right;	
 			}
 		}
 	}

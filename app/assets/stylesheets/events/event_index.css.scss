@@ -6,7 +6,7 @@
 @import 'colors';
 
 .section {
-	background-color: lighten($event_background_color, 15%);
+	background-color: #FFFFFF;//lighten($event_background_color, 2%);
 	margin-top:10px;
 	float:left;
 	//margin-left: 3px;
@@ -20,6 +20,7 @@
 .event {
 	width: $event_width;
 	margin-bottom: 15px;
+	
 	.event_contents {
 		width: 474px;
 		.avatar {
