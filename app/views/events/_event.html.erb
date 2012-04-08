@@ -18,16 +18,21 @@
 			<% end %>
 			
 			<div class="when">
-				 <%= event.starttime.strftime("%A, %I:%M%p") %>
+				 <%= event.starttime.strftime("%A, %I:%M%p") %>&nbsp; by <a class="username" href="/users/<%= event.user.id %>"><%= event.user.username %></a> <%= time_ago_in_words(event.created_at) %> ago
 			</div>
 			
+			<!--
 			<div class="event_description">
 				<%= truncate(event.description, :length => 62) %> 
 			</div>
+			-->
+			<!-- TODO the href below should be updated to something dealt with in the controller -->
+			
+			<!--
 			<div class="posted_by">
-				<!-- TODO the href below should be updated to something dealt with in the controller -->
-				- by <a class="username" href="/users/<%= event.user.id %>"><%= event.user.username %></a> <%= time_ago_in_words(event.created_at) %> ago
+				by <a class="username" href="/users/<%= event.user.id %>"><%= event.user.username %></a> <%= time_ago_in_words(event.created_at) %> ago
 			</div>
+			-->
 		</div>
 	</div>
 	

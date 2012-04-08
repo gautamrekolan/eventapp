@@ -6,8 +6,7 @@
 @import 'colors';
 
 .section {
-	width:none;
-	background-color: #cccc99;
+	background-color: lighten($event_background_color, 15%);
 	margin-top:10px;
 	float:left;
 	//margin-left: 3px;
@@ -22,7 +21,7 @@
 	width: $event_width;
 	margin-bottom: 15px;
 	.event_contents {
-		width: 475px;
+		width: 474px;
 		.avatar {
 			width:50px;
 			height:50px;
@@ -39,6 +38,7 @@
 			
 			.when {
 				font-size: 11px;
+				//margin-top:;
 			}
 
 			.place_address {
@@ -50,7 +50,7 @@
 			}
 
 			.posted_by {
-				width: 405px;
+				//width: 405px;
 			}
 		}
 	}

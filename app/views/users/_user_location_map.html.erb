@@ -1,0 +1,18 @@
+<div class="user_location_map">
+	<div class="user_location_actions">
+		<div class="title">
+			events in <%= @address %>
+			<a class="incorrect_city">
+				not your city?
+			</a>
+		</div>
+		<div class="search_city hidden">
+			<%= form_tag(events_path, :method => :get) do %>
+				<%= text_field_tag 'city', 'city or zip' %>
+			 	<%= submit_tag 'submit' %>
+			<% end %>	
+			<a href="#" class="cancel">cancel</a>
+		</div>
+	</div>
+	<%= render 'places/placemap', :locals => {:address => @address, :places_near => @places_near } %>
+</div>

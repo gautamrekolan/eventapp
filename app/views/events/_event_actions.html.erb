@@ -12,9 +12,11 @@
 			:remote => true, 
 			:class => 'comment_link' %>	
 		
+		<!-- TODO show tickets after the user clicks join 
 		&nbsp;&middot;&nbsp;
 			
 		<%= link_to "get tickets", tickets_event_path(event), :class => "tickets" %>
+		-->
 	</div>
 	<% else %>
 	<div class="public_actions">
@@ -22,8 +24,11 @@
 		<%= link_to "like", "/login", :class => "like_link", :notice => "login to like events" %>&nbsp;&middot;&nbsp;
 		-->
 		<%= link_to "go! (" + event.going_tos.count.to_s + ")", "/login", :class => "go_link" %>&nbsp;&middot;&nbsp;
-		<%= link_to pluralize(event.comments.count, 'comment'), "/login", :class => "comment_link" %>&nbsp;&middot;&nbsp;
+		<%= link_to pluralize(event.comments.count, 'comment'), "/login", :class => "comment_link" %>
+		<!-- TODO show tickets after the user clicks join 
+		&nbsp;&middot;&nbsp;
 		<%= link_to 'get tickets', "/login", :class => "tickets"  %>
+		-->
 		<!-- TODO if the event has tickets add the link here, for now just keep a dummy link to remember -->
 	</div>
 	<% end %>
