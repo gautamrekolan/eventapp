@@ -16,22 +16,16 @@ class EventsController < ApplicationController
     
     @places_near = Place.near(@address, 10, :order => :distance)
     
-    # @events = Event.find(:all, :limit => 50, :order => 'created_at DESC')
     @events_array = Array.new
     @events_array.push(Event.today.section_formatted)
     @events_array.push(Event.tomorrow.section_formatted)
-    #@events_hash = Hash.new
-    #@events_hash["today"] = Event.today
-    #@events_hash["tomorrow"] = Event.tomorrow
     
     # get the rest of the days events
     5.times do |n|
       day = Time.now + (n + 2).days
       events = Event.get_events_by_day(day).section_formatted
-      #hash = "#{day.strftime('%A, %h %m')}"
       @events_array.push(events)
     end  
-    #@events_tomorrow
     
     respond_with @events_array #@event_sections
     # respond_with @events_today

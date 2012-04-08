@@ -1,7 +1,3 @@
-<!--
-<p id="notice"><%= notice %></p>
--->
-<!-- TODO check that start date is before end date -->
 <%= div_for(event) do %>
 	<div class="event_contents">
 		<div class="avatar">
@@ -12,19 +8,21 @@
 		<% end %>
 		</div>
 		<div class="event_body">
-			<%= link_to event.name, event, :class => "event_title" %>
+			<%= link_to truncate(event.name, :length => 50), 
+					event, 
+					:class => "event_title" %>
 			
 			<% if event.place_id? %>
 				<%= link_to "@ #{event.place.name}", event.place, :class => "place_name" %>
 				<%= render :partial => 'places/address', :locals => { :place => event.place }%>
 			<% end %>
 			
-			<div class="time">
+			<div class="when">
 				 <%= event.starttime.strftime("%A, %I:%M%p") %>
 			</div>
 			
 			<div class="event_description">
-				<%= event.description %> 
+				<%= truncate(event.description, :length => 62) %> 
 			</div>
 			<div class="posted_by">
 				<!-- TODO the href below should be updated to something dealt with in the controller -->
