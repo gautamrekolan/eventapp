@@ -36,7 +36,16 @@
 			.place_name {
 				color: $event_place_name_text_color;
 				float: left;
-				font-style: italic;
+				//font-style: italic;
+				font-weight: bold;
+				float:left;
+				margin-top:2px;
+				width: 100%;
+			}
+			
+			.time {
+				color: $event_place_name_text_color;
+				float: left;
 				font-weight: bold;
 				float:left;
 				margin-top:2px;

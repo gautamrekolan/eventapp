@@ -66,45 +66,47 @@ def make_portland_places
 end
 
 def make_events
-  make_events_today
-  make_events_tomorrow
   make_events_this_week
-  make_events_this_month
+  make_events_next_week
+  # make_events_this_month
 end
 
 def make_events_today
-  User.all(:limit => 20).each do |user|
-    @accumulator = 1 # id's start with 1 not 0
-    5.times do |n|
-      # content = Faker::Lorem.sentence(5) user.microposts.create!(:content => content)
-      @name = Faker::Lorem.sentence
-      @starttime = Time.now
-      @endtime = Time.now
-      @user_id = user.id
-      @description = Faker::Lorem.sentence(6)
-      @place_id = @accumulator
-      user.events.create!(:name => @name,
-                          :starttime => @starttime,
-                          :endtime => @endtime,
-                          :user_id => @user_id,
-                          :description => @description,
-                          :place_id => @place_id)
-      
-      if @accumulator > 19
-        @accumulator = 1
-      else
-        @accumulator += 1
-      end
-    end 
-  end
+  make_events_from_datetime(Time.now)
 end
 
 def make_events_tomorrow
-  
+  if Time.now.tomorrow.day == 1
+    #do nothing because events next week will take care of it
+  else
+    make_events_from_datetime(Time.now.tomorrow)
+  end
 end
 
 def make_events_this_week
+  # make todays events, then we'll make the rest of the weeks events
+  make_events_today
   
+  # get the number of days left in the week
+  number_of_days_left_in_the_week = 7 - Time.now.wday
+  
+  #iterate through each day and create events
+  number_of_days_left_in_the_week.times do |n|
+    days = n + 1
+    make_events_from_datetime(Time.now + days.day)
+  end
+    
+  # make_events_today
+  # make_events_tomorrow
+  # make_rest_of_the_week_events
+end
+
+def make_events_next_week
+  next_week = Time.now.next_week # returns Monday Month # 00:00...
+  
+  7.times do |n|
+    make_events_from_datetime(next_week + n.days)
+  end
 end
 
 def make_events_this_month
@@ -124,4 +126,33 @@ def make_relationships
   @followers = @users[3..40]
   @following.each { |followed| @user.follow!(followed) }
   @followers.each { |follower| follower.follow!(@user) }
+end
+
+
+private 
+def make_events_from_datetime(time)
+  User.all(:limit => 20).each do |user|
+    @accumulator = 1 # id's start with 1 not 0
+    5.times do |n|
+      # content = Faker::Lorem.sentence(5) user.microposts.create!(:content => content)
+      @name = Faker::Lorem.sentence
+      @starttime = time
+      @endtime = time.to_time + 1.hours
+      @user_id = user.id
+      @description = Faker::Lorem.sentence(6)
+      @place_id = @accumulator
+      user.events.create!(:name => @name,
+                          :starttime => @starttime,
+                          :endtime => @endtime,
+                          :user_id => @user_id,
+                          :description => @description,
+                          :place_id => @place_id)
+      
+      if @accumulator > 19
+        @accumulator = 1
+      else
+        @accumulator += 1
+      end
+    end 
+  end
 end

@@ -19,6 +19,10 @@
 				<%= render :partial => 'places/address', :locals => { :place => event.place }%>
 			<% end %>
 			
+			<div class="time">
+				 <%= event.starttime.strftime("%A, %I:%M%p") %>
+			</div>
+			
 			<div class="event_description">
 				<%= event.description %> 
 			</div>

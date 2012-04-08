@@ -15,6 +15,9 @@ class Event < ActiveRecord::Base
 	#has_many :event_likes
 	has_many :going_tos
 	
+	# scopes
+	scope :section_formatted, order('starttime DESC').limit(8)
+	
 	# this indexing must come after any associations
 	# uses thinking sphinx and a running Sphinx daemon
 	define_index do
@@ -23,7 +26,7 @@ class Event < ActiveRecord::Base
 	end
 	
 	def find_all_gone_to_by_user_id(id)
-	  Event.find(:all, :where => 'starttime < #{Time.now}', :user_id => id)
+	  Event.find(:all, :where => "starttime < #{ Time.now }", :user_id => id)
 	end
 	
 	def owned_by?(owner)
@@ -54,7 +57,15 @@ class Event < ActiveRecord::Base
 	  
 	end
 	
-	def first_and_last
-		"#{firstname} #{lastname}"
+	def self.get_events_by_day(day)
+	  Event.where('starttime BETWEEN ? AND ?', day.beginning_of_day, day.end_of_day)
+	end
+	
+	def self.today 
+	  Event.where('starttime BETWEEN ? AND ?', Time.now.beginning_of_day, Time.now.end_of_day)
+	end
+	
+	def self.tomorrow
+	  Event.where('starttime BETWEEN ? AND ?', (Time.now + 1.day).beginning_of_day, (Time.now + 1.day).end_of_day)
 	end
 end

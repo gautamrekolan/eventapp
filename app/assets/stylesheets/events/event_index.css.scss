@@ -2,14 +2,11 @@
 
 /* hide addresses to make a more list friendly compact style */
 
-.column {
-	
-	float:left;
-	width:492px;
-	margin-right: 10px;
-}
+@import 'layout';
+@import 'colors';
 
 .event {
+	width: $event_width;
 	margin-bottom: 15px;
 	.event_contents {
 		width: 475px;
@@ -24,6 +21,10 @@
 			width: 417px;
 			
 			.place_name {
+				font-size: 11px;
+			}
+			
+			.time {
 				font-size: 11px;
 			}
 
@@ -75,3 +76,10 @@
 	}
 }
 
+
+.column {
+	
+	float:left;
+	width:492px;
+	margin-right: 10px;
+}

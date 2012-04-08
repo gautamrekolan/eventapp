@@ -8,14 +8,34 @@
 -->
 
 <!-- using a two column format that should keep loading down the entire page as user scrolls -->
-<div class="col1 column">
-	<div class="title">upcoming events</div>
-	<div class="events">
-		<%= render @events %>
+
+<% @events_array.each_with_index do |days_events, i|%>
+
+<div class="section">
+	<div class="section_title">
+		<% if i == 0 %>
+			today
+		<% elsif i == 1 %>
+			tomorrow
+		<% else %>
+			<%- # get the first event's date, all dates within should match'%>
+			<%= days_events[0].starttime.strftime("%A, %b %d") %>
+		<% end %>
 	</div>
+	
+	<% days_events.each do |e| %>
+		<%= render e %>
+	<% end %>
 </div>
 
+<% end %>
+
+
+
+<!--
+
 <div class="col2 column">
+	<!--
 	<div class="user_location_map">
 		<div class="user_location_actions">
 			<div class="title">
@@ -35,12 +55,8 @@
 		<%= render 'places/placemap', :locals => {:address => @address, :places_near => @places_near } %>
 	</div>
 	
-	<div class="title">other events</div>
-	<div class="events">
-		<%= render @events %>
-	</div>
 </div>
-
+-->
 <!-- TODO create a database full of sample events for the 'new event teaser'... should be prepopulated suggestions of events,
 	then randomly draw from those events and place them in the new event form in a light gray -->
 
