@@ -6,6 +6,7 @@ namespace :db do
     Rake::Task['db:reset'].invoke
     make_users
     make_places
+    make_event_categories
     make_events
     make_event_comments
     make_event_going_tos
@@ -63,6 +64,16 @@ def make_portland_places
                       :city => @city,
                       :zip => @zip)
   end
+end
+
+def make_event_categories 
+  Category.create [ {:name => 'Sports'},
+                    {:name => 'Arts and Entertainment'},
+                    {:name => 'Music'},
+                    {:name => 'Meeting'},
+                    {:name => 'Hang out'},
+                    {:name => 'Random'},
+                    {:name => 'Conference'}]
 end
 
 def make_events
@@ -131,6 +142,7 @@ end
 
 private 
 def make_events_from_datetime(time)
+  categories = Category.all
   User.all(:limit => 20).each do |user|
     @accumulator = 1 # id's start with 1 not 0
     5.times do |n|
@@ -146,7 +158,8 @@ def make_events_from_datetime(time)
                           :endtime => @endtime,
                           :user_id => @user_id,
                           :description => @description,
-                          :place_id => @place_id)
+                          :place_id => @place_id,
+                          :category_id => categories[rand(categories.count - 1)].id)
       
       if @accumulator > 19
         @accumulator = 1

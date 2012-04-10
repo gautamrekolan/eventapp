@@ -10,7 +10,8 @@
 		<%= link_to pluralize(event.comments.count, 'comment'), 
 			new_event_comment_path(event, :format => :js), 
 			:remote => true, 
-			:class => 'comment_link' %>	
+			:class => 'comment_link',
+			:id => "event_#{event.id}_comment_link" %>	
 		
 		<!-- TODO show tickets after the user clicks join 
 		&nbsp;&middot;&nbsp;

@@ -1,7 +1,7 @@
 <% if event.going?(current_user) %>
 	<%-# it would be great to see this functionality moved into a helper or into the model perhaps %>
 	<% if event.going_tos.count == 1 %>
-		<%= link_to "you're going!", 
+		<%= link_to "you're joining!", 
 			event_going_tos_path(event, :format => :js),
 			:disabled => true, 
 			:class => "goinglink",
@@ -12,13 +12,14 @@
 			:class => "goinglink",
 			:remote => true %>
 	<% else %>
-		<%= link_to "you & " + (event.going_tos.count - 1).to_s + " others are going",
+		<%= link_to "you & " + (event.going_tos.count - 1).to_s + " others are joining",
 			event_going_tos_path(event, :format => :js),
 			:class => "goinglink",
 			:remote => true %>
 	<% end %>
 <% else %>
-	<%= link_to "go!", 
+	<%= link_to "join!",
+	 	#[event, ]
 		new_event_going_to_path(event, :format => :json), 
 		:class => "golink",
 		:remote => true %>

@@ -7,7 +7,7 @@ class Place < ActiveRecord::Base
 	validates :zip, :presence => true
 	
 	has_many :place_comments
-	
+	has_many :events
 	# geocoder gem
 	geocoded_by :full_address
 	after_validation :geocode, :if => :address_changed?

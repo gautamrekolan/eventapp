@@ -12,8 +12,18 @@
 	//margin-left: 3px;
 	padding-left: 3px;
 	.section_title {
-		width: 100%;
+		width: $header_content_container_width - (7 * 2);
+		height: 20px;
 		padding: 7px;
+		.day {
+			float: left;
+			width: 50%;
+		}
+		.browse_all {
+			float: right;
+			//width: 50%;
+			padding-right: 7px;
+		}
 	}
 }
 

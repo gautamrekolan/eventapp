@@ -33,23 +33,12 @@
 		<%- #TODO find a way to show events with no address %>
 	
 		<%= render 'places/form' %>
-	
-		<%- # TODO change categories to "tags" and get rid of weird shit below %>
 		<!--
-	  <div class="categories"> 
-	    <%= f.label "Categories" %><br /> 
-		  <% for category in Category.all %>
-	        <%= check_box_tag 'event[category_ids][]', category.id, @event.category_ids.include?(category.id), :id => dom_id(category) %>
-	        <%= label_tag dom_id(category), category.name, :class => "check_box_label" %> 
-		  <% end %>
-	  </div>
+		<%= render 'categories/categories_select'%>
 		-->
+	  </div>
 	  <div class="submit_container row">
 		<%= f.submit 'Post Event'%>
-		<!--
-		<br />or
-		<%= link_to 'cancel', events_path %>
-		-->
 		<%- # TODO probably change or customize this helper method %>
 		<%- # this method is found in app/helper/appication it is a helper method%>
 	    	<%- # submit_or_cancel(f) %>

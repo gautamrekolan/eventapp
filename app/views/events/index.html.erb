@@ -17,17 +17,15 @@
 
 <div class="section">
 	<div class="section_title">
-		<% if i == 0 %>
-			today
-		<% elsif i == 1 %>
-			tomorrow
-		<% else %>
-			<%- # get the first event's date, all dates within should match'%>
-			<%= days_events[0].starttime.strftime("%A, %b %d") %>
-		<% end %>
+		<div class="day">
+			<%= days_events.keys.first %>
+		</div>
+		<div class="browse_all">
+			<%= link_to "browse all #{ days_events.keys.first }", "/events" %> 
+		</div>
 	</div>
 	
-	<% days_events.each do |e| %>
+	<% days_events[days_events.keys.first].each do |e| %>
 		<%= render e %>
 	<% end %>
 </div>

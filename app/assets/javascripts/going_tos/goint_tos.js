@@ -2,7 +2,7 @@ $(document).ready(function() {
 	
 	//listen for an ajax event after going link is clicked and updated
 	$(".eventactionsbar .golink").bind('ajax:success', function(evt, data, status, xhr) {
-		//alert(status);
+		alert(status);
 		j = JSON.parse(xhr.responseText)
 		$(this).text(j.message);
 	});	

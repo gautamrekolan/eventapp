@@ -16,6 +16,8 @@ $('#event_<%=@event.id%> #new_comment').slideDown();
 //set focus to the comment text area
 $("#new_event_<%=@event.id%>_comment").focus();
 
+$("#event_<%=@event.id%>_comment_link").hide('slow');
+
 //TODO fix new_comment name to something more specific to avoid conflicts with other css
 
 //$('#new_comment_link').hide();
@@ -41,7 +43,6 @@ $(".comment_body").keypress(function(e) {
 		
 		form.ajaxSuccess(function (e, x) {
 			//alert(x.message);
-			//TODO since it succeeded then let's clear the text area in case they want to comment again
 			$(this).find("textarea").val("");
 		});
 		

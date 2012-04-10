@@ -10,7 +10,8 @@ class Event < ActiveRecord::Base
 	                                                        :maximum => 1000}
 	has_one :place
 	belongs_to :user
-	#has_and_belongs_to_many :categories
+	# has_and_belongs_to_many :categories
+	belongs_to :category
 	has_many :comments
 	#has_many :event_likes
 	has_many :going_tos
@@ -58,6 +59,7 @@ class Event < ActiveRecord::Base
 	end
 	
 	def self.get_events_by_day(day)
+	  #debugger
 	  Event.where('starttime BETWEEN ? AND ?', day.beginning_of_day, day.end_of_day)
 	end
 	

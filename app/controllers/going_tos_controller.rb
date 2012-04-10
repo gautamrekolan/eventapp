@@ -16,8 +16,8 @@ class GoingTosController < ApplicationController
   end
   
   def new 
-    @goingto = @event.going_tos.new
-    create
+    #@goingto = @event.going_tos.new
+    #create
   end
   
   def create 
@@ -40,14 +40,8 @@ class GoingTosController < ApplicationController
       @data = ActiveSupport::JSON.encode( { :message => @goingtostring.to_s } )
       
       respond_with @data
-      # respond_to do |format|
-      #         format.html
-      #         format.xml
-      #         format.js { render :nothing => true }
-      #         format.json { render :json => @data.to_json }
-      #       end
-    else
-      respond_with @data
+      else
+        respond_with @data
     end
   end
   

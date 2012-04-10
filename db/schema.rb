@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120314051711) do
+ActiveRecord::Schema.define(:version => 20120409033336) do
 
   create_table "account_settings", :force => true do |t|
     t.boolean  "profile_is_public"
@@ -22,11 +22,6 @@ ActiveRecord::Schema.define(:version => 20120314051711) do
     t.string   "name"
     t.datetime "created_at"
     t.datetime "updated_at"
-  end
-
-  create_table "categories_events", :id => false, :force => true do |t|
-    t.integer "category_id"
-    t.integer "event_id"
   end
 
   create_table "comments", :force => true do |t|
@@ -53,6 +48,7 @@ ActiveRecord::Schema.define(:version => 20120314051711) do
     t.integer  "user_id"
     t.string   "description"
     t.integer  "place_id"
+    t.integer  "category_id"
   end
 
   create_table "events_categories", :id => false, :force => true do |t|

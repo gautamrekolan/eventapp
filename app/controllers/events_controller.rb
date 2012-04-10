@@ -17,14 +17,25 @@ class EventsController < ApplicationController
     @places_near = Place.near(@address, 10, :order => :distance)
     
     @events_array = Array.new
-    @events_array.push(Event.today.section_formatted)
-    @events_array.push(Event.tomorrow.section_formatted)
+    #@events_array.push(Event.today.section_formatted)
+    #@events_array.push(Event.tomorrow.section_formatted)
     
     # get the rest of the days events
-    5.times do |n|
-      day = Time.now + (n + 2).days
+    7.times do |n|
+      day = Time.now + (n).days
+      events_hash = Hash.new
       events = Event.get_events_by_day(day).section_formatted
-      @events_array.push(events)
+      if n == 0 && events.count > 0
+        events_hash["today"] = events
+      elsif n == 1 && events.count > 0
+        events_hash["tomorrow"] = events
+      else
+        if events.count > 0
+          str = events.first.starttime.strftime("%A, %b %d")
+          events_hash[str] = events
+        end
+      end
+      @events_array.push(events_hash)
     end  
     
     respond_with @events_array #@event_sections

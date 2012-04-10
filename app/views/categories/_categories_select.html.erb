@@ -1,0 +1,4 @@
+<div class="categories row"> 
+	<%= label_tag :category_id, "category"%>
+	<%= select("event","category_id", Category.all.collect { |c| [c.name, c.id] }, { :prompt => "Choose Category" }) %>
+</div>
