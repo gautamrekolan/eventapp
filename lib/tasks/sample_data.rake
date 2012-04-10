@@ -48,7 +48,7 @@ def make_places
 end
 
 def make_portland_places 
-  json_result = JSON.parse(open("/Users/sword/Sites/eventapp/lib/tasks/places/places_portland_downtown_food.json").read)
+  json_result = JSON.parse(open("#{Rails.root}/lib/tasks/places/places_portland_downtown_food.json").read)
   
   res = json_result["results"]
   
