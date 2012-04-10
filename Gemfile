@@ -27,9 +27,13 @@ gem 'aws-sdk' # didn't use 'aws-s3' because i read that this is more extensive f
 gem 'rake', '>= 0.9.2.2'
 gem 'rdoc', '~>3.12' 
 
+# this was originally in group dev but i need to run in production to get others to see the app
+gem 'ffaker', '~> 1.13.0'
+
 # development specific gems
 group :development do
-	gem 'ffaker', '~> 1.13.0', :require => false
+	
+	gem 'ruby-debug'
 end
 
 # asset pipeline
