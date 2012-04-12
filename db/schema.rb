@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120409033336) do
+ActiveRecord::Schema.define(:version => 20120412002513) do
 
   create_table "account_settings", :force => true do |t|
     t.boolean  "profile_is_public"
@@ -49,6 +49,7 @@ ActiveRecord::Schema.define(:version => 20120409033336) do
     t.string   "description"
     t.integer  "place_id"
     t.integer  "category_id"
+    t.boolean  "featured"
   end
 
   create_table "events_categories", :id => false, :force => true do |t|

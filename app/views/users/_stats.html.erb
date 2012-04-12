@@ -18,4 +18,11 @@
 		<span class="events_going_to_text text">attended</span>
 	<% end %>
 	
+	<%= link_to "/check_ins", { :class => "check_ins",
+			:remote => true,
+			:format => :js } do %>	
+		<span class="check_ins_count count"><%= 0 %></span><br />
+		<span class="check_ins_text text">check-ins</span>
+	<% end %>
+	
 </div>

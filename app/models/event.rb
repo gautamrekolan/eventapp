@@ -63,8 +63,12 @@ class Event < ActiveRecord::Base
 	  Event.where('starttime BETWEEN ? AND ?', day.beginning_of_day, day.end_of_day)
 	end
 	
+	def self.featured
+	  Event.where('starttime > ?', Time.now.utc.beginning_of_day).order('starttime DESC').limit(5)
+	end
+	
 	def self.today 
-	  Event.where('starttime BETWEEN ? AND ?', Time.now.beginning_of_day, Time.now.end_of_day)
+	  Event.where('starttime BETWEEN ? AND ?', Time.now.utc.beginning_of_day, Time.now.utc.end_of_day)
 	end
 	
 	def self.tomorrow

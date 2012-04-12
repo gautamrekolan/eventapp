@@ -3,47 +3,77 @@
 
 #user_profile {
 	
-	margin-top:10px;
 	
-	#user_info {
-		width: 500px;
-		float: left;
+	
+	#user_profile_info_container {
+		margin: 0px auto;
+		margin-top:10px;
+		width: $user_profile_width;
 		@include box_shadow;
 		background-color: $event_background_color;
 		padding: 7px;
 		margin-left: 3px;
-		img {
+		float:left;
+		margin-bottom: 10px;
+		float: left;
+		
+		.profile_image {
+			width: 213px;
+			height: 213px;
+			background-color: #FFFFFF;
 			float:left;
-		}
-		
-		.stats {
 			
+			img {
+				@include rounded_corners;
+			}
 		}
 		
-		.stats {
+		.profile_content {
+			background-color: #FFFFFF;
 			float: left;
-			a {
-				float: left;
-				background-color: #FFFFFF;
-				border-right: 2px solid #000000;
-				padding: 4px;
-				.count {
-					font-size: 14px;
-					font-weight: bold;
-					color: $event_title_text_color;
-				}
-				
-				.text {
-					font-size: 12px;
-					color: lighten($event_title_text_color, 20%);
-				}
-				
-				&:hover {
-					
-				}
+			width: 580px;
+			margin-left: 8px;
+			padding: 10px;
+			@include rounded_corners;
+			
+			.username {
+				float:left;
+				//width: $user_profile_info_width - ;
+				width: 440px;
+				font-size: 18px;
+				font-weight:bold;
 			}
-			.events_gone_to {
-				border-right: none;
+
+			.stats {
+				float: left;
+				padding: 5px;
+				border: 1px solid #CCCCCC;
+				background-color: #FFFFFF;
+				a {
+					float: left;
+					//background-color: #FFFFFF;
+					border-right: 2px solid #000000;
+					padding: 4px;
+					.count {
+						font-size: 20px;
+						font-weight: bold;
+						color: $event_title_text_color;
+					}
+
+					.text {
+						font-size: 20px;
+						color: lighten($event_title_text_color, 20%);
+					}
+
+					&:hover {
+
+					}
+				}
+		
+				.check_ins {
+					border-right: none;
+				}
+			
 			}
 		}
 	}
