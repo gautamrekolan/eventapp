@@ -12,8 +12,11 @@ gem 'pg'
 
 gem 'thin' # this breaks everything 
 
-gem 'thinking-sphinx', '2.0.10' #this could be installed as a "plugin"
+# this could be installed as a "plugin"
 # but supposedly gemfile is where all the app dependencies go
+gem 'thinking-sphinx', '2.0.10' 
+# this is required for heroku 'flying sphinx' which is a heroku add-on for thinking sphinx support
+gem 'flying-sphinx',   '0.6.4' 
 
 # geocoding library for rails 3 - uses google maps default http://rubygeocoder.com/
 gem 'geocoder'
@@ -22,7 +25,8 @@ gem 'geocoder'
 gem "paperclip", :git => "git://github.com/thoughtbot/paperclip.git"
 
 # amazon aws for use with paperclip
-gem 'aws-sdk' # didn't use 'aws-s3' because i read that this is more extensive for multiple languages
+# didn't use 'aws-s3' because i read that this is more extensive for multiple languages
+gem 'aws-sdk' 
 
 gem 'rake', '>= 0.9.2.2'
 gem 'rdoc', '~>3.12' 
@@ -32,7 +36,6 @@ gem 'ffaker', '~> 1.13.0'
 
 # development specific gems
 group :development do
-	
 	gem 'ruby-debug'
 end
 
