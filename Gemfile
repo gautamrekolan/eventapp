@@ -16,7 +16,9 @@ gem 'thin' # this breaks everything
 # but supposedly gemfile is where all the app dependencies go
 gem 'thinking-sphinx', '2.0.10' 
 # this is required for heroku 'flying sphinx' which is a heroku add-on for thinking sphinx support
-gem 'flying-sphinx',   '0.6.4' 
+# gem 'flying-sphinx',   '0.6.4' 
+# trying github repo to see if it resolves multi_json dependency
+gem 'flying-sphinx', :git => 'git://github.com/flying-sphinx/flying-sphinx.git'
 
 # geocoding library for rails 3 - uses google maps default http://rubygeocoder.com/
 gem 'geocoder'
