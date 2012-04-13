@@ -8,6 +8,13 @@ class EventsController < ApplicationController
     @event = Event.find(params[:id])
   end 
   
+  def search 
+      @search_q = params[:query]
+      @events = Event.search @search_q
+      
+      respond_with @events
+  end
+  
   # GET /events
   def index
     

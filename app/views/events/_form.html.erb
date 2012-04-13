@@ -5,10 +5,12 @@
 			<%= f.label :name, "name" %>
 			<%= f.text_field :name, :class => "required event_name", :placeholder => "event name" %>
 		</div>
+		
 		<div class="description_container row">
 			<%= f.label :description, "description"%>
 	  		<%= f.text_field :description, :class => "required", :placeholder => "event description..." %>
 		</div>
+		
 		<div class="starttime_container date row">
 			<%= f.label :starttime, 'start date'%>
 			<%= f.text_field :starttime, :class => "required", :readonly => "true" %>
@@ -26,6 +28,7 @@
 				<%= render :partial => 'shared/time_select', :locals => { :prepend_id => "endtime" } %>
 			</div>
 		</div>
+		
 		<div class="endtime_add">
 			<a href="#" title="add end time">end date / time? (optional)</a>
 		</div>
@@ -36,15 +39,14 @@
 		<!--
 		<%= render 'categories/categories_select'%>
 		-->
-	  </div>
-	  <div class="submit_container row">
-		<%= f.submit 'Post Event'%>
-		<%- # TODO probably change or customize this helper method %>
-		<%- # this method is found in app/helper/appication it is a helper method%>
-	    	<%- # submit_or_cancel(f) %>
-	  </div>
+	  	<div class="submit_container row">
+			<%= f.submit 'Post Event'%>
+			<%- # TODO probably change or customize this helper method %>
+			<%- # this method is found in app/helper/appication it is a helper method%>
+		    <%- # submit_or_cancel(f) %>
+		</div>
 	<% end %>
-
+</div>
 	<% if @event.errors.any? %>
 		<!-- TODO add place errors here -->
 	   <div id="error_explanation">
@@ -56,4 +58,3 @@
 	     </ul>
 	   </div>
 	 <% end %>
-</div>

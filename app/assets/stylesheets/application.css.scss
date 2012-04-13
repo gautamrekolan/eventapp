@@ -31,7 +31,7 @@ body {
 
 form label {
 	float:left;
-	text-align:right;
+	//text-align:right;
 	padding-top:2px;
 	padding-right:5px;
 	//background-color:$label_background_color;
@@ -43,8 +43,59 @@ form input {
 	float:left;
 }
 
+
+/* this will exclude all input submit buttons
+ * but still style inputs, but only works for IE9 not previous
+input:not([type=submit]):not([type=file]) {
+   	background-color: $input_color;
+	border: 1px solid #ccc;
+	font-size: 20px;
+    padding: 4px 7px;
+    outline: 0;
+    -webkit-appearance: none;
+	@include rounded_corners(5px);
+	@include box_shadow;
+}
+*/
+
+/* this will style the input buttons too, not desirable
 input {
 	background-color: $input_color;
+	border: 1px solid #ccc;
+	font-size: 20px;
+    padding: 4px 7px;
+    outline: 0;
+    -webkit-appearance: none;
+	@include rounded_corners(5px);
+	@include box_shadow;
+}
+*/ 
+
+input[type=text],
+input[type=url],
+input[type=tel],
+input[type=number],
+input[type=color],
+input[type=email],
+input[type=password],
+input[type=search] {
+   /* And that ain't all of them... */
+	background-color: $input_color;
+	border: 1px solid #ccc;
+	font-size: 20px;
+   	padding: 4px 7px;
+   	outline: 0;
+   	-webkit-appearance: none;
+	@include rounded_corners(5px);
+	@include box_shadow;
+}
+
+input {
+	background-color: $input_color;
+	border: 1px solid #ccc;
+	font-size: 20px;
+   	padding: 4px 7px;
+   	outline: 0;
 }
 
 /* popup notices across pages */

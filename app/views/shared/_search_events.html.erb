@@ -1,0 +1,6 @@
+<div id="search_events">
+	<form action="<%= search_path %>" method="get">
+		<%= text_field_tag :query, params[:query] %>
+		<%= submit_tag "search", :name => nil %>
+	</form>
+</div>

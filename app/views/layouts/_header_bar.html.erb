@@ -1,0 +1,36 @@
+<div id="header_bar">
+	<div id="header_content">
+	
+		<div id="home_logo_container">
+			<div id="home_logo">
+				<%= link_to SiteSettings::NAME + " (logo)", "/events" %>
+			</div>
+		</div>
+		
+		<div id="new_event_button_container">
+			<div id="new_event_button">
+				<%= link_to 'create event +', new_event_path %>
+			</div>
+		</div>
+		
+		<%= render 'shared/search_events'%>
+	
+		<div id="loggedin_user_menu_container">
+			<%-# user not logged in then show the top login bar %>
+	
+			<% if logged_in? %>
+	
+				<%= render 'layouts/loggedin_user_menu'%>
+	
+			<% else %>
+				<%- # don't show top login bar if the user is on login "sessions" page'%>
+		
+				<% if controller_name != "sessions" %>
+					<%-#= render 'shared/login'%>
+					<%= link_to "sign in", "/login"%>
+				<% end %>
+
+			<% end %>
+		</div>
+	</div>
+</div>

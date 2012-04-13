@@ -14,7 +14,10 @@ $box_shadow: 0 0 5px #888;
 @mixin rounded_corners($size: 5px) {
 	-moz-border-radius: $size;
 	border-radius: $size;
+	-webkit-border-radius: $size;
 }
+
+
 
 /************** header ******************/
 
@@ -31,6 +34,8 @@ $user_logged_in_menu_dropdown_width: 150px;
 /**************** main container *************/
 
 $main_container_width: 1005px;
+//probably should change this name below, an attempt to keep uniform sizes 
+$main_container_subcontent_width: 850px; 
 
 
 /*************** event index event ************/
@@ -39,5 +44,9 @@ $event_width: 488px;
 
 /*************** user profile *****************/
 //TODO seperate all of these into separate _layout.css.scss files for example _user_profile.css.scss for the code below
-$user_profile_width: 830px;
-$user_profile_info_width: 500px
+$user_profile_width: $main_container_subcontent_width;
+$user_profile_info_width: 500px;
+
+/*************** login *****************/
+
+$login_content_width: $main_container_subcontent_width;

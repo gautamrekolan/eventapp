@@ -7,31 +7,44 @@
 </div>
 -->
 
-<!-- using a two column format that should keep loading down the entire page as user scrolls -->
+<%-# check if user has entered a search %>
 
-<% @events_array.each_with_index do |days_events, i|%>
-
-<%-# check if there are any events at all, if not break %>
-
-<% break if days_events.count < 1 %>
-
-<div class="section">
-	<div class="section_title">
-		<div class="day">
-			<%= days_events.keys.first %>
+<% if !@searched_events.nil? && @searched_events.count > 0 %>
+	<div class="section">
+		<div class="section_title">
+			events search for "<%= @search_q %>"
 		</div>
-		<div class="browse_all">
-			<%= link_to "browse all #{ days_events.keys.first }", "/events" %> 
-		</div>
-	</div>
 	
-	<% days_events[days_events.keys.first].each do |e| %>
-		<%= render e %>
+		<%= render @searched_events %>
+	</div>
+<% elsif %>
+
+	<!-- using a two column format that should keep loading down the entire page as user scrolls -->
+
+	<% @events_array.each_with_index do |days_events, i|%>
+
+		<%-# check if there are any events at all, if not break %>
+
+		<% break if days_events.count < 1 %>
+
+		<div class="section">
+			<div class="section_title">
+				<div class="day">
+					<%= days_events.keys.first %>
+				</div>
+				<div class="browse_all">
+					<%= link_to "browse all #{ days_events.keys.first }", "/events" %> 
+				</div>
+			</div>
+	
+			<% days_events[days_events.keys.first].each do |e| %>
+				<%= render e %>
+			<% end %>
+		</div>
+
 	<% end %>
-</div>
 
 <% end %>
-
 <!-- TODO create a database full of sample events for the 'new event teaser'... should be prepopulated suggestions of events,
 	then randomly draw from those events and place them in the new event form in a light gray -->
 

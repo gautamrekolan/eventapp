@@ -1,23 +1,58 @@
+@import 'layout';
+@import 'colors';
+
+$login_container_padding: 20px;
+$login_containter_height: 240px;
+
 #login_container {
-	.field_container {
-		width: 130px;
+	margin: 0px auto;
+	margin-bottom: 30px;
+	margin-top: 20px;
+	width: $login_content_width;
+	background-color: $event_background_color;
+	height: $login_containter_height;
+	padding: $login_container_padding;
+	@include rounded_corners;
+	
+	$center_space: 10px;
+	$subcontainer_width: (($login_content_width / 2) - $login_container_padding) - $center_space / 2;
+	#login_group {
+		width: $subcontainer_width;
+		float: left;
+		margin-right: $center_space;
+		
+		#username_container {
+			margin-bottom: 10px;
+			float:left;
+		}
+		
+		.field_container {
+			//width: 130px;
+			label {
+				width: $subcontainer_width;
+			}
+		}
+	}
+	
+	#login_facebook {
+		width: $subcontainer_width;
+		float: left;
 	}
 }
 
 .login_signup_container {
 	margin: 0 auto;
 	margin-top: 100px;
+	.row {
+		width:325px;
+		float:left;
+		padding-bottom:5px;
+	}
+	label {
+		width:90px;
+	}
 }
 
-.login_signup_container .row {
-	width:325px;
-	float:left;
-	padding-bottom:5px;
-}
-
-.login_signup_container label {
-	width:90px;
-}
 
 .login_container {
 	float:left;

@@ -6,6 +6,7 @@ Eventapp::Application.routes.draw do
     member do
 	    post :notify_friend
 	    get :tickets
+	    # get :search  # TODO figure out where the best place is to implement search
 	  end
     resources :comments
     resources :event_likes
@@ -30,6 +31,9 @@ Eventapp::Application.routes.draw do
   match '/logout' => "sessions#destroy", :as => "logout"
   
   match '/signup' => "users#new", :as => "signup"
+  
+  #searches on events
+  match '/search' => 'events#search', :as => "search"
   
   #match '/going' => 
 

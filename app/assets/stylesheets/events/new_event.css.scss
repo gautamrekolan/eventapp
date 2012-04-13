@@ -4,15 +4,13 @@
 #new_event_container {
 
 	padding: 15px;
-	-moz-box-shadow: $box_shadow;
-	-webkit-box-shadow: $box_shadow;
-	box-shadow: $box_shadow;
 	float: left;
 	margin-bottom: 20px;
 	margin-left: 5px;
+	width:500px;
+	@include box_shadow;
 		
 	#new_event {
-		width:400px;
 		float: left;
 		
 		.date {
