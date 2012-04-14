@@ -39,7 +39,7 @@ class User < ActiveRecord::Base
   has_attached_file :avatar, 
               :styles => { 
                 :large => "500x500>", 
-                :medium => "300x300>", 
+                :medium => "213x213>", # profile image
                 :thumb => "50x50>",
                 :smaller => "30x30>" }, 
                 :processors => [:cropper],
@@ -56,7 +56,7 @@ class User < ActiveRecord::Base
   #  GoingTo.find_all_by_user_id(id)
   #end
   
-  def username 
+  def full_name 
     # used to be a field in db username, but now we want firstname and last name
     "#{firstname} #{lastname}"
   end

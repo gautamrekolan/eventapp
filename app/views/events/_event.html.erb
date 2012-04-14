@@ -18,7 +18,7 @@
 			<% end %>
 			
 			<div class="when">
-				 <%= event.starttime.strftime("%A, %I:%M%p") %>&nbsp; by <a class="username" href="/users/<%= event.user.id %>"><%= event.user.username %></a> <%= time_ago_in_words(event.created_at) %> ago
+				 <%= event.starttime.strftime("%A, %I:%M%p") %>&nbsp; by <a class="username" href="/users/<%= event.user.id %>"><%= event.user.full_name %></a> <%= time_ago_in_words(event.created_at) %> ago
 			</div>
 			
 			<!--
@@ -30,7 +30,7 @@
 			
 			<!--
 			<div class="posted_by">
-				by <a class="username" href="/users/<%= event.user.id %>"><%= event.user.username %></a> <%= time_ago_in_words(event.created_at) %> ago
+				by <a class="username" href="/users/<%= event.user.id %>"><%= event.user.full_name %></a> <%= time_ago_in_words(event.created_at) %> ago
 			</div>
 			-->
 		</div>

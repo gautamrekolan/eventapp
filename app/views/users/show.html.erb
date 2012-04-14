@@ -15,7 +15,7 @@
 			<% end %>
 		</div>
 		<div class="profile_content">
-			<%= link_to @user.username, @user, :class => "username"%>
+			<%= link_to @user.full_name, @user, :class => "username"%>
 
 			<!-- stats -->
 			<%= render 'stats' %>
@@ -35,7 +35,7 @@
 				<% if current_user?(@user) %>
 				your events
 				<% else %>
-				<%= @user.username %>'s events
+				<%= @user.full_name %>'s events
 				<% end %>
 			</div>
 			<%= render @user.events %>
@@ -50,7 +50,7 @@
 	<% if @user.going_tos.count > 0 %>	
 		<div class="going_tos_container">
 			<div class="going_tos_title title">
-				event's <%= @user.username %> is going to
+				event's <%= @user.full_name %> is going to
 			</div>
 			<%-# there a better way to do this? %>
 			<% @user.going_tos.each do |going_to| %>
