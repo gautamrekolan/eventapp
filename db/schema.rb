@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120412002513) do
+ActiveRecord::Schema.define(:version => 20120414073259) do
 
   create_table "account_settings", :force => true do |t|
     t.boolean  "profile_is_public"
@@ -133,6 +133,7 @@ ActiveRecord::Schema.define(:version => 20120412002513) do
     t.string   "firstname"
     t.string   "lastname"
     t.string   "zip"
+    t.string   "username"
   end
 
 end
