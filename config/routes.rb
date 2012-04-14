@@ -21,6 +21,9 @@ Eventapp::Application.routes.draw do
     member do
       get :following, :followers, :events_gone_to, :events_created
     end
+    collection do 
+      get :checkname
+    end
   end
 
   resources :relationships, :only => [:create, :destroy]

@@ -7,6 +7,10 @@
 <%= form_for(@user) do |f| %> 
 	<div class="signup_container">
 		<div class="row">
+			<%= f.label :username, 'username' %>
+			<%= f.text_field :username, :'data-validate' => '/users/checkname' %>
+		</div>
+		<div class="row">
 			<%= f.label :firstname, 'first name' %>
 			<%= f.text_field :firstname %>
 		</div>

@@ -6,6 +6,15 @@ class UsersController < ApplicationController
   
   respond_to :html, :js
   
+  def checkname
+    if User.where('user = ?', params[:user]).count == 0
+      render :nothing => true, :status => 200
+    else
+      render :nothing => true, :status => 409
+    end
+    return
+  end
+  
   def events_gone_to
     @title = "events gone to"
     @user = User.find(params[:id])
