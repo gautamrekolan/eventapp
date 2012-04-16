@@ -41,6 +41,10 @@ group :development do
 	gem 'ruby-debug'
 end
 
+group :test, :development do
+
+end
+
 # asset pipeline
 group :assets do
   gem 'sass-rails' #, "~> 3.1.0"

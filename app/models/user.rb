@@ -6,6 +6,8 @@ class User < ActiveRecord::Base
   # for submissions from users/crop.html.erb cropping avatar etc
   attr_accessor :crop_x, :crop_y, :crop_h, :crop_w
 
+  validates :username, :uniqueness => true
+
   validates :email, :uniqueness => true,
     :length => { :within => 5..50 },
     :format => { :with => /^[^@][\w.-]+@[\w.-]+[.][a-z]{2,4}$/i }

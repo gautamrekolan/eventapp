@@ -9,7 +9,7 @@ class EventTest < ActiveSupport::TestCase
   
   test "should not save event without name" do
     event = Event.new
-    assert !event.save
+    assert !event.save, "this is the optional event.save error message"
   end
 
 end
