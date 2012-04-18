@@ -1,20 +1,28 @@
 <%= fields_for :place do |fp| %>	
 	<div class="full_address_container">
 		<div class="place_name_container row required">
-		 	<%= fp.label :name, "location" %>
-		   <%= fp.text_field :name, :class => "required", :placeholder => "location name... ex. Pete's Coffee" %>
+		 	<%= fp.text_field :name, :class => "required", :placeholder => "location name... ex. Pete's Coffee" %>
+			<div class="message">
+				<div class="valid_message"></div>
+				<div class="suggestion_message"></div>
+			</div>
 		 </div>
 		<div class="address_container row">
-			<%= fp.label :address, "address" %>
 			<%= fp.text_field :address, :class => "required", :placeholder => "666 Your Mom's House"%>
+			<div class="message">
+				<div class="valid_message"></div>
+				<div class="suggestion_message"></div>
+			</div>
 		</div>
 		<div class="city_container row">
-			<%= fp.label :city, "city" %>
 			<%= fp.text_field :city, :class => "required", :placeholder => "Portland? LA? NY? SF?"%>
+			<div class="message">
+				<div class="valid_message"></div>
+				<div class="suggestion_message"></div>
+			</div>
 		</div>
 		<div class="state_and_zip_container row">
 			<div class="state_container">
-				<%= fp.label :state, "state"%>
 				<%= select("place","state", [ 	
 					['State', 'None'],
 					['Alabama', 'AL'], 
@@ -70,8 +78,8 @@
 					['Wyoming', 'WY']]) %>
 			</div>
 			<div class="zip_container">
-				<%= fp.label :zip, "zip" %>
 				<%= fp.text_field :zip, :class => "required", :placeholder => "97219"%>
+				<div class="message"></div>
 			</div>
 		</div>
 	</div>

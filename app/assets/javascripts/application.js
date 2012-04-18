@@ -26,7 +26,17 @@ $(document).ready(function() {
 	});
 	
 	//call js geolocation/geolocation.js
-	initGeoLocate();
+	//initGeoLocate();
+	
+	//add some input validation
+	
+	
+	
+	
+	
+	
+	
+	
 	
 	// TODO move functionality into page by page document ready functions if possible
 	

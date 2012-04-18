@@ -2,30 +2,41 @@
 	<%= form_for(@event) do |f| %>
 
 		<div class="name_container row">
-			<%= f.label :name, "name" %>
 			<%= f.text_field :name, :class => "required event_name", :placeholder => "event name" %>
+			<div class="message">
+				<div class="valid_message"></div>
+				<div class="suggestion_message"></div>
+			</div>
 		</div>
 		
 		<div class="description_container row">
-			<%= f.label :description, "description"%>
-	  		<%= f.text_field :description, :class => "required", :placeholder => "event description..." %>
+			<%= f.text_field :description, :class => "required", :placeholder => "event description..." %>
+			<div class="message">
+				<div class="valid_message"></div>
+				<div class="suggestion_message"></div>
+			</div>
 		</div>
 		
 		<div class="starttime_container date row">
-			<%= f.label :starttime, 'start date'%>
 			<%= f.text_field :starttime, :class => "required", :readonly => "true" %>
 			<div class="time">
 				<%= label_tag 'time'%>
 				<%= render :partial => 'shared/time_select', :locals => { :prepend_id => "starttime" }  %>
 			</div>
+			<div class="message">
+				<div class="valid_message"></div>
+				<div class="suggestion_message"></div>
+			</div>
 		</div>
 		
 		<div class="endtime_container date row hidden">
-			<%= f.label :endtime, "end date" %>
-		    <%= f.text_field :endtime, :class => "required" , :readonly => "true" %>
+			<%= f.text_field :endtime, :class => "required" , :readonly => "true" %>
 			<div class="time">
-				<%= label_tag 'time'%>
 				<%= render :partial => 'shared/time_select', :locals => { :prepend_id => "endtime" } %>
+			</div>
+			<div class="message">
+				<div class="valid_message"></div>
+				<div class="suggestion_message"></div>
 			</div>
 		</div>
 		

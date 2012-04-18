@@ -21,7 +21,7 @@ class EventsController < ApplicationController
     # get current user location
     @address = get_address
     
-    @places_near = Place.near(@address, 10, :order => :distance)
+    # @places_near = Place.near(@address, 10, :order => :distance)
     
     @events_array = Array.new
     #@events_array.push(Event.today.section_formatted)

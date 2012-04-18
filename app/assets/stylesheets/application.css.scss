@@ -83,19 +83,33 @@ input[type=search] {
 	background-color: $input_color;
 	border: 1px solid #ccc;
 	font-size: 20px;
-   	padding: 4px 7px;
+   	padding: $input_padding;
    	outline: 0;
    	-webkit-appearance: none;
 	@include rounded_corners(5px);
-	@include box_shadow;
+	margin: 0px;
+	//@include box_shadow;
 }
 
 input {
 	background-color: $input_color;
 	border: 1px solid #ccc;
 	font-size: 20px;
-   	padding: 4px 7px;
+   	padding: $input_padding;
    	outline: 0;
+}
+
+input:focus {
+	@include box_shadow($input_focus_color)
+}
+
+select {
+	background-color: $input_color;
+	border: 1px solid #ccc;
+	font-size: 20px;
+   	padding: $input_padding;
+   	outline: 0;
+	height: 34px;
 }
 
 /* popup notices across pages */

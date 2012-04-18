@@ -3,46 +3,59 @@
 		$("#signup_message").hide();
 	});
 </script>
-
-<%= form_for(@user) do |f| %> 
-	<div class="signup_container">
-		<div class="row">
-			<%= f.label :username, 'username' %>
-			<%= f.text_field :username, :'data-validate' => '/users/checkname' %>
+<div id="signup_container">
+	<div class="subtitle">get ready to have fun.</div>
+	<%= form_for(@user) do |f| %> 
+		<div id="firstname_container" class="row">
+			<%= f.text_field :firstname, :placeholder => "first name", :class => "field" %>
+			<div class="message">
+				<div class="valid_message">Lookin good!</div>
+				<div class="suggestion_message">My name is Rudolpho</div>
+			</div>
+		</div>
+		<div id="lastname_container" class="row">
+			<%= f.text_field :lastname, :placeholder => "last name", :class => "field" %>
+			<div class="message">
+				<div class="valid_message"></div>
+				<div class="suggestion_message"></div>
+			</div>
 		</div>
 		<div class="row">
-			<%= f.label :firstname, 'first name' %>
-			<%= f.text_field :firstname %>
+			<%= f.text_field :username, :'data-validate' => '/users/checkname', :placeholder => "username", :class => "field" %>
+			<div class="message">
+				<div class="valid_message"></div>
+				<div class="suggestion_message"></div>
+			</div>
 		</div>
 		<div class="row">
-			<%= f.label :lastname, 'last name' %>
-			<%= f.text_field :lastname %>
+			<%= f.text_field :email, :placeholder => "email", :class => "field" %>
+			<div class="message">
+				<div class="valid_message"></div>
+				<div class="suggestion_message"></div>
+			</div>
 		</div>
 		<div class="row">
-			<%= f.label :email, 'email'%>
-			<%= f.text_field :email %>
-		</div>
-		<!-- TODO do not show password field when editing profile, only when a user wants to request a new password or forgot -->
-		<div class="row">
-			<%= f.label :password, 'password' %>
-			<%= f.password_field :password %>
+			<%= f.password_field :password, :class => "field" %>
+			<div class="message">
+				<div class="valid_message"></div>
+				<div class="suggestion_message"></div>
+			</div>
 		</div>
 		<div class="row">
-		    <%= f.label :password_confirmation, 'confirm password' %><br />
-		    <%= f.password_field :password_confirmation %>
-		  </div>
+			<%= f.text_field :zip, :placeholder => "zip code", :class => "field" %>
+			<div class="message">
+				<div class="valid_message"></div>
+				<div class="suggestion_message"></div>
+			</div>
+		</div>
 		<div class="row">
 			<%= f.file_field :avatar %>
 		</div>
 		<div class="row">
-			<%= f.label :zip, 'zip' %>
-			<%= f.text_field :zip %>
-		</div>
-		<div class="row">
 			<%= f.submit 'sign up!' %> 
 		</div>
-	</div>
-<% end %>
+	<% end %>
+</div>
 <% if @user.errors.any? %> 
 <div id="error_explanation">
   <h2><%= pluralize(@user.errors.count, "error") %> 

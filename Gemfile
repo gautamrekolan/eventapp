@@ -41,8 +41,9 @@ group :development do
 	gem 'ruby-debug'
 end
 
-group :test, :development do
-
+# directions found here: http://www.rubyinside.com/how-to-rails-3-and-rspec-2-4336.html
+group :development, :test do
+  gem 'rspec-rails'
 end
 
 # asset pipeline

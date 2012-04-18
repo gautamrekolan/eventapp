@@ -5,10 +5,10 @@ $box_shadow: 0 0 5px #888;
 
 /*********** mixins *******************/
 
-@mixin box_shadow () {
-	-moz-box-shadow: 0 0 5px #888;
-	-webkit-box-shadow: 0 0 5px #888;
-	box-shadow: 0 0 5px #888;
+@mixin box_shadow ($color: #888) {
+	-moz-box-shadow: 0 0 5px $color;
+	-webkit-box-shadow: 0 0 5px $color;
+	box-shadow: 0 0 5px $color;
 }
 
 @mixin rounded_corners($size: 5px) {
@@ -50,3 +50,7 @@ $user_profile_info_width: 500px;
 /*************** login *****************/
 
 $login_content_width: $main_container_subcontent_width;
+
+/*************** INPUT ******************/
+
+$input_padding: 5px;

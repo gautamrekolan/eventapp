@@ -1,14 +1,56 @@
-.signup_container {
-	width:400px;
+@import 'layout';
+
+$signup_container_padding: 50px;
+$signup_container_width: $main_container_subcontent_width - ($signup_container_padding * 2);
+#signup_container {
+	width: $signup_container_width;
+	//background-color: black;
+	border: 1px solid #CCC;
+	@include rounded_corners;
 	float:left;
+	padding: $signup_container_padding;
 	
-	label {
-		width:140px;
-		padding-right:4px;
-	}
-	
+	$row_width: $signup_container_width;// - ($signup_container_padding * 2);
 	.row {
+		width:  $row_width;
 		margin-bottom:4px;
+		//background-color: red;
+		
+		$center_margin: 10px;
+		.field {
+			margin-right: $center_margin;
+			width: $row_width / 2 - (($center_margin / 2) + ($input_padding * 2) + 5);
+			float: left;
+		}
+		
+		.error {
+			.suggestion_message {
+				display: none;
+			}
+			.valid_message {
+				display: none;
+			}
+		}
+		
+		.valid {
+			.valid_message {
+				display: inline !important;
+			}
+			.suggestion_message {
+				display: none;
+			}
+		}
+		
+		.message {
+			width: $row_width / 2 - ($center_margin / 2);
+			//background-color: green;
+			float: left;
+			height: 40px;
+			
+			.valid_message {
+				display: none;
+			}
+		}
 	}
 	
 }
