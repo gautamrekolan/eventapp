@@ -1,6 +1,9 @@
 <script>
 	$(function() {
 		$("#signup_message").hide();
+		
+		//TODO reset the form every time the page loads 
+		//so that when a user enters some info and refreshes the page, they don't end up with un-validated fields
 	});
 </script>
 <div id="signup_container">
@@ -10,42 +13,42 @@
 			<%= f.text_field :firstname, :placeholder => "first name", :class => "field" %>
 			<div class="message">
 				<div class="valid_message">Lookin good!</div>
-				<div class="suggestion_message">My name is Rudolpho</div>
+				<div class="suggestion_message">For example: My name is James</div>
 			</div>
 		</div>
 		<div id="lastname_container" class="row">
 			<%= f.text_field :lastname, :placeholder => "last name", :class => "field" %>
 			<div class="message">
-				<div class="valid_message"></div>
-				<div class="suggestion_message"></div>
+				<div class="valid_message">You're awesome!</div>
+				<div class="suggestion_message">Last name is Bond</div>
 			</div>
 		</div>
 		<div class="row">
-			<%= f.text_field :username, :'data-validate' => '/users/checkname', :placeholder => "username", :class => "field" %>
+			<%= f.text_field :username, :'data-validate' => '/users/checkname', :placeholder => "username", :class => "field ignore" %>
 			<div class="message">
-				<div class="valid_message"></div>
-				<div class="suggestion_message"></div>
+				<div class="valid_message">I'm so proud of you!</div>
+				<div class="suggestion_message">Make it something unique</div>
 			</div>
 		</div>
 		<div class="row">
 			<%= f.text_field :email, :placeholder => "email", :class => "field" %>
 			<div class="message">
-				<div class="valid_message"></div>
-				<div class="suggestion_message"></div>
+				<div class="valid_message">Can I have your autograph!?</div>
+				<div class="suggestion_message">My email: awesome@example.com</div>
 			</div>
 		</div>
 		<div class="row">
 			<%= f.password_field :password, :class => "field" %>
 			<div class="message">
-				<div class="valid_message"></div>
-				<div class="suggestion_message"></div>
+				<div class="valid_message">Nobody will ever guess... mwahahaha!</div>
+				<div class="suggestion_message">Somthing harder to guess than 'banana' :P</div>
 			</div>
 		</div>
 		<div class="row">
 			<%= f.text_field :zip, :placeholder => "zip code", :class => "field" %>
 			<div class="message">
-				<div class="valid_message"></div>
-				<div class="suggestion_message"></div>
+				<div class="valid_message">You're about to cross the finish line!</div>
+				<div class="suggestion_message">Where you from foo?</div>
 			</div>
 		</div>
 		<div class="row">

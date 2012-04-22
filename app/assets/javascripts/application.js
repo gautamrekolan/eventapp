@@ -11,6 +11,7 @@
 // Place your application-specific JavaScript functions and classes here
 // This file is automatically included by javascript_include_tag :defaults
 /* respond to event likes - this needs to find a better home, doubt it's good to keep in top level like this */
+
 $(document).ready(function() {
 	
 	//console.log("doc ready");
@@ -29,6 +30,15 @@ $(document).ready(function() {
 	//initGeoLocate();
 	
 	//add some input validation
+	//add regex function to validation
+	$.validator.addMethod(
+	        "regex",
+	        function(value, element, regexp) {
+	            var re = new RegExp(regexp);
+	            return this.optional(element) || re.test(value);
+	        }//,
+	        //"Please enter valid characters..."
+	);
 	
 	
 	

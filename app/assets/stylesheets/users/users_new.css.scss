@@ -1,4 +1,5 @@
 @import 'layout';
+@import 'colors';
 
 $signup_container_padding: 50px;
 $signup_container_width: $main_container_subcontent_width - ($signup_container_padding * 2);
@@ -30,14 +31,20 @@ $signup_container_width: $main_container_subcontent_width - ($signup_container_p
 			.valid_message {
 				display: none;
 			}
+			
+			.error {
+				color: $error_red_text;
+			}
 		}
 		
 		.valid {
 			.valid_message {
 				display: inline !important;
+				color: $valid_green_text;
 			}
 			.suggestion_message {
 				display: none;
+				color: $valid_green_text;
 			}
 		}
 		
@@ -47,8 +54,18 @@ $signup_container_width: $main_container_subcontent_width - ($signup_container_p
 			float: left;
 			height: 40px;
 			
+			
+			
 			.valid_message {
 				display: none;
+			}
+			
+			.suggestion_message {
+				color: $subtle_hint_grey;
+			}
+			
+			.error {
+				color: $error_red_text;
 			}
 		}
 	}

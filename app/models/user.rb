@@ -6,19 +6,26 @@ class User < ActiveRecord::Base
   # for submissions from users/crop.html.erb cropping avatar etc
   attr_accessor :crop_x, :crop_y, :crop_h, :crop_w
 
-  validates :username, :uniqueness => true
+  validates :username, :length => { :minimum => 1, :maximum => 15 },
+                       :format => { :with => /^[a-z0-9\-_]+$/i },
+                       :uniqueness => true
 
   validates :email, :uniqueness => true,
-    :length => { :within => 5..50 },
-    :format => { :with => /^[^@][\w.-]+@[\w.-]+[.][a-z]{2,4}$/i }
+            :length => { :within => 5..50 },
+            :format => { :with => /^[^@][\w.-]+@[\w.-]+[.][a-z]{2,4}$/i }
 
   validates :password, :confirmation => true,
-    :length => { :within => 4..20 },
-	  :presence => true,
-	  :if => :password_required?
+            :length => { :within => 4..20 },
+	          :presence => true,
+	          :if => :password_required?
 	  
-	validates :firstname, :presence => true
-  validates :lastname, :presence => true
+	validates :firstname, :format => { :with => /^[a-z ,.'-]+$/i }, 
+	                      :length => { :minimum => 2, :maximum => 15 }, 
+	                      :presence => true
+  validates :lastname, :format => { :with => /^[a-z ,.'-]+$/i }, 
+                       :length => { :minimum => 1, :maximum => 20 }, 
+                       :presence => true
+  
   validates :zip, :presence => true
   
   #has_one :profile, :dependent => :destroy
@@ -115,6 +122,11 @@ class User < ActiveRecord::Base
   private
   def reprocess_avatar
     avatar.reprocess!
+  end
+  
+  # seems like duplication, and it is! no other way to use validations on remote client side form validation
+  def username_valid?(username) 
+    username.length > 0 && username.length < 15 && !!(username =~ /^[a-z0-9\-_]+$/i)
   end
   
 end

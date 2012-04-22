@@ -16,7 +16,7 @@ $(function() {
         });
     });
 
-	$('[data-validate]').keypress(function() {
+	$('[data-validate]').keyup(function() {
         $this = $(this);
         $.get($this.data('validate'), {
             user: $this.val()
@@ -33,6 +33,9 @@ $(function() {
 		ignore: ".ignore",
 		//onfocusout: ,
 		onkeyup: function(element) { 
+					//http://whilefalse.net/2011/01/17/jquery-validation-onkeyup/
+					//http://groups.google.com/group/jquery-en/browse_thread/thread/eae7eb51e6c7c03f?pli=1
+					//kind of a hack, not really sure how this works
 					this.element(element); 
 					//console.log('fuck you');
 				}, 
@@ -40,17 +43,46 @@ $(function() {
 		rules: {
 				"user[firstname]" : {
 						required: true,
-						minlength: 5,
-						maxlength: 15
+						minlength: 1,
+						maxlength: 15,
+						regex: /^[a-z ,.'-]+$/i
 						//loginRegex: true
 				},
 				
-				last_name : {
+				"user[lastname]" : {
 						required: true,
 						maxlength: 15,
-						min: 5
+						minlength: 1,
+						regex: /^[a-z ,.'-]+$/i
 						//loginRegex: true
+				},
+				
+				"user[username]" : {
+					required: true,
+					minlength: 1,
+					maxlength: 15,
+					regex: /[a-z0-9_]+/i
+				},
+				
+				"user[email]" : {
+					required: true,
+					regex: /^[^@][\w.-]+@[\w.-]+[.][a-z]{2,4}$/i
+				},
+				
+				"user[password]" : {
+					required: true,
+					minlength: 5,
+					maxlength: 20
+				},
+				
+				//zips
+				"user[zip]" : {
+					required: true,
+					//us zips only
+					//TODO possibly add canada and other regions later
+					regex: /^\d{5}(-\d{4})?$/
 				}
+				
 		},
 		
 		messages: {
@@ -66,6 +98,28 @@ $(function() {
 				minlength: "last name should be 2 or more characters",
 				maxlength: "last name should be less than 15 characters"
 				//logingRegex: "must be letters and numbers only"
+			},
+			
+			"user[username]" : {
+				required: "username is required",
+				minlength: 1,
+				maxlength: 15,
+			},
+			
+			"user[email]" : {
+				required: "Email is required",
+				regex: "Please enter a valid email"
+			},
+			
+			"user[password]" : {
+				required: "please enter a password",
+				minlength: "too short, must be at least 5 characters",
+				maxlength: "password is too long, don't go over 20 characters"
+			},
+			
+			"user[zip]" : {
+				required: "Please enter a zip code",
+				regex: "Please enter a valid US zip"
 			}
 		},
 		
