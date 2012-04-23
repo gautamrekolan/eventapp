@@ -7,14 +7,14 @@
 			</div>
 		</div>
 		
+		<%= render 'shared/search_events'%>
+		
 		<div id="new_event_button_container">
 			<div id="new_event_button">
 				<%= link_to 'create event +', new_event_path %>
 			</div>
 		</div>
 		
-		<%= render 'shared/search_events'%>
-	
 		<div id="loggedin_user_menu_container">
 			<%-# user not logged in then show the top login bar %>
 	
