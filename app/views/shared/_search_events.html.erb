@@ -1,6 +1,6 @@
 <div id="search_events">
-	<form action="<%= search_path %>" method="get">
-		<%= text_field_tag :query, params[:query] %>
+	<form action="<%= search_path %>.json" method="get" data-remote="true">
+		<%= text_field_tag :query, params[:query], :placeholder => 'search: events, people, places' %>
 		<%= submit_tag "search", :name => nil %>
 	</form>
 </div>

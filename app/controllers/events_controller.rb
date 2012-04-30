@@ -1,6 +1,6 @@
 class EventsController < ApplicationController
 
-  before_filter :authenticate, :except => [:index, :show, :notify_friend]
+  before_filter :authenticate, :except => [:index, :search, :show, :notify_friend]
   
   respond_to :html, :js, :json, :xml
   
@@ -10,7 +10,11 @@ class EventsController < ApplicationController
   
   def search 
       @search_q = params[:query]
-      @events = Event.search @search_q
+      limit = 4
+      @events = Event.search @search_q, :limit => limit
+      # @places = Place.search @search_q, :limit => limit
+      @places = Place.search_foursquare_venues
+      @users = User.search @search_q, :limit => limit
       
       respond_with @events
   end

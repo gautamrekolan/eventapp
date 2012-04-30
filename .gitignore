@@ -5,3 +5,5 @@ tmp/
 rdoc/*
 .sass-cache/
 public/assets/*
+config/development.sphinx.conf
+db/sphinx/*

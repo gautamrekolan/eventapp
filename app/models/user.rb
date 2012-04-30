@@ -58,6 +58,13 @@ class User < ActiveRecord::Base
               :path => ":attachment/:id/:style/:basename.:extension",
               :bucket => 'eventsbucket'
               
+    # this indexing must come after any associations
+  	# uses thinking sphinx and a running Sphinx daemon
+  	define_index do
+  	  indexes :username
+  	  # indexes :description
+  	end
+
   
   #events the user is going to 
   #TODO probably should only return public events
