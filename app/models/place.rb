@@ -18,9 +18,13 @@ class Place < ActiveRecord::Base
 	  # indexes :description
 	# end
 	def search_foursquare_venues
-	  
-    # "https://api.foursquare.com/v2/venues/search?ll=40.7,-74&client_id=#{SiteSettings::FOURSQUARE_CLIENT_ID}&client_secret=FOURSQUARE_CLIENT_SECRET&v=20120429"
-	end
+	  url = "https://api.foursquare.com/v2/venues/search"
+	  location = "ll=40.7,-74"
+	  client_id = "client_id=#{SiteSettings::FOURSQUARE_CLIENT_ID}"
+	  client_secret = "client_secret=#{SiteSettings::FOURSQUARE_CLIENT_SECRET}"
+	  params = "?#{location}&#{client_id}&&v=20120429"
+    # "https://api.foursquare.com/v2/venues/search	
+  end
 	
   def full_address
     "#{address} #{city} #{state} #{zip.to_s}"

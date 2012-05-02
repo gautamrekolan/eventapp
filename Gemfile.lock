@@ -195,6 +195,7 @@ DEPENDENCIES
   ffaker (~> 1.13.0)
   flying-sphinx!
   geocoder
+  httparty
   jquery-rails
   paperclip!
   pg

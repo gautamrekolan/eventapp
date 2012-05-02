@@ -32,6 +32,7 @@ class EventsController < ApplicationController
     #@events_array.push(Event.tomorrow.section_formatted)
     
     # get the rest of the days events
+    # TODO move to function somewhere else
     7.times do |n|
       day = Time.now + (n).days
       events_hash = Hash.new

@@ -2,14 +2,17 @@ source 'http://rubygems.org'
 
 gem 'rails', '3.1.0'
 
+gem 'httparty'
+
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
-#using post
-#gem 'sqlite3'
-
+# using post
+# gem 'sqlite3'
+# postgres
 gem 'pg'
 
+# thin is faster and everybody else thinks it's cool, so i think it's cool
 gem 'thin' # this breaks everything 
 
 # this could be installed as a "plugin"
