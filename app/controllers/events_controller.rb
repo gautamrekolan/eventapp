@@ -11,10 +11,11 @@ class EventsController < ApplicationController
   def search 
       @search_q = params[:query]
       limit = 4
-      @events = Event.find(:all, :conditions => [ "lower(name) LIKE ?", (@search_q + "%").downcase ], :limit => limit) #{}"name LIKE lower(" + @search_q + "%)").limit(limit) #Event.search @search_q, :limit => limit #, :retry_stale => true
+      # TODO simplify these queries by moving them into models and more intuitively naming the method
+      @events = Event.find(:all, :conditions => ["lower(name) LIKE ?", (@search_q + "%").downcase], :limit => limit) #{}"name LIKE lower(" + @search_q + "%)").limit(limit) #Event.search @search_q, :limit => limit #, :retry_stale => true
       # @places = Place.search @search_q, :limit => limit
       @places = Place.search_foursquare_venues(limit, @search_q)
-      @users = User.where("username LIKE ?", @search_q + "%").limit(limit)  # @search_q, :limit => limit
+      @users = User.find(:all, :conditions => ["lower(username) LIKE ?", (@search_q + "%").downcase], :limit => limit) # where("username LIKE ?", @search_q + "%").limit(limit)  # @search_q, :limit => limit
       
       respond_with ({ :events => @events, :users => @users, :places => @places })
   end

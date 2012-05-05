@@ -20,15 +20,19 @@ class Place < ActiveRecord::Base
 	
 	def self.search_foursquare_venues(limit = 5, q = "")
 	  url = "https://api.foursquare.com/v2/venues/search"
-	  location = "ll=40.7,-74"
+	  # location = "ll=40.7,-74"
+	  # TODO update to reflect user's location
+	  near = "near=" + CGI.escape("Ventura, Ca")
 	  client_id = "client_id=#{SiteSettings::FOURSQUARE_CLIENT_ID}"
 	  client_secret = "client_secret=#{SiteSettings::FOURSQUARE_CLIENT_SECRET}"
 	  date = "v=20120429"
-	  query = q
-	  params = "?#{location}&#{client_id}&#{client_secret}&#{date}&limit=#{limit}"
+	  query = "&query=" + q
+	  params = "?#{near}&#{client_id}&#{client_secret}&#{date}&limit=#{limit}"
     # "https://api.foursquare.com/v2/venues/search
     # if there was a query add it onto params	
-    params = params + q unless q.empty?
+    params = params + query unless query.empty?
+    
+    puts "#{url}#{params}"
     
     HTTParty.get "#{url}#{params}"
   end
