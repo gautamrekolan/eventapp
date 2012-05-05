@@ -17,13 +17,20 @@ class Place < ActiveRecord::Base
 	  # indexes :username
 	  # indexes :description
 	# end
-	def search_foursquare_venues
+	
+	def self.search_foursquare_venues(limit = 5, q = "")
 	  url = "https://api.foursquare.com/v2/venues/search"
 	  location = "ll=40.7,-74"
 	  client_id = "client_id=#{SiteSettings::FOURSQUARE_CLIENT_ID}"
 	  client_secret = "client_secret=#{SiteSettings::FOURSQUARE_CLIENT_SECRET}"
-	  params = "?#{location}&#{client_id}&&v=20120429"
-    # "https://api.foursquare.com/v2/venues/search	
+	  date = "v=20120429"
+	  query = q
+	  params = "?#{location}&#{client_id}&#{client_secret}&#{date}&limit=#{limit}"
+    # "https://api.foursquare.com/v2/venues/search
+    # if there was a query add it onto params	
+    params = params + q unless q.empty?
+    
+    HTTParty.get "#{url}#{params}"
   end
 	
   def full_address

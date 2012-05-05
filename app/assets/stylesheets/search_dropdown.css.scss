@@ -1,0 +1,21 @@
+@import 'colors';
+@import 'layout';
+
+#search_bar_results {
+	//display: none;
+	position:absolute;
+	//top: 50px;
+	width: $search_bar_width;
+	background-color: $header_color;
+	border: 1px solid black;
+	
+	.group {
+		border-bottom: 1px solid #000;
+		a {
+			width: $search_bar_width;
+			height: 40px;
+			font-size: 12px;
+			padding: 5px;
+		}
+	}
+}

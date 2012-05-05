@@ -1,3 +1,4 @@
+require 'lib/railsutils/string_utils'
 
 namespace :db do
   desc "Fill database with sample data" 
@@ -18,11 +19,13 @@ def make_users
   100.times do |n|
     @firstname = Faker::Name.first_name
     @lastname = Faker::Name.last_name
+    @username = StringUtils::random_string(8)
     @email = "example-#{n+1}@example.com" 
     @password = "password"
     @zip = Faker::Address.zip_code
     User.create!(:firstname => @firstname,
                      :lastname => @lastname, 
+                     :username => @username,
                      :email => @email,
                      :password => @password,
                      :zip => @zip)

@@ -1,6 +1,9 @@
-<div id="search_events">
-	<form action="<%= search_path %>.json" method="get" data-remote="true">
+<div id="search_events" class="search_container">
+	<form action="<%= search_path %>" method="get" data-remote="false">
 		<%= text_field_tag :query, params[:query], :placeholder => 'search: events, people, places' %>
 		<%= submit_tag "search", :name => nil %>
 	</form>
 </div>
+
+<!-- hidden until a seach term is entered -->
+<%= render 'shared/search_bar_results'%>
