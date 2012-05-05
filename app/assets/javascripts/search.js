@@ -42,9 +42,9 @@ function populateUsers(data) {
 		links = "";
 		for(var i = 0; i < users.length; i++) {
 			u = users[i].user;
-			links = "<a href=''>" + u.username + "</a>";
+			links = "<a href='/users/" + u.id + "'>" + u.username + "</a>";
 		}	
-		appendGroup(links);
+		appendGroup(links, "Users");
 	} else {
 		link = "<a href=''>no users</a>";
 		$("#search_bar_results").append(link);
@@ -63,7 +63,7 @@ function populateEvents(data) {
 				links += "<a href=''>" + e.name + "</a>";
 			}
 		}
-		appendGroup(links);
+		appendGroup(links, "Events");
 	} else {
 		link = "<a href=''>no events</a>";
 		$("#search_bar_results").append(link);
@@ -80,19 +80,19 @@ function populateVenues(data) {
 		links = "";
 		for(var i = 0; i < venues.length; i++) {
 			links += "<a href=''>" + venues[i].name + "</a>";
-			appendGroup(links)
 		}
+		appendGroup(links, "Foursquare")
 	} else {
 		link = "<a href=''>no places</a>";
 		$("#search_bar_results").append(link);
 	}
 }
 
-function appendGroup(linkStr, id) {
+function appendGroup(linkStr, title, id) {
 	// default value
 	id = typeof id !== 'undefined' ? id : "";
 	if (id == "") {
-		html = "<div class='group'>";
+		html = "<div class='group'><div class='title'>" + title + "</div>";
 	} else {
 		html = "<div class='group' id='" + id + ">";
 	}
